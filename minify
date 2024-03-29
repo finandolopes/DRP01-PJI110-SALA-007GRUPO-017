@@ -1,0 +1,5 @@
+html-minifier --remove-attribute-quotes --collapse-whitespace --remove-comments index.html -o dist/index.html
+uglifyjs --compress -o dist/js/contactform.min.js -- js/contactform.js
+uglifyjs --compress -o dist/js/language.min.js -- js/language.js
+uglifyjs --compress -o dist/js/main.min.js -- js/main.js
+uglifycss css/style.css > dist/css/style.min.css

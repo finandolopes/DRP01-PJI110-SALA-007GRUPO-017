@@ -1,0 +1,66 @@
+DOCTYPE: Define o tipo de documento HTML5.
+head: Cabeçalho da página.
+title: Define o título da página ("Projeto - Integrador").
+meta charset: Define o charset da página como UTF-8 (necessário para caracteres especiais).
+meta viewport: Define o comportamento responsivo da página para diferentes dispositivos.
+Bootstrap CSS: Importa o Bootstrap CSS online (CDN) da versão 4.3.1.
+estilo.css: Importa a folha de estilo customizada "estilo.css".
+font-awesome.css: Importa a folha de estilo do Font Awesome para ícones (substituída pela importação do Font Awesome 5).
+Font Awesome 5: Importa o Font Awesome 5 online (CDN) para ícones.
+body: Corpo da página.
+nav: Menu de navegação.
+container: Define um container para centralizar o conteúdo do menu.
+navbar-brand: Logo da marca ("Projeto - Integrador").
+navbar-toggler: Botão para expandir/contrair o menu em telas pequenas.
+collapse navbar-collapse: Conteúdo que aparece quando o menu é expandido.
+nav-item: Itens do menu.
+nav-link: Links dos itens do menu.
+dropdown: Menu suspenso ("Social").
+dropdown-item: Itens do menu suspenso (redes sociais).
+form-inline: Formulário de busca.
+carouselSite: Carrossel de imagens.
+carousel-indicators: Indicadores de slides do carrossel.
+carousel-inner: Slides do carrossel.
+carousel-item: Item individual do slide.
+img: Imagem do slide.
+carousel-caption: Legenda do slide (opcional).
+carousel-control-prev: Botão para o slide anterior.
+carousel-control-next: Botão para o próximo slide.
+container: Container para o restante do conteúdo da página.
+row: Linha.
+col: Coluna.
+(vazio): Espaçamento inicial.
+servicos: Seção de serviços.
+row: Linha para alinhar os cards de serviços.
+col: Colunas para cada card de serviço.
+card: Card de serviço individual.
+card-img-top: Imagem do card.
+card-body: Corpo do card com título e descrição.
+card-footer: Rodapé do card (opcional).
+jumbotron: Jumbotron (seção com destaque).
+container: Container para centralizar o conteúdo do Jumbotron.
+Missão, Visão e Valores: Título da seção.
+nav-pills: Abas para alternar conteúdo da Missão, Visão e Valores.
+nav-item: Item individual de aba.
+nav-link: Link do item de aba.
+tab-content: Conteúdo das abas.
+tab-pane: Conteúdo individual de cada aba.
+row: Linha para alinhar o vídeo e texto.
+col: Colunas para o vídeo e texto.
+embed-responsive: Elemento responsivo para o vídeo (opcional).
+iframe: Incorporação do vídeo.
+p: Texto da aba.
+contato: Seção de contato.
+row: Linha para centralizar o título.
+col: Coluna para o título.
+fas fa-envelope: Ícone de envelope (Font Awesome).
+row: Linha para o formulário de contato.
+col: Coluna para o formulário.
+form: Formulário de contato.
+form-row: Linha para agrupar campos do formulário.
+form-group col: Coluna para cada campo do formulário.
+label: Rótulo do campo.
+input: Campo de texto.
+textarea: Campo de texto multiline (mensagem).
+form-check: Checkbox para receber novidades por e-mail.
+form-row: Linha para os botões de
