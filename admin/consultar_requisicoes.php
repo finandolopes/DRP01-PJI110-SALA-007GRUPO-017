@@ -1,6 +1,6 @@
 <?php
 // Incluir o arquivo de conexão e as funções de manipulação de requisições
-include_once('php/conexao.php');
+include_once('config/conexao.php');
 include_once('php/funcoes_requisicoes.php');
 // Verificar se o formulário de filtro foi submetido
 if(isset($_POST['filtrar'])) {
@@ -94,70 +94,70 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['exportar']) && !empty(
             border-radius: 5px; /* Arredondar bordas */
         }
 
-            button:hover {
-                background-color: #0056b3; /* Cor de fundo ao passar o mouse */
-            }
+        button:hover {
+            background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+        }
     </style>
 </head>
 <body>
-    <h1>Consultar Requisições</h1>
+<h1>Consultar Requisições</h1>
 
-    <!-- Formulário de filtro por data -->
+<!-- Formulário de filtro por data -->
+<form method="post">
+    <label for="data_inicio">Data de Início:</label>
+    <input type="date" name="data_inicio" id="data_inicio">
+    <label for="data_fim">Data Fim:</label>
+    <input type="date" name="data_fim" id="data_fim">
+    <button type="submit" name="filtrar">Filtrar</button>
+</form>
+
+<!-- Botão para exportar em XML -->
+<?php if(!empty($requisicoes)): ?>
     <form method="post">
-        <label for="data_inicio">Data de Início:</label>
-        <input type="date" name="data_inicio" id="data_inicio">
-        <label for="data_fim">Data Fim:</label>
-        <input type="date" name="data_fim" id="data_fim">
-        <button type="submit" name="filtrar">Filtrar</button>
+        <button type="submit" name="exportar">Exportar em XML</button>
     </form>
+<?php endif; ?>
 
-    <!-- Botão para exportar em XML -->
-    <?php if(!empty($requisicoes)): ?>
-        <form method="post">
-            <button type="submit" name="exportar">Exportar em XML</button>
-        </form>
-    <?php endif; ?>
+<!-- Verificar se existem requisições a serem exibidas -->
+<?php if($requisicoes): ?>
+    <!-- Tabela para exibir as requisições -->
+    <table border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Data de Nascimento</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Horário de Contato</th>
+            <th>Tipo</th>
+            <th>Categoria</th>
+            <th>Outras Informações</th>
+            <th>Data da Requisição</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach($requisicoes as $requisicao): ?>
+            <tr>
+                <td><?php echo $requisicao['id_requisicao']; ?></td>
+                <td><?php echo $requisicao['nome']; ?></td>
+                <td><?php echo isset($requisicao['data_nascimento']) ? $requisicao['data_nascimento'] : ''; ?></td>
+                <td><?php echo $requisicao['email']; ?></td>
+                <td><?php echo $requisicao['telefone']; ?></td>
+                <td><?php echo $requisicao['horario_contato']; ?></td>
+                <td><?php echo $requisicao['tipo']; ?></td>
+                <td><?php echo $requisicao['categoria']; ?></td>
+                <td><?php echo $requisicao['outros_info']; ?></td>
+                <td><?php echo $requisicao['data_requisicao']; ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php else: ?>
+    <p>Não há requisições para exibir.</p>
+<?php endif; ?>
 
-    <!-- Verificar se existem requisições a serem exibidas -->
-    <?php if($requisicoes): ?>
-        <!-- Tabela para exibir as requisições -->
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Data de Nascimento</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th>Horário de Contato</th>
-                    <th>Tipo</th>
-                    <th>Categoria</th>
-                    <th>Outras Informações</th>
-                    <th>Data da Requisição</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach($requisicoes as $requisicao): ?>
-                    <tr>
-                        <td><?php echo $requisicao['id_requisicao']; ?></td>
-                        <td><?php echo $requisicao['nome']; ?></td>
-                        <td><?php echo isset($requisicao['data_nascimento']) ? $requisicao['data_nascimento'] : ''; ?></td>
-                        <td><?php echo $requisicao['email']; ?></td>
-                        <td><?php echo $requisicao['telefone']; ?></td>
-                        <td><?php echo $requisicao['horario_contato']; ?></td>
-                        <td><?php echo $requisicao['tipo']; ?></td>
-                        <td><?php echo $requisicao['categoria']; ?></td>
-                        <td><?php echo $requisicao['outros_info']; ?></td>
-                        <td><?php echo $requisicao['data_requisicao']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        <p>Não há requisições para exibir.</p>
-    <?php endif; ?>
-
-    <button type="button" class="btn btn-sm btn-success" onclick="window.location.href='admin.php'">Voltar</button>
+<button type="button" class="btn btn-sm btn-success" onclick="window.location.href='admin.php'">Voltar</button>
 
 </body>
 </html>
