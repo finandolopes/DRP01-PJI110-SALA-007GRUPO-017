@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('php/conexao.php');
+include_once('../config/conexao.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -15,93 +15,92 @@ include_once('php/conexao.php');
 </head>
 <body>
 
-    <div class="container">
-        <div class="album py-5 bg-light">
-            <h2>Bem vindo ao painel de administrador</h2>
-            <div class="container">
-                <div class="row">
-                    <!-- Seção de funcionalidades -->
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="card-body">
-                                <p class="card-text">Consultar Requisições realizadas no Site</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="consultar_requisicoes.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
-                                    </div>
-                                    <small class="text-muted">1</small>
+<div class="container">
+    <div class="album py-5 bg-light">
+        <h2>Bem vindo ao painel de administrador</h2>
+        <div class="container">
+            <div class="row">
+                <!-- Seção de funcionalidades -->
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <p class="card-text">Consultar Requisições realizadas no Site</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="consultar_requisicoes.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
                                 </div>
+                                <small class="text-muted">1</small>
                             </div>
                         </div>
                     </div>
-                    <!-- Seção de funcionalidades -->
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="card-body">
-                                <p class="card-text">Listar Clientes</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="listar_clientes.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
-                                    </div>
-                                    <small class="text-muted">1</small>
+                </div>
+                <!-- Seção de funcionalidades -->
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <p class="card-text">Listar Clientes</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="listar_clientes.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
                                 </div>
+                                <small class="text-muted">1</small>
                             </div>
                         </div>
                     </div>
-                    <!-- Seção de funcionalidades -->
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="card-body">
-                                <p class="card-text">Gerenciar Usuários</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="gerenciar_usuarios.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
-                                    </div>
-                                    <small class="text-muted">1</small>
+                </div>
+                <!-- Seção de funcionalidades -->
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <p class="card-text">Gerenciar Usuários</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="gerenciar_usuarios.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
                                 </div>
+                                <small class="text-muted">1</small>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Seção de funcionalidades -->
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="card-body">
-                                <p class="card-text">Alterar imagens do Carrossel</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="upload_imagens.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
-                                    </div>
-                                    <small class="text-muted">1</small>
+                <!-- Seção de funcionalidades -->
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <p class="card-text">Alterar imagens do Carrossel</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="upload_imagens.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
                                 </div>
+                                <small class="text-muted">1</small>
                             </div>
                         </div>
                     </div>
-                    <!-- Seção de funcionalidades -->
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="card-body">
-                                <p class="card-text">Moderar Depoimentos</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="admin_depoimentos.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
-                                    </div>
-                                    <small class="text-muted">1</small>
+                </div>
+                <!-- Seção de funcionalidades -->
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <p class="card-text">Moderar Depoimentos</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="admin_depoimentos.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
                                 </div>
+                                <small class="text-muted">1</small>
                             </div>
                         </div>
                     </div>
-                    <!-- Seção de funcionalidades -->
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="card-body">
-                                <p class="card-text">Gerenciar Informações da Empresa</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button onclick="openModal()" class="btn btn-sm btn-success btn-outline-success text-light">Editar Empresa</button>
-                                    </div>
-                                    <small class="text-muted">1</small>
+                </div>
+                <!-- Seção de funcionalidades -->
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <p class="card-text">Gerenciar Informações da Empresa</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button onclick="openModal()" class="btn btn-sm btn-success btn-outline-success text-light">Editar Empresa</button>
                                 </div>
+                                <small class="text-muted">1</small>
                             </div>
                         </div>
                     </div>
@@ -109,6 +108,7 @@ include_once('php/conexao.php');
             </div>
         </div>
     </div>
+</div>
 
 <!-- Modal de Edição -->
 <div id="modal" class="modal" style="display:none;">
@@ -158,17 +158,17 @@ include_once('php/conexao.php');
 <style>
     /* Estilo para o modal */
     .modal {
-        display: none; 
-        position: fixed; 
-        z-index: 1; 
-        padding-top: 100px; 
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
         left: 0;
         top: 0;
-        width: 100%; 
-        height: 100%; 
-        overflow: auto; 
-        background-color: rgb(0,0,0); 
-        background-color: rgba(0,0,0,0.4); 
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
     }
 
     /* Estilo para o conteúdo do modal */
@@ -199,9 +199,9 @@ include_once('php/conexao.php');
 </style>
 
 
-    <!-- Botão de Sair -->
-    <div class="fixed-bottom mb-3 mr-3">
-        <a href="index.php" class="btn btn-danger">Sair</a>
-    </div>
+<!-- Botão de Sair -->
+<div class="fixed-bottom mb-3 mr-3">
+    <a href="index.php" class="btn btn-danger">Sair</a>
+</div>
 </body>
 </html>
