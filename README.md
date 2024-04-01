@@ -3,7 +3,7 @@
 
 
 ## 📋 Índice
-- [Link do projeto:](grupo-pi-turma-007.vercel.app)
+- [Link do projeto:](https://finandolopes.github.io/GRUPO-PI-TURMA-007/)
 
 - [📖 Sobre](#-Sobre)
 - [🚀 Tecnologias utilizadas](#-Tecnologias-utilizadas)
