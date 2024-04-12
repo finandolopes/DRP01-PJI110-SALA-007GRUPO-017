@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - CONFINTER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f3f2f8;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 48px 0 0;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+            background-color: #2e2e35;
+            color: #fff;
+        }
+        .sidebar.dark-theme {
+            background-color: #141418;
+            color: #fff;
+        }
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: 0.5rem;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .nav-link {
+            color: #fff !important;
+            padding: 10px;
+            transition: background-color 0.2s;
+        }
+        .nav-link:hover {
+            background-color: #454550 !important;
+        }
+        .active {
+            background-color: #454550 !important;
+        }
+        main {
+            padding: 90px 30px 50px; /* Ajustado para acomodar a barra superior */
+        }
+        .card {
+            background-color: #fff;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .modal-content {
+            background-color: #fff;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.2s;
+        }
+        .modal-content .modal-header, .modal-content .modal-footer {
+            border: none;
+            border-radius: 8px;
+        }
+        .btn-primary, .btn-danger {
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .btn-primary:hover, .btn-danger:hover {
+            background-color: #454550;
+        }
+        .menu-icon {
+            margin-bottom: 5px;
+        }
+        .theme-toggler {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .theme-toggler i {
+            color: #000;
+            font-size: 20px;
+        }
+        .dark-theme .theme-toggler i {
+            color: #fff;
+        }
+        .dark-theme {
+            background-color: #141418 !important;
+            color: #fff !important;
+        }
+        .dark-theme main {
+            color: #fff;
+        }
+        .dark-theme .card {
+            background-color: #2e2e35;
+            color: #fff;
+        }
+        .dark-theme .modal-content {
+            background-color: #2e2e35;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Barra de Navegação -->
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <span class="navbar-brand mb-0 h1">Nome da Empresa</span>
+  <div class="ml-auto">
+    <span class="navbar-text mr-3">Usuário: Fulano de Tal</span>
+    <a href="#" class="btn btn-danger">Sair</a>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" onclick="openFuncionalidade('consultar_requisicoes.php')">
+              <i class="fa fa-search menu-icon"></i> Consultar Requisições
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="openFuncionalidade('listar_clientes.php')">
+              <i class="fa fa-users menu-icon"></i> Listar Clientes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="openFuncionalidade('gerenciar_usuarios.php')">
+              <i class="fa fa-user menu-icon"></i> Gerenciar Usuários
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="openFuncionalidade('upload_imagens.php')">
+              <i class="fa fa-image menu-icon"></i> Alterar imagens do Carrossel
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="openFuncionalidade('admin_depoimentos.php')">
+              <i class="fa fa-comments menu-icon"></i> Moderar Depoimentos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="openModal()">
+              <i class="fa fa-building menu-icon"></i> Gerenciar Informações da Empresa
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="album py-5 bg-light">
+        <h2 class="text-center mb-4">Bem vindo ao painel de administrador</h2>
+        <div id="funcionalidades" class="row">
+          <!-- Conteúdo das funcionalidades será carregado aqui -->
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Modal de Edição -->
+<div id="modal" class="modal" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Editar Empresa</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm" action="edit.php" method="POST">
+                    <!-- Formulário de edição da empresa -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeModal()">Fechar</button>
+                <button type="submit" form="editForm" class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Menu flutuante para mudar o tema -->
+<div class="theme-toggler" onclick="toggleTheme()">
+    <i class="fa fa-adjust"></i>
+</div>
+
+<!-- Script para abrir e fechar o modal -->
+<script>
+    function openModal() {
+        document.getElementById('modal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+
+    function openFuncionalidade(url) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("funcionalidades").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
+    }
+
+    function toggleTheme() {
+        document.body.classList.toggle("dark-theme");
+    }
+</script>
+
+<!-- Bootstrap e jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
