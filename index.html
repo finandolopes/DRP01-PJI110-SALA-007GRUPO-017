@@ -426,12 +426,12 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="page-scroll" href="#contact">
-                                        <div class="br">Contato</div>
+                                    <a class="page-scroll" href="#redes">
+                                        <div class="br">Redes Sociais</div>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="page-scroll" href="#contact">
+                                    <a class="page-scroll" href="#depoimentos">
                                         <div class="br">Depoimentos</div>
                                     </a>
                                 </li>
@@ -917,6 +917,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                     </div>
                                 </div>
                             </div>
+                            <div id="redes" class="faq-area area-padding"></div>
                             <div class="container mt-5">
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6 col-xs-12">
@@ -937,32 +938,32 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                 </div>
                             </div>
                             
-  <div class="footer-area-bottom">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <!-- Div para Envio de Depoimentos -->
-                <div class="col-md-6 col-sm-6 col-xs-12 text-center">
-                    <h2>Enviar Depoimento</h2>
-                    <div class="d-inline-block mx-auto" style="max-width: 500px; border: 1px solid #ccc; padding: 20px; border-radius: 10px;">
-                        <form action="php/enviar_depoimento.php" method="POST">
-                            <div class="form-group">
-                                <input type="text" name="nome" class="br form-control" id="nome" placeholder="Insirir nome, em branco enviará como Anônimo" data-rule="minlen:4" data-msg="" />
-                                <div class="br validation"></div>
+                            <div class="footer-area-bottom bg-light py-5 mt-5">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-8 col-sm-8 col-xs-12">
+                                            <h2 class="text-center mb-4">Enviar Depoimento</h2>
+                                            <form action="php/enviar_depoimento.php" method="POST">
+                                                <div class="form-group">
+                                                    <input type="text" name="nome" class="br form-control" id="nome" placeholder="Insirir nome, em branco enviará como Anônimo" data-rule="minlen:4" data-msg="" />
+                                                    <div class="br validation"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <textarea class="br form-control" name="mensagem" name="mensagem" rows="5" data-rule="required" data-msg="Por favor escreva algo para nós" placeholder="Mensagem"></textarea>
+                                                    <div class="br validation"></div>
+                                                    <div class="en validation"></div>
+                                                </div>
+                                                <div class="form-group text-center">
+                                                    <button type="submit" class="btn btn-primary">Enviar Depoimento</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <textarea class="br form-control" name="mensagem" name="mensagem" rows="5" data-rule="required" data-msg="Por favor escreva algo para nós" placeholder="Mensagem"></textarea>
-                                <div class="br validation"></div>
-                                <div class="en validation"></div>
-                            </div>
-
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-block">Enviar Depoimento</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                            
                 <!-- Div para Depoimentos Aprovados -->
+<div id="depoimentos" class="faq-area area-padding"></div>
 <div class="col-md-12 col-sm-12 col-xs-12 mt-5 bg-success pb-2">
     <h2 class="text-center">Depoimentos</h2>
     <hr>
@@ -1023,7 +1024,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                     <p class="br">&copy; Copyright 2024 CONFINTER. Todos Direitos Reservados.</p>
                 </div>
                 <div class="credits">
-                    <div class="br">Desenvolvido por <a href="https://github.com/finandolopes/">Fernando A. L. da Silva</a> com <a href="https://bootstrapmade.com/">BootstrapMade</a></div>
+                    <div class="br">Desenvolvido por <a href="https://github.com/finandolopes/DRP01-PJI110-SALA-007GRUPO-017/tree/main">DRP01-PJI110-SALA-007GRUPO-017</a> com <a href="https://bootstrapmade.com/">BootstrapMade</a></div>
                 </div>
             </div>
         </div>
