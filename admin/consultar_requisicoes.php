@@ -1,7 +1,8 @@
 <?php
 // Incluir o arquivo de conexão e as funções de manipulação de requisições
-include_once('config/conexao.php');
-include_once('php/funcoes_requisicoes.php');
+include_once('../php/conexao.php');
+include_once('../php/funcoes_requisicoes.php');
+
 // Verificar se o formulário de filtro foi submetido
 if(isset($_POST['filtrar'])) {
     $data_inicio = $_POST['data_inicio'];
@@ -52,50 +53,76 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['exportar']) && !empty(
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css">
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.components.min.css">
     <title>Consultar Requisições</title>
     <style>
         body {
-            background-color: #343a40; /* Cor de fundo escura */
-            color: #fff; /* Cor do texto */
-            padding: 20px; /* Espaçamento interno */
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="date"],
+        input[type="submit"],
+        button {
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #0078d4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #005a9e;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
         }
 
         th, td {
             padding: 8px;
             text-align: left;
-            border-bottom: 1px solid #dee2e6; /* Cor da linha inferior */
+            border-bottom: 1px solid #dee2e6;
         }
 
         th {
-            background-color: #343a40; /* Cor de fundo do cabeçalho */
-            color: #fff; /* Cor do texto do cabeçalho */
+            background-color: #343a40;
+            color: #fff;
         }
 
         tbody tr:nth-child(odd) {
-            background-color: #495057; /* Cor de fundo das linhas ímpares */
+            background-color: #495057;
         }
 
         tbody tr:hover {
-            background-color: #6c757d; /* Cor de fundo ao passar o mouse */
-        }
-
-        button {
-            background-color: #007bff; /* Cor de fundo do botão */
-            color: #fff; /* Cor do texto do botão */
-            padding: 10px 20px; /* Espaçamento interno */
-            border: none; /* Remover borda */
-            cursor: pointer; /* Alterar cursor ao passar o mouse */
-            border-radius: 5px; /* Arredondar bordas */
-        }
-
-        button:hover {
-            background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+            background-color: #6c757d;
         }
     </style>
 </head>
@@ -108,20 +135,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['exportar']) && !empty(
     <input type="date" name="data_inicio" id="data_inicio">
     <label for="data_fim">Data Fim:</label>
     <input type="date" name="data_fim" id="data_fim">
-    <button type="submit" name="filtrar">Filtrar</button>
+    <button type="submit" name="filtrar" class="ms-Button ms-Button--primary">Filtrar</button>
 </form>
 
 <!-- Botão para exportar em XML -->
 <?php if(!empty($requisicoes)): ?>
     <form method="post">
-        <button type="submit" name="exportar">Exportar em XML</button>
+        <button type="submit" name="exportar" class="ms-Button ms-Button--primary">Exportar em XML</button>
     </form>
 <?php endif; ?>
 
 <!-- Verificar se existem requisições a serem exibidas -->
 <?php if($requisicoes): ?>
     <!-- Tabela para exibir as requisições -->
-    <table border="1">
+    <table class="ms-Table">
         <thead>
         <tr>
             <th>ID</th>
@@ -154,10 +181,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['exportar']) && !empty(
         </tbody>
     </table>
 <?php else: ?>
-    <p>Não há requisições para exibir.</p>
+    <p style="text-align: center;">Não há requisições para exibir.</p>
 <?php endif; ?>
 
-<button type="button" class="btn btn-sm btn-success" onclick="window.location.href='admin.php'">Voltar</button>
+<button type="submit" class="ms-Button ms-Button--primary" onclick="window.location.href='admin.php'">Voltar</button>
 
 </body>
 </html>

@@ -49,89 +49,82 @@ if(isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css">
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.components.min.css">
     <title>Editar Clientes</title>
     <style>
         body {
-            background-color: #343a40; /* Cor de fundo escura */
-            color: #fff; /* Cor do texto */
-            padding: 20px; /* Espaçamento interno */
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            font-family: "Segoe UI", Arial, sans-serif;
         }
 
-        table {
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
             width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
             padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #dee2e6; /* Cor da linha inferior */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
         }
 
-        th {
-            background-color: #343a40; /* Cor de fundo do cabeçalho */
-            color: #fff; /* Cor do texto do cabeçalho */
+        input[type="submit"],
+        button {
+            padding: 10px 20px;
+            background-color: #0078d4;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
 
-        tbody tr:nth-child(odd) {
-            background-color: #495057; /* Cor de fundo das linhas ímpares */
+        button {
+            margin-top: 10px;
+            margin-right: 10px;
         }
 
-        tbody tr:hover {
-            background-color: #6c757d; /* Cor de fundo ao passar o mouse */
-        }
-
-        .btn-action {
-            padding: 5px 10px; /* Espaçamento interno */
-            border: none; /* Remover borda */
-            cursor: pointer; /* Alterar cursor ao passar o mouse */
-            border-radius: 5px; /* Arredondar bordas */
-            margin-right: 5px; /* Margem à direita */
-        }
-
-        .btn-edit {
-            background-color: #007bff; /* Cor de fundo azul */
-            color: #fff; /* Cor do texto */
-        }
-
-        .btn-delete {
-            background-color: #dc3545; /* Cor de fundo vermelha */
-            color: #fff; /* Cor do texto */
-        }
-
-        .btn-back {
-            margin-top: 10px; /* Margem superior */
-        }
-
-        .btn-container {
-            text-align: center; /* Centralizar botões */
+        button:hover,
+        input[type="submit"]:hover {
+            background-color: #005a9e;
         }
     </style>
 </head>
 <body>
-    <h1>Editar Cliente</h1>
-    
-    <?php if(isset($erro)): ?>
-        <p><?php echo $erro; ?></p>
-    <?php else: ?>
-        <form method="POST">
-            <!-- Adicione um campo oculto para passar o ID do cliente -->
-            <input type="hidden" name="id_cliente" value="<?php echo $id_cliente; ?>">
-            
-            <label for="nome">Nome:</label><br>
-            <input type="text" id="nome" name="nome" value="<?php echo $cliente['nome']; ?>"><br>
-            
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" value="<?php echo $cliente['email']; ?>"><br>
-            
-            <label for="telefone">Telefone:</label><br>
-            <input type="text" id="telefone" name="telefone" value="<?php echo $cliente['telefone']; ?>"><br>
-            
-            <input type="submit" value="Salvar">
-        </form>
-    <?php endif; ?>
-    
-    <button type="button" class="btn btn-sm btn-success" onclick="window.location.href='admin.php'">Voltar</button>
+<h1>Editar Cliente</h1>
+
+<?php if(isset($erro)): ?>
+    <p><?php echo $erro; ?></p>
+<?php else: ?>
+    <form method="POST">
+        <!-- Adicione um campo oculto para passar o ID do cliente -->
+        <input type="hidden" name="id_cliente" value="<?php echo $id_cliente; ?>">
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="<?php echo $cliente['nome']; ?>">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="<?php echo $cliente['email']; ?>">
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" value="<?php echo $cliente['telefone']; ?>">
+
+        <input type="submit" value="Salvar">
+    </form>
+<?php endif; ?>
+
+<button type="button" class="ms-Button ms-Button--primary" onclick="window.location.href='admin.php'">Voltar</button>
 </body>
 </html>

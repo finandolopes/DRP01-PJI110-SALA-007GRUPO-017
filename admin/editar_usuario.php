@@ -7,14 +7,16 @@
     <title>Editar Usuário</title>
     <style>
         body {
-            background-color: #343a40;
-            color: #fff;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #fff;
+            color: #333;
             padding: 20px;
         }
 
         label {
             margin-top: 10px;
             display: block;
+            color: #333;
         }
 
         input[type="text"],
@@ -23,12 +25,19 @@
             padding: 10px;
             margin-top: 5px;
             margin-bottom: 15px;
-            border: none;
-            border-radius: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: #333;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #0078d4;
         }
 
         button {
-            background-color: #28a745;
+            background-color: #0078d4;
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -37,7 +46,7 @@
         }
 
         button:hover {
-            background-color: #218838;
+            background-color: #005a9e;
         }
     </style>
 </head>

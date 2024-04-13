@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('../config/conexao.php');
+include_once('../php/conexao.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -8,200 +8,150 @@ include_once('../config/conexao.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Administrativo - CONFINTER</title>
-    <script src="../script/jquery.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <script src="../script/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f3f2f8;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        .navbar-logo {
+            max-height: 40px; /* Altura máxima do logo */
+            margin-right: 10px; /* Espaçamento entre o logo e o texto */
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 100;
+            padding: 60px 0 0; /* Ajuste de espaçamento superior */
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fafafa;
+            color: #201f1f;
+            transition: width 0.3s;
+            overflow-y: auto;
+            width: 240px;
+        }
+
+        .sidebar-collapsed {
+            width: 60px;
+        }
+
+        .nav-link {
+            color: #201f1f !important;
+            padding: 12px 10px; /* Ajuste de espaçamento interno */
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .nav-link:hover {
+            background-color: #ebedf0 !important;
+        }
+
+        .active {
+            background-color: #ebedf0 !important;
+        }
+
+        main {
+            margin-left: 240px;
+            padding: 90px 30px 50px;
+            transition: margin-left 0.3s;
+        }
+
+        .content-container {
+            width: calc(100% - 240px);
+            float: right;
+            padding: 20px;
+        }
+
+        /* Outros estilos permanecem inalterados */
+
+    </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="album py-5 bg-light">
-        <h2>Bem vindo ao painel de administrador</h2>
-        <div class="container">
-            <div class="row">
-                <!-- Seção de funcionalidades -->
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <div class="card-body">
-                            <p class="card-text">Consultar Requisições realizadas no Site</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="consultar_requisicoes.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
-                                </div>
-                                <small class="text-muted">1</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Seção de funcionalidades -->
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <div class="card-body">
-                            <p class="card-text">Listar Clientes</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="listar_clientes.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
-                                </div>
-                                <small class="text-muted">1</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Seção de funcionalidades -->
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <div class="card-body">
-                            <p class="card-text">Gerenciar Usuários</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="gerenciar_usuarios.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
-                                </div>
-                                <small class="text-muted">1</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Seção de funcionalidades -->
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <div class="card-body">
-                            <p class="card-text">Alterar imagens do Carrossel</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="upload_imagens.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
-                                </div>
-                                <small class="text-muted">1</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Seção de funcionalidades -->
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <div class="card-body">
-                            <p class="card-text">Moderar Depoimentos</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="admin_depoimentos.php"><button type="button" class="btn btn-sm btn-success btn-outline-success text-light">Clique aqui!</button></a>
-                                </div>
-                                <small class="text-muted">1</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Seção de funcionalidades -->
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <div class="card-body">
-                            <p class="card-text">Gerenciar Informações da Empresa</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button onclick="openModal()" class="btn btn-sm btn-success btn-outline-success text-light">Editar Empresa</button>
-                                </div>
-                                <small class="text-muted">1</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="../img/logo01-blue.png" class="navbar-logo" alt="Logo da Empresa">
+            Painel Administrativo - CONFINTER
+        </a>
+        <div class="ml-auto">
+            <span class="navbar-text mr-3">Usuário: <?php echo $_SESSION['nome_usuario']; ?></span>
+            <a href="../index.php" class="btn btn-danger">Sair</a>
         </div>
-    </div>
-</div>
+    </nav>
 
-<!-- Modal de Edição -->
-<div id="modal" class="modal" style="display:none;">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Editar Empresa</h2>
-        <form id="editForm" action="edit.php" method="POST">
-            <label for="tel">Telefone:</label>
-            <input type="text" id="tel" name="tel">
-            <label for="celular">Celular:</label>
-            <input type="text" id="celular" name="celular">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <label for="descricao">Descrição:</label>
-            <textarea id="descricao" name="descricao"></textarea>
-            <h3>Endereço</h3>
-            <label for="logradouro">Logradouro:</label>
-            <input type="text" id="logradouro" name="logradouro">
-            <label for="numero">Número:</label>
-            <input type="text" id="numero" name="numero">
-            <label for="bairro">Bairro:</label>
-            <input type="text" id="bairro" name="bairro">
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade">
-            <label for="estado">Estado:</label>
-            <input type="text" id="estado" name="estado">
-            <label for="cep">CEP:</label>
-            <input type="text" id="cep" name="cep">
-            <input type="submit" value="Salvar">
-        </form>
-        <!-- Botão Voltar -->
-        <button onclick="closeModal()" class="btn-voltar">Voltar</button>
-    </div>
-</div>
+    <!-- Sidebar -->
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" onclick="openFuncionalidade('dashboard.html')">
+                        <i class="fa fa-search menu-icon"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="openFuncionalidade('listar_clientes.html')">
+                        <i class="fa fa-users menu-icon"></i> Clientes
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="openFuncionalidade('consultar_requisicoes.html')">
+                        <i class="fa fa-users menu-icon"></i> Requisições
+                    </a>
+                </li>                
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="openFuncionalidade('gerenciar_usuarios.html')">
+                        <i class="fa fa-user menu-icon"></i> Usuários
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="openFuncionalidade('upload_imagens.html')">
+                        <i class="fa fa-image menu-icon"></i> Alterar imagens
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="openFuncionalidade('admin_depoimentos.html')">
+                        <i class="fa fa-comments menu-icon"></i> Depoimentos
+                    </a>
+                </li>    
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="openFuncionalidade('acesso_erp.html')">
+                        <i class="fa fa-key menu-icon"></i> Acesso ERP
+                    </a>
+                </li>                
+            </ul>
+        </div>
+    </nav>
 
-<!-- Script para abrir e fechar o modal -->
-<script>
-    function openModal() {
-        document.getElementById('modal').style.display = 'block';
-    }
+    <!-- Conteúdo principal -->
+    <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+        <div id="funcionalidades" class="content-container">
+            <!-- Conteúdo das funcionalidades será carregado aqui -->
+        </div>
+    </main>
 
-    function closeModal() {
-        document.getElementById('modal').style.display = 'none';
-    }
-</script>
+    <!-- Script para carregar as funcionalidades -->
+    <script>
+        function openFuncionalidade(url) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("funcionalidades").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+    </script>
 
-<style>
-    /* Estilo para o modal */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        padding-top: 100px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgb(0,0,0);
-        background-color: rgba(0,0,0,0.4);
-    }
+    <!-- Bootstrap e jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    /* Estilo para o conteúdo do modal */
-    .modal-content {
-        background-color: #fefefe;
-        margin: auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 50%; /* Defina a largura desejada para o modal */
-        border-radius: 10px;
-    }
-
-    /* Estilo para o botão Voltar */
-    .btn-voltar {
-        background-color: #f44336;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 10px;
-        transition: background-color 0.3s;
-    }
-
-    .btn-voltar:hover {
-        background-color: #d32f2f;
-    }
-</style>
-
-
-<!-- Botão de Sair -->
-<div class="fixed-bottom mb-3 mr-3">
-    <a href="index.php" class="btn btn-danger">Sair</a>
-</div>
 </body>
 </html>
