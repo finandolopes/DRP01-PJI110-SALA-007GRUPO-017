@@ -40,6 +40,8 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
     <link href="lib/venobox/venobox.min.css" rel="stylesheet">
     <link href="css/responsive.min.css" rel="stylesheet">
     <link href="css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <script>
         $(document).ready(function () {
             // Remover a máscara de data antes de enviar o formulário
@@ -223,7 +225,141 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
         });
 
     </script>
+    <style>
+        /* Estilos personalizados */
+        /* Estilizando os ícones do mapa */
+        .fa-map-marker {
+            color: #f03a3a; /* Cor vermelho */
+            font-size: 130%; /* Aumenta o tamanho em 30% */
+        }
+
+        /* Estilizando os ícones do e-mail */
+        .fa-envelope-o {
+            color: #75cbeb; /* Cor azul */
+            font-size: 130%; /* Aumenta o tamanho em 30% */
+        }
+
+        /* Estilizando os ícones do WhatsApp */
+        .fa-whatsapp {
+            color: #25d366; /* Cor do WhatsApp */
+            font-size: 130%; /* Aumenta o tamanho em 30% */
+        }
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <style>
+       .floating-buttons {
+           position: fixed;
+           top: 50%;
+           left: 0; /* Ajuste para centralizar os botões na lateral esquerda */
+           transform: translateY(-50%);
+           z-index: 1000;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           padding: 20px;
+           width: 50px; /* Definindo a largura dos botões */
+           border-radius: 50%; /* Tornando o container redondo */
+       }
+   
+       .floating-buttons a {
+           display: flex; /* Usando flex para alinhar ícone verticalmente */
+           justify-content: center; /* Alinhando ícone horizontalmente */
+           align-items: center; /* Alinhando ícone verticalmente */
+           margin-bottom: 10px;
+           width: 40px; /* Definindo a largura dos botões */
+           height: 40px; /* Definindo a altura dos botões */
+           background-color: rgba(0, 0, 0, 0.5); /* Adicionando um fundo semi-transparente */
+           border-radius: 50%; /* Tornando o botão redondo */
+           text-decoration: none;
+           transition: background 0.3s ease;
+       }
+   
+       .floating-buttons a:hover {
+           background: rgba(255, 255, 255, 0.1); /* Mudando a cor de fundo ao passar o mouse */
+       }
+   
+       /* Estilize cada botão com as cores e ícones apropriados */
+       .floating-buttons a.whatsapp {
+           background-color: #25D366; /* Cor do WhatsApp */
+       }
+       .floating-buttons a.email {
+           background-color: #FFC107; /* Cor do E-mail */
+       }
+       .floating-buttons a.gps {
+           background-color: #4CAF50; /* Cor do GPS */
+       }
+   
+       /* Estilizando os ícones */
+       .floating-buttons a i {
+           color: #fff; /* Definindo a cor do ícone */
+           font-size: 18px; /* Tamanho do ícone */
+       }
+   </style>
+   <style>
+    /* Estilos personalizados para o modal */
+    .modal-dialog {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        max-width: 100%;
+        max-height: calc(100vh - 20px);
+        margin: 0;
+    }
+    .modal-content {
+        width: 100%;
+        height: 100%;
+    }
+    .modal-body {
+        padding: 0;
+    }
+    .iframe-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+</style>
 </head>
+<div class="floating-buttons">
+    <a href="https://api.whatsapp.com/send?phone=11948016298" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:contato@confinter.com.br" class="email"><i class="far fa-envelope"></i></a>
+    <a href="#" class="gps" id="btnOpenMap"><i class="fas fa-map-marked-alt"></i></a>
+</div>
+
+<!-- Modal de Como Chegar -->
+<div class="modal fade" id="modalComoChegar" tabindex="-1" role="dialog" aria-labelledby="modalComoChegarLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalComoChegarLabel">Como Chegar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Container para o iframe -->
+                <div class="iframe-container">
+                    <!-- Adicione o mapa aqui -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.1988382851664!2d-46.35146388502099!3d-23.525430884702335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce8c29978bd3ed%3A0xfc15ad62e912d4c0!2sRua%20Marina%20La%20Regina%2C%20203%20-%20Centro%2C%20Po%C3%A1%20-%20SP%2C%2008550-210!5e0!3m2!1sen!2sbr!4v1649864460259!5m2!1sen!2sbr" class="responsive-iframe" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <body data-spy="scroll" data-target="#navbar-edart">
 <div id="preloader"></div>
 <header>
@@ -240,10 +376,10 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                 <span class="icon-bar"></span>
                             </button>
                             <a id="navbar-logo" class="navbar-brand page-scroll sticky-logo br hidden-sm hidden-xs" href="#">
-                                <img src="img/logo01-white.png" alt="logo" width="140px">
+                                <img src="img/logo01-white.png" alt="logo" width="80px">
                             </a>
                             <a id="navbar-logo" class="navbar-brand page-scroll sticky-logo br visible-xs" href="#">
-                                <img src="img/logo01-white.png" alt="logo" width="125px">
+                                <img src="img/logo01-white.png" alt="logo" width="80px">
                             </a>
                         </div>
                         <div class="collapse navbar-collapse main-menu bs-edart-navbar-collapse-1" id="navbar-example">
@@ -552,42 +688,36 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                     </div>
                 </div>
             </div>
-            <div id="requisicoes" class="our-team-area area-padding">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="section-headline text-center">
-                                <h2 class="br">Requisição de Análise de Crédito</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Formulário de Requisição de Análise de Crédito -->
-                    <div class="formulario-modal" id="requisicaoForm">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
+            <div class="container">
+                    <div class="row align-items-stretch">
+                        <div class="col-md-6">
+                            <div id="requisicoes" class="our-team-area area-padding">
+                                <div class="section-headline text-center">
+                                    <h2 class="br">Requisição de Análise de Crédito</h2>
+                                </div>
+                                <div class="formulario-modal" id="requisicaoForm">
                                     <form action="process.php" method="POST" id="form-requisicao">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira seu nome" required>
+                                            <input type="text" class="br form-control" id="nome" name="nome" placeholder="Nome completo" required>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-4">
                                                 <label for="data_nascimento">Data de Nascimento:</label>
-                                                <input type="date" class="form-control" id="data_nascimento" placeholder="Data de Nascimento:" name="data_nascimento" required>
+                                                <input type="date" class="br form-control" id="data_nascimento" placeholder="Data de Nascimento:" name="data_nascimento" required>
                                             </div>
                                             <div class="form-group col-md-4">
-                                                <label for="data_nascimento">Telefone:</label>
-                                                <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="Telefone" required maxlength="15">
+                                                <label for="telefone">Telefone:</label>
+                                                <input type="tel" class="br form-control" id="telefone" name="telefone" placeholder="Telefone" required maxlength="15">
                                             </div>
                                             <div class="form-group col-md-4">
-                                                <label for="data_nascimento">E-mail:</label>
-                                                <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu E-mail" required>
+                                                <label for="email">E-mail:</label>
+                                                <input type="email" class="br form-control" id="email" name="email" placeholder="Digite seu E-mail" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="horario_contato">Horário para Contato:</label>
                                             <div class="input-group">
-                                                <input type="time" class="form-control" id="horario_contato" name="horario_contato" required>
+                                                <input type="time" class="br form-control" id="horario_contato" name="horario_contato" required>
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="far fa-clock"></i></span>
                                                 </div>
@@ -595,7 +725,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                         </div>
                                         <div class="form-group">
                                             <label for="tipo" class="text-left">Tipo:</label>
-                                            <textarea class="form-control" id="tipo" name="tipo" rows="3" maxlength="250"></textarea>
+                                            <textarea class="br form-control" id="tipo" name="tipo" rows="3" maxlength="250"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label>Categoria:</label><br>
@@ -620,82 +750,25 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                         </div>
                                         <div class="form-group" id="outros_info_div" style="display: none;">
                                             <label for="outros_info">Insira outras informações se necessário:</label>
-                                            <input type="text" class="form-control" id="outros_info" name="outros_info" rows="3" maxlength="200">
+                                            <input type="text" class="br form-control" id="outros_info" name="outros_info" rows="3" maxlength="200">
                                         </div>
                                         <div class="row justify-content-end">
                                             <div class="col-auto">
-                                                <button type="submit" class="btn btn-primary">Enviar Requisição</button>
+                                                <button type="submit" class="btn btn-primary">
+                                                    <div class="br">Enviar Requisição</div>
+                                                </button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <script>
-                        $(document).ready(function () {
-                            // Máscara para telefone (fixo ou celular)
-                            $('#telefone').mask('(00) 00000-0000');
-                        });
-                    </script>
-
-
-
-                    <script>
-                        // Desabilitar outras opções de categoria quando "Outros" é selecionado
-                        document.addEventListener('DOMContentLoaded', function () {
-                            var outrosCheckbox = document.getElementById('outros_check');
-                            var outrasOpcoes = document.querySelectorAll('input[name="categoria"]:not(#outros_check)');
-
-                            outrosCheckbox.addEventListener('change', function () {
-                                if (outrosCheckbox.checked) {
-                                    outrasOpcoes.forEach(function (opcao) {
-                                        opcao.disabled = true;
-                                    });
-                                    document.getElementById('outros_info_div').style.display = 'block';
-                                } else {
-                                    outrasOpcoes.forEach(function (opcao) {
-                                        opcao.disabled = false;
-                                    });
-                                    document.getElementById('outros_info_div').style.display = 'none';
-                                }
-                            });
-                        });
-                    </script>
-
-
-                    <style>
-                        /* Estilo para tornar o modal responsivo */
-                        .formulario-modal .modal-dialog {
-                            width: auto; /* Define a largura do modal em relação à largura da tela */
-                            max-width: 60%; /* Define uma largura máxima para o modal */
-                            height: auto; /* Define a altura do modal em relação à altura da tela */
-                            max-height: 60%; /* Define uma altura máxima para o modal */
-                        }
-
-                        /* Estilo para centralizar o conteúdo dentro do modal */
-                        .formulario-modal .modal-content {
-                            height: auto;
-                        }
-
-                        .formulario-modal .modal-body {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            height: auto;
-                        }
-                    </style>
-                    <div id="duvidas" class="faq-area area-padding">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-6">
+                            <div class="col-md-12">
+                                <div id="duvidas" class="faq-area area-padding">
                                     <div class="section-headline text-center">
                                         <h2 class="br">Dúvidas frequentes</h2>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="faq-details">
                                         <div class="panel-group" id="accordion">
                                             <div class="panel panel-default">
@@ -710,7 +783,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                                 <div id="check1" class="panel-collapse collapse in">
                                                     <div class="panel-body">
                                                         <h5 class="br">
-                                                            Operamos com credito Consignado.
+                                                            Operamos com crédito Consignado.
                                                         </h5>
                                                     </div>
                                                 </div>
@@ -720,14 +793,13 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                                     <h4 class="check-title">
                                                         <a data-toggle="collapse" data-parent="#accordion" href="#check2">
                                                             <span class="acc-icons"></span>
-                                                            <h3 class="br">Porquê escolher a CONFINDER como parceira?</h3>
+                                                            <h3 class="br">Porquê escolher a CONFINTER como parceira?</h3>
                                                         </a>
                                                     </h4>
                                                 </div>
                                                 <div id="check2" class="panel-collapse collapse">
                                                     <div class="panel-body">
                                                         <h5 class="br">
-
                                                             Possuímos ampla experiência no mercado.
                                                         </h5>
                                                     </div>
@@ -750,8 +822,6 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -759,108 +829,58 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                         </div>
                     </div>
                 </div>
+
+        
+
+<!-- Modal de Contato -->
+<div class="modal fade" id="modalContato" tabindex="-1" aria-labelledby="modalContatoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalContatoLabel">Formulário de Contato</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-        </div>
-        <div id="contact" class="contact-area">
-            <div class="contact-inner area-padding">
-                <div class="contact-overly"></div>
-                <div class="container ">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="section-headline text-center">
-                                <h2 class="br">Entre<spam class="section-headline-lowercase">&nbsp;em&nbsp;</spam>contato conosco</h2>
-                            </div>
-                        </div>
+            <div class="modal-body">
+                <div class="form contact-form">
+                    <!-- Formulário de contato aqui -->
+                    <div id="sendmessage">
+                        <div class="br">Sua mensagem foi enviada. Obrigado!</div>
                     </div>
-                    <div class="row text-center">
-                        <h2 class="br">Faça uma simulação de crédito conosco</h2>
-                        <br />
-                        <h4 class="about-content">
-                            <div class="br">
-                                O primeiro passo é deixar seus dados abaixo
-                            </div>
-                        </h4>
-                        <br />
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.674620432733!2d-46.34657878502169!3d-23.529135784679013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce43de0d92a6f5%3A0x8f85eeb0c19e3c32!2sMarina%20La%20Regina!5e0!3m2!1sen!2sus!4v1648523258379!5m2!1sen!2sus" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <div id="errormessage"></div>
+                    <form action="" method="post" role="form" class="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" class="br form-control" id="name_br" placeholder="Nome completo" data-rule="minlen:4" data-msg="Digite pelo menos 4 caracteres" />
+                            <div class="br validation"></div>
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="form contact-form">
-                                <div id="sendmessage">
-                                    <div class="br">Sua mensagem foi enviada. Obrigado!</div>
-                                </div>
-                                <div id="errormessage"></div>
-                                <form action="" method="post" role="form" class="contactForm">
-                                    <div class="form-group">
-                                        <input type="text" name="name" class="br form-control" id="name_br" placeholder="Nome completo" data-rule="minlen:4" data-msg="Digite pelo menos 4 caracteres" />
-                                        <div class="br validation"></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" class="br form-control" name="email" id="email_br" placeholder="E-mail" data-rule="email" data-msg="Por favor digite um e-mail válido" />
-                                        <div class="br validation"></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="br form-control" name="phone" id="phone_br" placeholder="Celular/Whatsapp" data-rule="regexp:[0-9]{8,}" data-msg="Por favor digite um número de celular válido" />
-                                        <div class="br validation"></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea class="br form-control" name="message" name="message_br" rows="5" data-rule="required" data-msg="Por favor escreva algo para nós" placeholder="Mensagem"></textarea>										<div class="br validation"></div>
-
-                                        <div class="en validation"></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <h5>
-                                            <i class="fa fa-lock" aria-hidden="true"></i>
-                                            <strong class="br">Seus dados estão protegidos conosco</strong>
-                                        </h5>
-                                    </div>
-                                    <div class="text-center">
-                                        <button type="submit">
-                                            <div class="br">Enviar Dados</div>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+                        <div class="form-group">
+                            <input type="email" class="br form-control" name="email" id="email_br" placeholder="E-mail" data-rule="email" data-msg="Por favor digite um e-mail válido" />
+                            <div class="br validation"></div>
                         </div>
-                    </div>
-                    <br /><br />
-                    <div class="row">
-                        <div class="col-md-3 col-sm-3 col-xs-12">
-                            <div class="contact-icon text-center">
-                                <div class="single-icon">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <h5>
-                                        E-mail: <a href="mailto:contato@confinter.com.br">contato@confinter.com.br</a><br>
-                                    </h5>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <input type="text" class="br form-control" name="phone" id="phone_br" placeholder="Celular/Whatsapp" data-rule="regexp:[0-9]{8,}" data-msg="Por favor digite um número de celular válido" />
+                            <div class="br validation"></div>
                         </div>
-                        <div class="col-md-3 col-sm-3 col-xs-12">
-                            <div class="contact-icon text-center">
-                                <div class="single-icon">
-                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                    <h5 class="number-sequence">
-                                        (11) 94801-6298
-                                    </h5>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <textarea class="br form-control" name="message" name="message_br" rows="5" data-rule="required" data-msg="Por favor escreva algo para nós" placeholder="Mensagem"></textarea>
+                            <div class="br validation"></div>
                         </div>
-                        <div class="col-md-3 col-sm-3 col-xs-12">
-                            <div class="contact-icon text-center">
-                                <div class="single-icon">
-                                    <i class="fa fa-map-marker"></i>
-                                    <h6 class="br">
-                                        Marina La Regina nº203</spam><br />Centro<br />Poá  - SP<br />CEP:&nbsp;<spam class="number-sequence">08550-210</spam>&nbsp;&nbsp;&nbsp;
-                                    </h6>
-
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <h5>
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                                <strong class="br">Seus dados estão protegidos conosco</strong>
+                            </h5>
                         </div>
-                    </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">
+                                <div class="br">Enviar Dados</div>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
             <footer>
                 <div class="footer-area">
                     <div class="container">
@@ -937,47 +957,57 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                     </div>
                 </div>
                 <!-- Div para Depoimentos Aprovados -->
-                <div class="col-md-12 col-sm-12 col-xs-12 mt-5 bg-success pb-2">
-                    <h2 class="text-center">Depoimentos</h2>
-                    <hr>
-                    <?php
-                    // Consultar os depoimentos aprovados no banco de dados
-                    $sql = "SELECT nome, mensagem FROM depoimentos WHERE status_mod = 'aprovado'";
-                    $result = mysqli_query($conexao, $sql);
+<div class="col-md-12 col-sm-12 col-xs-12 mt-5 bg-success pb-2">
+    <h2 class="text-center">Depoimentos</h2>
+    <hr>
+    <?php
+    // Consultar os depoimentos aprovados no banco de dados
+    $sql = "SELECT nome, mensagem FROM depoimentos WHERE status_mod = 'aprovado'";
+    $result = mysqli_query($conexao, $sql);
 
-                    // Verificar se há depoimentos aprovados
-                    if (mysqli_num_rows($result) > 0) {
-                    ?>
-                    <div id="carouselDepoimentos" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <?php
-                            $active = true;
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                $nome = $row['nome'] ? $row['nome'] : "Anônimo";
-                                $mensagem = $row['mensagem'];
-                                ?>
-                                <div class="carousel-item <?php echo $active ? 'active' : ''; ?>">
-                                    <blockquote class="blockquote text-center text-light">
-                                        <p class="mb-0"><em>"<?php echo $mensagem; ?>"</em></p>
-                                        <footer class="blockquote-footer text-white"><?php echo $nome; ?></footer>
-                                    </blockquote>
-                                </div>
-                                <?php
-                                $active = false;
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    <?php
-                    } else {
-                        echo "<p class='text-center text-white'>Nenhum depoimento aprovado disponível.</p>";
-                    }
-                    ?>
+    // Verificar se há depoimentos aprovados
+    if (mysqli_num_rows($result) > 0) {
+        $depoimentos = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $nome = $row['nome'] ? $row['nome'] : "Anônimo";
+            $mensagem = $row['mensagem'];
+            $depoimentos[] = array("nome" => $nome, "mensagem" => $mensagem);
+        }
+        shuffle($depoimentos); // Embaralha os depoimentos aleatoriamente
+    ?>
+    <div id="carouselDepoimentos" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <?php
+            $active = true;
+            foreach ($depoimentos as $depoimento) {
+                ?>
+                <div class="carousel-item <?php echo $active ? 'active' : ''; ?>">
+                    <blockquote class="blockquote text-center text-light">
+                        <p class="mb-0"><em>"<?php echo $depoimento['mensagem']; ?>"</em></p>
+                        <footer class="blockquote-footer text-white"><?php echo $depoimento['nome']; ?></footer>
+                    </blockquote>
                 </div>
-            </div>
+                <?php
+                $active = false;
+            }
+            ?>
         </div>
     </div>
+    <?php
+    } else {
+        echo "<p class='text-center text-white'>Nenhum depoimento aprovado disponível.</p>";
+    }
+    ?>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Inicializa o carrossel
+        var myCarousel = new bootstrap.Carousel(document.getElementById('carouselDepoimentos'), {
+            interval: 5000 // Tempo de transição entre os slides em milissegundos (5 segundos)
+        });
+    });
+</script>
+
 
 <footer class="footer-area-bottom">
     <div class="container">
@@ -1024,6 +1054,20 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
 <script src="js/language.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Adicione os scripts do Bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<script>
+    $(document).ready(function() {
+        $('#btnOpenMap').click(function() {
+            $('#modalComoChegar').modal('show');
+        });
+    });
+</script>
 </body>
 </html>
