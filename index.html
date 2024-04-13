@@ -292,7 +292,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
        /* Estilizando os ícones */
        .floating-buttons a i {
            color: #fff; /* Definindo a cor do ícone */
-           font-size: 18px; /* Tamanho do ícone */
+           font-size: 30px; /* Tamanho do ícone */
        }
    </style>
    <style>
@@ -327,6 +327,27 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
         width: 100%;
         height: 100%;
         border: 0;
+    }
+</style>
+<style>
+    /* Estilizando os ícones das redes sociais */
+    .footer-icons .fab.fa-instagram,
+    .footer-icons .fab.fa-whatsapp {
+        font-size: 30px; /* Ajuste o tamanho do ícone */
+    }
+
+    .footer-icons .fab.fa-instagram {
+        color: #e4405f; /* Cor do Instagram */
+    }
+
+    .footer-icons .fab.fa-whatsapp {
+        color: #25d366; /* Cor do WhatsApp */
+    }
+
+    /* Remover estilo padrão dos links */
+    .footer-icons a {
+        text-decoration: none; /* Remove sublinhado */
+        display: inline-block; /* Transforma em bloco para ajuste de tamanho */
     }
 </style>
 </head>
@@ -896,41 +917,26 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <div class="footer-content">
-                                    <div>
-                                        <br /><br />
-                                        <h4 class="footer-title-icons">
-                                            <div class="br">Siga-nos em nossas redes sociais</div>
-
-                                        </h4>
-                                        <div class="footer-icons">
-                                            <ul>
-                                                <li>
-                                                    <a href="https://www.instagram.com/confintersp?igsh=a3NuaGJrem5pYzZu" target="_blank"><i class="fa fa-instagram"></i></a>
-                                                    <a href="https://api.whatsapp.com/send?phone=11948016298" target="_blank"><i class="fa fa-whatsapp"></i></a>
-                                                </li>
-                                                <style>
-                                                    /* Estilizando os ícones das redes sociais */
-                                                    .fa-instagram {
-                                                        color: #e4405f; /* Cor do Instagram */
-                                                        font-size: 130%; /* Aumenta o tamanho em 30% */
-                                                    }
-
-                                                    .fa-whatsapp {
-                                                        color: #25d366; /* Cor do WhatsApp */
-                                                        font-size: 130%; /* Aumenta o tamanho em 30% */
-                                                    }
-                                                </style>
-                                            </ul>
+                            <div class="container mt-5">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="footer-content">
+                                            <h4 class="footer-title-icons">
+                                                <div class="br">Siga-nos em nossas redes sociais</div>
+                                            </h4>
+                                            <div class="footer-icons">
+                                                <ul>
+                                                    <li>
+                                                        <a href="https://www.instagram.com/confintersp?igsh=a3NuaGJrem5pYzZu" target="_blank"><i class="fab fa-instagram"></i></a>
+                                                        <a href="https://api.whatsapp.com/send?phone=11948016298" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
+                            
   <div class="footer-area-bottom">
     <div class="container">
         <div class="row">
