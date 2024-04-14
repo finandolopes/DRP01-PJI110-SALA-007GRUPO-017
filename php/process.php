@@ -79,6 +79,13 @@ if ($stmtRequisicoes = $conn->prepare($sqlRequisicoes)) {
     exit(); // Sai do script se houver erro
 }
 
+// Enviar email
+$to = "fnando0506@gmail.com";
+$subject = "Nova Requisição de Análise de Crédito";
+$message = "Uma nova requisição de análise de crédito foi enviada.\n\nNome: $nome\nEmail: $email\nTelefone: $telefone\nHorário para Contato: $horario_contato\nTipo: $tipo\nCategoria: $categoria\nOutras informações: $outros_info";
+$headers = "From: seu_email@example.com"; // Substitua pelo seu email
+mail($to, $subject, $message, $headers);
+
 // Fechar a conexão
 $conn->close();
 
