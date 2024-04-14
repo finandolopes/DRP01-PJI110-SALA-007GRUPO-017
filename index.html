@@ -1,6 +1,3 @@
-
-
-
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -206,27 +203,8 @@
         });
 
     </script>
-    <style>
-        /* Estilos personalizados */
-        /* Estilizando os ícones do mapa */
-        .fa-map-marker {
-            color: #f03a3a; /* Cor vermelho */
-            font-size: 130%; /* Aumenta o tamanho em 30% */
-        }
+    
 
-        /* Estilizando os ícones do e-mail */
-        .fa-envelope-o {
-            color: #75cbeb; /* Cor azul */
-            font-size: 130%; /* Aumenta o tamanho em 30% */
-        }
-
-        /* Estilizando os ícones do WhatsApp */
-        .fa-whatsapp {
-            color: #25d366; /* Cor do WhatsApp */
-            font-size: 130%; /* Aumenta o tamanho em 30% */
-        }
-    </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
    <style>
        .floating-buttons {
            position: fixed;
@@ -260,14 +238,15 @@
        }
    
        /* Estilize cada botão com as cores e ícones apropriados */
+       
        .floating-buttons a.whatsapp {
            background-color: #25D366; /* Cor do WhatsApp */
        }
        .floating-buttons a.email {
-           background-color: #FFC107; /* Cor do E-mail */
+           background-color: #7c92f1; /* Cor do E-mail */
        }
        .floating-buttons a.gps {
-           background-color: #4CAF50; /* Cor do GPS */
+           background-color: #e7c712; /* Cor do GPS */
        }
    
        /* Estilizando os ícones */
@@ -314,7 +293,7 @@
     /* Estilizando os ícones das redes sociais */
     .footer-icons .fab.fa-instagram,
     .footer-icons .fab.fa-whatsapp {
-        font-size: 30px; /* Ajuste o tamanho do ícone */
+        font-size: 45px; /* Ajuste o tamanho do ícone */
     }
 
     .footer-icons .fab.fa-instagram {
@@ -329,7 +308,10 @@
     .footer-icons a {
         text-decoration: none; /* Remove sublinhado */
         display: inline-block; /* Transforma em bloco para ajuste de tamanho */
-    }
+    } 
+    .footer-icons a {
+    outline: none; /* Remover qualquer contorno ao redor dos ícones */
+}   
 </style>
 </head>
 <div class="floating-buttons">
@@ -340,7 +322,7 @@
 
 <!-- Modal de Como Chegar -->
 <div class="modal fade" id="modalComoChegar" tabindex="-1" role="dialog" aria-labelledby="modalComoChegarLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalComoChegarLabel">Como Chegar</h5>
@@ -349,11 +331,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <!-- Container para o iframe -->
-                <div class="iframe-container">
-                    <!-- Adicione o mapa aqui -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.1988382851664!2d-46.35146388502099!3d-23.525430884702335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce8c29978bd3ed%3A0xfc15ad62e912d4c0!2sRua%20Marina%20La%20Regina%2C%20203%20-%20Centro%2C%20Po%C3%A1%20-%20SP%2C%2008550-210!5e0!3m2!1sen!2sbr!4v1649864460259!5m2!1sen!2sbr" class="responsive-iframe" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+                <!-- Mapa do Google Maps incorporado -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.1988382851664!2d-46.35146388502099!3d-23.525430884702335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce8c29978bd3ed%3A0xfc15ad62e912d4c0!2sRua%20Marina%20La%20Regina%2C%20203%20-%20Centro%2C%20Po%C3%A1%20-%20SP%2C%2008550-210!5e0!3m2!1sen!2sbr!4v1649864460259!5m2!1sen!2sbr" class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -361,6 +340,13 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Adicionando um evento de clique ao botão GPS para abrir o modal de Como Chegar
+    document.getElementById('btnOpenMap').addEventListener('click', function() {
+        $('#modalComoChegar').modal('show'); // Exibir o modal de Como Chegar quando o botão GPS for clicado
+    });
+</script>
 
 <body data-spy="scroll" data-target="#navbar-edart">
 <div id="preloader"></div>
@@ -1045,14 +1031,18 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- Adicione os scripts do Bootstrap -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 <script>
-    $(document).ready(function() {
-        $('#btnOpenMap').click(function() {
+    // Aguarde até que o documento esteja totalmente carregado
+    document.addEventListener("DOMContentLoaded", function () {
+        // Obtenha uma referência ao botão "Como Chegar"
+        var btnOpenMap = document.getElementById("btnOpenMap");
+
+        // Adicione um listener de evento para o botão
+        btnOpenMap.addEventListener("click", function () {
+            // Se o botão for clicado, abra o modal correspondente
             $('#modalComoChegar').modal('show');
         });
     });
