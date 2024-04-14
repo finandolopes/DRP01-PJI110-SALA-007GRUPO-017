@@ -27,7 +27,7 @@ include_once('../php/conexao.php');
             left: 0;
             bottom: 0;
             z-index: 100;
-            padding: 60px 0 0; /* Ajuste de espaçamento superior */
+            padding-top: 60px; /* Ajuste de espaçamento superior */
             box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
             background-color: #fafafa;
             color: #201f1f;
@@ -44,6 +44,8 @@ include_once('../php/conexao.php');
             color: #201f1f !important;
             padding: 12px 10px; /* Ajuste de espaçamento interno */
             transition: background-color 0.2s, color 0.2s;
+            display: flex;
+            align-items: center;
         }
 
         .nav-link:hover {
@@ -66,8 +68,16 @@ include_once('../php/conexao.php');
             padding: 20px;
         }
 
-        /* Outros estilos permanecem inalterados */
+        #sidebarToggle {
+            margin-left: auto;
+            display: none;
+        }
 
+        .sidebar-collapsed #sidebarToggle {
+            display: block;
+        }
+
+        /* Outros estilos permanecem inalterados */
     </style>
 </head>
 <body>
@@ -90,41 +100,51 @@ include_once('../php/conexao.php');
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link active" href="#" onclick="openFuncionalidade('dashboard.html')">
-                        <i class="fa fa-search menu-icon"></i> Dashboard
+                        <i class="fa fa-search menu-icon"></i> 
+                        <span class="d-none d-sm-inline">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" onclick="openFuncionalidade('listar_clientes.html')">
-                        <i class="fa fa-users menu-icon"></i> Clientes
+                        <i class="fa fa-users menu-icon"></i> 
+                        <span class="d-none d-sm-inline">Clientes</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" onclick="openFuncionalidade('consultar_requisicoes.html')">
-                        <i class="fa fa-users menu-icon"></i> Requisições
+                        <i class="fa fa-users menu-icon"></i> 
+                        <span class="d-none d-sm-inline">Requisições</span>
                     </a>
                 </li>                
                 <li class="nav-item">
                     <a class="nav-link" href="#" onclick="openFuncionalidade('gerenciar_usuarios.html')">
-                        <i class="fa fa-user menu-icon"></i> Usuários
+                        <i class="fa fa-user menu-icon"></i> 
+                        <span class="d-none d-sm-inline">Usuários</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" onclick="openFuncionalidade('upload_imagens.html')">
-                        <i class="fa fa-image menu-icon"></i> Alterar imagens
+                        <i class="fa fa-image menu-icon"></i> 
+                        <span class="d-none d-sm-inline">Alterar imagens</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" onclick="openFuncionalidade('admin_depoimentos.html')">
-                        <i class="fa fa-comments menu-icon"></i> Depoimentos
+                        <i class="fa fa-comments menu-icon"></i> 
+                        <span class="d-none d-sm-inline">Depoimentos</span>
                     </a>
                 </li>    
                 <li class="nav-item">
                     <a class="nav-link" href="#" onclick="openFuncionalidade('acesso_erp.html')">
-                        <i class="fa fa-key menu-icon"></i> Acesso ERP
+                        <i class="fa fa-key menu-icon"></i> 
+                        <span class="d-none d-sm-inline">Acesso ERP</span>
                     </a>
                 </li>                
             </ul>
         </div>
+        <button class="btn btn-dark" id="sidebarToggle">
+            <i class="fa fa-bars"></i>
+        </button>
     </nav>
 
     <!-- Conteúdo principal -->
@@ -146,6 +166,15 @@ include_once('../php/conexao.php');
             xhttp.open("GET", url, true);
             xhttp.send();
         }
+
+        $(document).ready(function(){
+            $('#sidebarToggle').click(function(){
+                $('.sidebar').toggleClass('sidebar-collapsed');
+                $('main').toggleClass('main-expanded');
+                $('.nav-link').toggleClass('collapsed-link');
+                $('.sidebar .nav-link').toggleClass('expanded-link');
+            });
+        });
     </script>
 
     <!-- Bootstrap e jQuery -->
