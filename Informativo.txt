@@ -19,8 +19,8 @@ Define estilos para elementos como botões, formulários e modal.
 JavaScript (JS):
 Utilizado para adicionar interatividade à página.
 Realiza validação do formulário antes do envio, exibição de mensagens de erro e remoção de máscaras de entrada de dados.
-Conceitos Utilizados:
 
+Conceitos Utilizados:
 Conteúdo Dinâmico:
 Utilização do PHP para processar o formulário de login e recuperar imagens do banco de dados.
 Mensagem de sucesso é exibida dinamicamente após o envio do depoimento.
@@ -268,23 +268,23 @@ Este fluxograma representa o processo sequencial do código, desde o início at�
 +-----------------+
 
 Referências Bibliográficas:
+
 HTML (HyperText Markup Language):
-
 Mozilla Developer Network (MDN) - HTML: https://developer.mozilla.org/en-US/docs/Web/HTML
-CSS (Cascading Style Sheets):
 
+CSS (Cascading Style Sheets):
 W3Schools - CSS Tutorial: https://www.w3schools.com/css/
 MDN Web Docs - CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
+
 PHP (Hypertext Preprocessor):
-
 PHP.net - Documentation: https://www.php.net/docs.php
-JavaScript (JS):
 
+JavaScript (JS):
 MDN Web Docs - JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 JavaScript.info - The Modern JavaScript Tutorial: https://javascript.info/
+
 Bootstrap:
-
 Bootstrap Documentation: https://getbootstrap.com/docs/
-jQuery:
 
+jQuery:
 jQuery Documentation: https://api.jquery.com/
