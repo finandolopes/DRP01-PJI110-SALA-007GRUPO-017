@@ -1,3 +1,7 @@
+<?php
+session_start();
+include_once('../php/conexao.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,298 +13,174 @@
     <style>
         body {
             background-color: #f3f2f8;
+            font-family: "Segoe UI", sans-serif;
         }
+
+        .navbar-logo {
+            max-height: 40px; /* Altura máxima do logo */
+            margin-right: 10px; /* Espaçamento entre o logo e o texto */
+        }
+
         .sidebar {
             position: fixed;
             top: 0;
-            bottom: 0;
             left: 0;
+            bottom: 0;
             z-index: 100;
-            padding: 48px 0 0;
+            padding-top: 60px; /* Ajuste de espaçamento superior */
             box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-            background-color: #2e2e35;
-            color: #fff;
-        }
-        .sidebar.dark-theme {
-            background-color: #141418;
-            color: #fff;
-        }
-        .sidebar-sticky {
-            position: relative;
-            top: 0;
-            height: calc(100vh - 48px);
-            padding-top: 0.5rem;
-            overflow-x: hidden;
+            background-color: #fafafa;
+            color: #201f1f;
+            transition: width 0.3s;
             overflow-y: auto;
+            width: 240px;
         }
+
+        .sidebar-collapsed {
+            width: 60px;
+        }
+
         .nav-link {
-            color: #fff !important;
-            padding: 10px;
-            transition: background-color 0.2s;
-        }
-        .nav-link:hover {
-            background-color: #454550 !important;
-        }
-        .active {
-            background-color: #454550 !important;
-        }
-        main {
-            padding: 90px 30px 50px; /* Ajustado para acomodar a barra superior */
-        }
-        .card {
-            background-color: #fff;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.2s;
-        }
-        .card:hover {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        .modal-content {
-            background-color: #fff;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.2s;
-        }
-        .modal-content .modal-header, .modal-content .modal-footer {
-            border: none;
-            border-radius: 8px;
-        }
-        .btn-primary, .btn-danger {
-            border-radius: 4px;
-            transition: background-color 0.2s;
-        }
-        .btn-primary:hover, .btn-danger:hover {
-            background-color: #454550;
-        }
-        .menu-icon {
-            margin-bottom: 5px;
-        }
-        .theme-toggler {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #fff;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            color: #201f1f !important;
+            padding: 12px 10px; /* Ajuste de espaçamento interno */
+            transition: background-color 0.2s, color 0.2s;
             display: flex;
             align-items: center;
-            justify-content: center;
-            cursor: pointer;
         }
-        .theme-toggler i {
-            color: #000;
-            font-size: 20px;
+
+        .nav-link:hover {
+            background-color: #ebedf0 !important;
         }
-        .dark-theme .theme-toggler i {
-            color: #fff;
+
+        .active {
+            background-color: #ebedf0 !important;
         }
-        .dark-theme {
-            background-color: #141418 !important;
-            color: #fff !important;
+
+        main {
+            margin-left: 240px;
+            padding: 90px 30px 50px;
+            transition: margin-left 0.3s;
         }
-        .dark-theme main {
-            color: #fff;
+
+        .content-container {
+            width: calc(100% - 240px);
+            float: right;
+            padding: 20px;
         }
-        .dark-theme .card {
-            background-color: #2e2e35;
-            color: #fff;
+
+        #sidebarToggle {
+            margin-left: auto;
+            display: none;
         }
-        .dark-theme .modal-content {
-            background-color: #2e2e35;
-            color: #fff;
+
+        .sidebar-collapsed #sidebarToggle {
+            display: block;
         }
+
+        /* Outros estilos permanecem inalterados */
     </style>
 </head>
 <body>
 
-<!-- Barra de Navegação -->
-<nav class="navbar navbar-dark bg-dark fixed-top">
-  <span class="navbar-brand mb-0 h1">Nome da Empresa</span>
-  <div class="ml-auto">
-    <span class="navbar-text mr-3">Usuário: Fulano de Tal</span>
-    <a href="#" class="btn btn-danger">Sair</a>
-  </div>
-</nav>
-
-<!-- Sidebar -->
-<div class="container-fluid">
-  <div class="row">
-    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-      <div class="sidebar-sticky">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active" href="" onclick="openFuncionalidade('consultar_requisicoes.php')">
-              <i class="fa fa-search menu-icon"></i> Consultar Requisições
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="openFuncionalidade('listar_clientes.php')">
-              <i class="fa fa-users menu-icon"></i> Listar Clientes
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="openFuncionalidade('gerenciar_usuarios.php')">
-              <i class="fa fa-user menu-icon"></i> Gerenciar Usuários
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="openFuncionalidade('upload_imagens.php')">
-              <i class="fa fa-image menu-icon"></i> Alterar imagens do Carrossel
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="openFuncionalidade('admin_depoimentos.php')">
-              <i class="fa fa-comments menu-icon"></i> Moderar Depoimentos
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="openModal()">
-              <i class="fa fa-building menu-icon"></i> Gerenciar Informações da Empresa
-            </a>
-          </li>
-        </ul>
-      </div>
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="../img/logo01-blue.png" class="navbar-logo" alt="Logo da Empresa">
+            Painel Administrativo - CONFINTER
+        </a>
+        <div class="ml-auto">
+            <span class="navbar-text mr-3">Usuário: <?php echo $_SESSION['nome_usuario']; ?></span>
+            <a href="../index.php" class="btn btn-danger">Sair</a>
+        </div>
     </nav>
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-      <div class="album py-5 bg-light">
-        <h2 class="text-center mb-4">Bem vindo ao painel de administrador</h2>
-        <div id="funcionalidades" class="row">
-          <!-- Conteúdo das funcionalidades será carregado aqui -->
+    <!-- Sidebar -->
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" onclick="openFuncionalidade('dashboard.html')">
+                        <i class="fa fa-search menu-icon"></i> 
+                        <span class="d-none d-sm-inline">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="openFuncionalidade('listar_clientes.html')">
+                        <i class="fa fa-users menu-icon"></i> 
+                        <span class="d-none d-sm-inline">Clientes</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="openFuncionalidade('consultar_requisicoes.html')">
+                        <i class="fa fa-users menu-icon"></i> 
+                        <span class="d-none d-sm-inline">Requisições</span>
+                    </a>
+                </li>                
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="openFuncionalidade('gerenciar_usuarios.html')">
+                        <i class="fa fa-user menu-icon"></i> 
+                        <span class="d-none d-sm-inline">Usuários</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="openFuncionalidade('upload_imagens.html')">
+                        <i class="fa fa-image menu-icon"></i> 
+                        <span class="d-none d-sm-inline">Alterar imagens</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="openFuncionalidade('admin_depoimentos.html')">
+                        <i class="fa fa-comments menu-icon"></i> 
+                        <span class="d-none d-sm-inline">Depoimentos</span>
+                    </a>
+                </li>    
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="openFuncionalidade('acesso_erp.html')">
+                        <i class="fa fa-key menu-icon"></i> 
+                        <span class="d-none d-sm-inline">Acesso ERP</span>
+                    </a>
+                </li>                
+            </ul>
         </div>
-      </div>
+        <button class="btn btn-dark" id="sidebarToggle">
+            <i class="fa fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+        <div id="funcionalidades" class="content-container">
+            <!-- Conteúdo das funcionalidades será carregado aqui -->
+        </div>
     </main>
-  </div>
-</div>
 
-<!-- Modal de Edição -->
-<div id="modal" class="modal" style="display:none;">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Editar Empresa</h2>
-        <form id="editForm" action="edit.php" method="POST">
-            <label for="tel">Telefone:</label>
-            <input type="text" id="tel" name="tel">
-            <label for="celular">Celular:</label>
-            <input type="text" id="celular" name="celular">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <label for="descricao">Descrição:</label>
-            <textarea id="descricao" name="descricao"></textarea>
-            <h3>Endereço</h3>
-            <label for="logradouro">Logradouro:</label>
-            <input type="text" id="logradouro" name="logradouro">
-            <label for="numero">Número:</label>
-            <input type="text" id="numero" name="numero">
-            <label for="bairro">Bairro:</label>
-            <input type="text" id="bairro" name="bairro">
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade">
-            <label for="estado">Estado:</label>
-            <input type="text" id="estado" name="estado">
-            <label for="cep">CEP:</label>
-            <input type="text" id="cep" name="cep">
-            <input type="submit" value="Salvar">
-        </form>
-        <!-- Botão Voltar -->
-        <button onclick="closeModal()" class="btn-voltar">Voltar</button>
-    </div>
-</div>
+    <!-- Script para carregar as funcionalidades -->
+    <script>
+        function openFuncionalidade(url) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("funcionalidades").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
 
-<!-- Script para abrir e fechar o modal -->
-<script>
-    function openModal() {
-        document.getElementById('modal').style.display = 'block';
-    }
+        $(document).ready(function(){
+            $('#sidebarToggle').click(function(){
+                $('.sidebar').toggleClass('sidebar-collapsed');
+                $('main').toggleClass('main-expanded');
+                $('.nav-link').toggleClass('collapsed-link');
+                $('.sidebar .nav-link').toggleClass('expanded-link');
+            });
+        });
+    </script>
 
-    function closeModal() {
-        document.getElementById('modal').style.display = 'none';
-    }
-</script>
-
-<style>
-    /* Estilo para o modal */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        padding-top: 100px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgb(0,0,0);
-        background-color: rgba(0,0,0,0.4);
-    }
-
-    /* Estilo para o conteúdo do modal */
-    .modal-content {
-        background-color: #fefefe;
-        margin: auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 50%; /* Defina a largura desejada para o modal */
-        border-radius: 10px;
-    }
-
-    /* Estilo para o botão Voltar */
-    .btn-voltar {
-        background-color: #f44336;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 10px;
-        transition: background-color 0.3s;
-    }
-
-    .btn-voltar:hover {
-        background-color: #d32f2f;
-    }
-</style>
-
-<!-- Menu flutuante para mudar o tema -->
-<div class="theme-toggler" onclick="toggleTheme()">
-    <i class="fa fa-adjust"></i>
-</div>
-
-<!-- Script para abrir e fechar o modal -->
-<script>
-    function openModal() {
-        document.getElementById('modal').style.display = 'block';
-    }
-
-    function closeModal() {
-        document.getElementById('modal').style.display = 'none';
-    }
-
-    function openFuncionalidade(url) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("funcionalidades").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", url, true);
-        xhttp.send();
-    }
-
-    function toggleTheme() {
-        document.body.classList.toggle("dark-theme");
-    }
-</script>
-
-<!-- Bootstrap e jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap e jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
