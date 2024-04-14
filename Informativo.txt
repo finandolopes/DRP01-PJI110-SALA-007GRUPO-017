@@ -1,5 +1,5 @@
 Site CCONFINTER
-Este relatório oferece uma visão geral dos elementos e conceitos utilizados no código do site index.php, destacando como eles contribuem para a criação de uma página dinâmica.
+Este relatório oferece uma visão geral dos elementos e conceitos utilizados no código do site.
 Linguagens Utilizadas:
 
 PHP (Hypertext Preprocessor):
