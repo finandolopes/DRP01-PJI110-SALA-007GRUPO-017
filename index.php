@@ -1,24 +1,3 @@
-<?php
-session_start();
-include_once('php/conexao.php');
-
-// Verificar se o formulário de login foi submetido
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include_once('php/processa_login.php');
-}
-// Consulta ao banco de dados para recuperar as imagens do carrossel
-$sql = "SELECT * FROM imagens_carrossel";
-$result = mysqli_query($conexao, $sql);
-
-// Verificar se a variável de sessão sucesso_depoimento está definida
-if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
-    // Exibir a mensagem de sucesso
-    echo "<p class='text-success'>Depoimento enviado com sucesso!</p>";
-    // Remover a variável de sessão para que a mensagem não seja exibida novamente após o próximo carregamento da página
-    unset($_SESSION['sucesso_depoimento']);
-}
-?>
-
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -335,7 +314,13 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
 .floating-buttons a:hover {
   opacity: 0.8; /* Efeito ao passar o mouse */
 }
-
+/* Aumentando o tamanho dos ícones */
+.whatsapp i,
+.email i,
+.gps i {
+  font-size: 30px; /* Ajuste o tamanho dos ícones conforme necessário */
+  line-height: 40px; /* Alinhamento vertical dos ícones */
+}
 </style>
    
    <style>
