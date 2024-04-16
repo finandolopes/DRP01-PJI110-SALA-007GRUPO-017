@@ -19,7 +19,6 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
 }
 ?>
 
-
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -150,6 +149,11 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
             // Máscara para hora (HH:MM)
             $('#horario_contato').mask('00:00');
 
+            $(document).ready(function() {
+            // Máscara para telefone
+            $('#telefone').mask('(00) 00000-0000');
+            });
+
             // Máscara para e-mail
             $('#email').mask('A', {
                 translation: {
@@ -225,28 +229,47 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
         });
 
     </script>
-    <style>
-        /* Estilos personalizados */
-        /* Estilizando os ícones do mapa */
-        .fa-map-marker {
-            color: #f03a3a; /* Cor vermelho */
-            font-size: 130%; /* Aumenta o tamanho em 30% */
-        }
+    
 
-        /* Estilizando os ícones do e-mail */
-        .fa-envelope-o {
-            color: #75cbeb; /* Cor azul */
-            font-size: 130%; /* Aumenta o tamanho em 30% */
-        }
-
-        /* Estilizando os ícones do WhatsApp */
-        .fa-whatsapp {
-            color: #25d366; /* Cor do WhatsApp */
-            font-size: 130%; /* Aumenta o tamanho em 30% */
-        }
-    </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
    <style>
+    /* Estilo do modal */
+.modal {
+  display: none; /* Inicialmente escondido */
+  position: fixed;
+  z-index: 9999; /* Z-index alto para sobrepor o site */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Conteúdo do modal */
+.modal-conteudo {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  position: relative;
+}
+
+/* Botão de fechar e ampliar */
+.fechar {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ampliar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
        .floating-buttons {
            position: fixed;
            top: 50%;
@@ -274,27 +297,47 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
            transition: background 0.3s ease;
        }
    
-       .floating-buttons a:hover {
-           background: rgba(255, 255, 255, 0.1); /* Mudando a cor de fundo ao passar o mouse */
-       }
+       /* Estilo dos botões flutuantes */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Estilo do ícone do WhatsApp */
+.whatsapp i {
+  color: #25D366; /* Cor verde do logo do WhatsApp */
+}
+
+/* Estilo do ícone do Email */
+.email i {
+  color: #D44638; /* Cor vermelha do logo do Gmail, por exemplo */
+}
+
+/* Estilo do ícone do GPS */
+.gps i {
+  color: #4285F4; /* Cor azul do logo do Google Maps */
+}
+
+.floating-buttons a {
+  display: block;
+  margin-bottom: 10px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #fff; /* Fundo branco para todos os ícones */
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2); /* Sombra para destacar os ícones */
+}
+
+.floating-buttons a:hover {
+  opacity: 0.8; /* Efeito ao passar o mouse */
+}
+
+</style>
    
-       /* Estilize cada botão com as cores e ícones apropriados */
-       .floating-buttons a.whatsapp {
-           background-color: #25D366; /* Cor do WhatsApp */
-       }
-       .floating-buttons a.email {
-           background-color: #FFC107; /* Cor do E-mail */
-       }
-       .floating-buttons a.gps {
-           background-color: #4CAF50; /* Cor do GPS */
-       }
-   
-       /* Estilizando os ícones */
-       .floating-buttons a i {
-           color: #fff; /* Definindo a cor do ícone */
-           font-size: 30px; /* Tamanho do ícone */
-       }
-   </style>
    <style>
     /* Estilos personalizados para o modal */
     .modal-dialog {
@@ -330,25 +373,24 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
     }
 </style>
 <style>
-    /* Estilizando os ícones das redes sociais */
-    .footer-icons .fab.fa-instagram,
-    .footer-icons .fab.fa-whatsapp {
-        font-size: 30px; /* Ajuste o tamanho do ícone */
+    /* Estilo dos ícones das redes sociais */
+    .footer-icons a i {
+        font-size: 45px; /* Ajuste o tamanho do ícone */
+        margin-right: 10px; /* Adiciona um espaçamento entre os ícones */
     }
 
-    .footer-icons .fab.fa-instagram {
+    .footer-icons a .fab.fa-instagram {
         color: #e4405f; /* Cor do Instagram */
     }
 
-    .footer-icons .fab.fa-whatsapp {
+    .footer-icons a .fab.fa-whatsapp {
         color: #25d366; /* Cor do WhatsApp */
     }
 
     /* Remover estilo padrão dos links */
     .footer-icons a {
         text-decoration: none; /* Remove sublinhado */
-        display: inline-block; /* Transforma em bloco para ajuste de tamanho */
-    }
+    } 
 </style>
 </head>
 <div class="floating-buttons">
@@ -358,28 +400,80 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
 </div>
 
 <!-- Modal de Como Chegar -->
-<div class="modal fade" id="modalComoChegar" tabindex="-1" role="dialog" aria-labelledby="modalComoChegarLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalComoChegarLabel">Como Chegar</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- Container para o iframe -->
-                <div class="iframe-container">
-                    <!-- Adicione o mapa aqui -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.1988382851664!2d-46.35146388502099!3d-23.525430884702335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce8c29978bd3ed%3A0xfc15ad62e912d4c0!2sRua%20Marina%20La%20Regina%2C%20203%20-%20Centro%2C%20Po%C3%A1%20-%20SP%2C%2008550-210!5e0!3m2!1sen!2sbr!4v1649864460259!5m2!1sen!2sbr" class="responsive-iframe" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            </div>
-        </div>
+<div id="modalComoChegar" class="modal">
+    <div class="modal-conteudo">
+        <span class="fechar" id="fecharModal">&times;</span>
+        <span class="ampliar" id="ampliarModal">Ampliar</span>
+        <h2>Como Chegar</h2>
+        <p>Aqui você pode adicionar instruções sobre como chegar ao seu local.</p>
+        <!-- Adicione um mapa ou instruções detalhadas -->
+        <button id="voltar">Voltar</button>
     </div>
 </div>
+
+<script>
+    // Obtém o elemento do modal
+    var modal = document.getElementById("modalComoChegar");
+
+    // Obtém o elemento para abrir o modal
+    var abrirModal = document.getElementById("btnOpenMap");
+
+    // Obtém o elemento para fechar o modal
+    var fecharModal = document.getElementById("fecharModal");
+
+    // Obtém o elemento para ampliar o modal
+    var ampliarModal = document.getElementById("ampliarModal");
+
+    // Obtém o botão de voltar
+    var botaoVoltar = document.getElementById("voltar");
+
+    // Função para abrir o modal
+    function abrirModalFunction() {
+        modal.style.display = "flex"; // Altera o display para flex
+        // Impede que a rolagem do corpo da página enquanto o modal estiver aberto
+        document.body.style.overflow = "hidden";
+    }
+
+    // Função para fechar o modal
+    function fecharModalFunction() {
+        modal.style.display = "none"; // Oculta o modal
+        // Restaura a rolagem do corpo da página
+        document.body.style.overflow = "";
+    }
+
+    // Quando o usuário clicar no ícone de GPS, o modal é exibido
+    abrirModal.onclick = function(event) {
+        event.preventDefault(); // Impede o comportamento padrão do link
+        abrirModalFunction();
+    }
+
+    // Quando o usuário clicar no botão de fechar, o modal é ocultado
+    fecharModal.onclick = function() {
+        fecharModalFunction();
+    }
+
+    // Quando o usuário clicar no botão de voltar, o modal é ocultado
+    botaoVoltar.onclick = function() {
+        fecharModalFunction();
+    }
+
+    // Quando o usuário clicar no botão de ampliar, o modal é ampliado
+    ampliarModal.onclick = function() {
+        // Adicione estilos para ampliar o modal conforme necessário
+        modal.style.width = "100%";
+        modal.style.height = "100%";
+        modal.style.margin = "0";
+    }
+
+    // Quando o usuário clicar fora do modal, ele também é ocultado
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            fecharModalFunction();
+        }
+    }
+</script>
+
+
 
 <body data-spy="scroll" data-target="#navbar-edart">
 <div id="preloader"></div>
@@ -463,7 +557,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                         <form action="php/processa_login.php" method="POST">
                             <div class="form-group">
                                 <label for="user">Usuário:</label>
-                                <input type="text" class="form-control" id="user" name="user">
+                                <input type="text" class="form-control" id="user" name="usuario">
                             </div>
                             <div class="form-group">
                                 <label for="senha">Senha:</label>
@@ -471,6 +565,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                             </div>
                             <button type="submit" class="btn btn-primary">Entrar</button>
                         </form>
+
                     </div>
                     <div class="col-md-6">
                         <img src="img/logo01-black.png" alt="Imagem de Login" class="img-fluid">
@@ -917,26 +1012,28 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                     </div>
                                 </div>
                             </div>
-                            <div id="redes" class="faq-area area-padding"></div>
-                            <div class="container mt-5">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="footer-content">
-                                            <h4 class="footer-title-icons">
-                                                <div class="br">Siga-nos em nossas redes sociais</div>
-                                            </h4>
-                                            <div class="footer-icons">
-                                                <ul>
-                                                    <li>
-                                                        <a href="https://www.instagram.com/confintersp?igsh=a3NuaGJrem5pYzZu" target="_blank"><i class="fab fa-instagram"></i></a>
-                                                        <a href="https://api.whatsapp.com/send?phone=11948016298" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                                                    </li>
-                                                </ul>
+                            <div id="redes" class="faq-area area-padding">
+                                <div class="container mt-5">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="footer-content">
+                                                <h4 class="footer-title-icons">
+                                                    <div class="br">Siga-nos em nossas redes sociais</div>
+                                                </h4>
+                                                <div class="footer-icons">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="https://www.instagram.com/confintersp?igsh=a3NuaGJrem5pYzZu" target="_blank"><i class="fab fa-instagram"></i></a>
+                                                            <a href="https://api.whatsapp.com/send?phone=11948016298" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                             
                             <div class="footer-area-bottom bg-light py-5 mt-5">
                                 <div class="container">
@@ -1064,10 +1161,9 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- Adicione os scripts do Bootstrap -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
 
 <script>
     // Aguarde até que o documento esteja totalmente carregado
