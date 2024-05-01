@@ -1,0 +1,39 @@
+html {scroll-behavior: smooth;}
+.scrollspySite {position: relative; overflow: auto; height: 380px;}
+.disp{display:none;}
+
+.aplicativos {position:relative;animation:animateleft 1.5s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+
+.automatizacao {position:relative;animation:animateright 1.5s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+
+.sites {position:relative;animation:animatebottom 1.5s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+
+@media screen and (max-width: 860px) {
+  .disp-2{display: none;}
+}
+
+@media screen and (max-width: 768px) {
+  .esp{padding-left: 0;}
+  .display-3{font-size: 3.5rem;}
+  .display-4{font-size: 3.0rem;}
+}
+
+@media screen and (max-width: 479px) {
+  .display-3{font-size: 3.0rem;}
+  .display-4{font-size: 2.5rem; margin-left: 6px;}
+  .aplicativos,.automatizacao,.sites {position:relative;animation:animatebottom 1.5s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+}
+
+@media screen and (max-width: 375px) {
+  .display-3{font-size: 2.5rem;}
+  .display-4{font-size: 2.0rem; margin-left: 6px;}
+}
+.panel-body {
+    padding-bottom: 20px;
+}
+
+
+
+
+
+

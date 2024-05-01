@@ -174,3 +174,9 @@
 	}
 
 })(jQuery);
+// JavaScript para abrir o modal de como chegar
+$(document).ready(function(){
+    $("#btnOpenMap").click(function(){
+        $("#modalComoChegar").modal('show');
+    });
+});
