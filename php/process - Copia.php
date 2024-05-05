@@ -1,9 +1,9 @@
 <?php
 // Conectar ao banco de dados (substitua os valores conforme necessário)
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "confinter";
+$username = "id22023619_confinter";
+$password = "C0nf1nt3r@";
+$dbname = "id22023619_confinter";
 
 // Criar conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -33,9 +33,6 @@ if ($stmtClientes = $conn->prepare($sqlClientes)) {
         exit(); // Sai do script se houver erro
     }
 
-    // Obtém o ID do cliente inserido
-    $id_cliente = $stmtClientes->insert_id;
-
     // Fechar a declaração para inserir os dados na tabela clientes
     $stmtClientes->close();
 } else {
@@ -43,15 +40,15 @@ if ($stmtClientes = $conn->prepare($sqlClientes)) {
     exit(); // Sai do script se houver erro
 }
 
-// Preparar a declaração SQL para inserir os dados na tabela requisicoes
-$sqlRequisicoes = "INSERT INTO requisicoes (id_cliente, horario_contato, tipo, categoria, outros_info, data_requisicao) VALUES (?, ?, ?, ?, ?, NOW())";
+// Definir a consulta SQL para inserir os dados na tabela requisicoes
+$sqlRequisicoes = "INSERT INTO requisicoes (id_cliente, horario_contato, tipo, categoria, outros_info) VALUES (?, ?, ?, ?, ?)";
 
 // Preparar e executar a declaração para inserir os dados na tabela requisicoes
 if ($stmtRequisicoes = $conn->prepare($sqlRequisicoes)) {
-   $stmtRequisicoes->bind_param("issss", $id_cliente, $horario_contato, $tipo, $categoria, $outros_info);
-
+    $stmtRequisicoes->bind_param("issss", $id_cliente, $horario_contato, $tipo, $categoria, $outros_info);
 
     // Atribuir os valores recebidos do formulário às variáveis para a tabela requisicoes
+    $id_cliente = $conn->insert_id; // Obtém o ID do cliente inserido anteriormente
     $horario_contato = $_POST['horario_contato'];
     $tipo = $_POST['tipo'];
 
@@ -86,6 +83,6 @@ if ($stmtRequisicoes = $conn->prepare($sqlRequisicoes)) {
 $conn->close();
 
 // Redirecionar de volta ao index.php
-echo "<script>alert('Requisição enviada com sucesso!'); window.location.href = '../index.php';</script>";
+echo "<script>alert('Requisição enviada com sucesso!'); window.location.href = 'index.php';</script>";
 exit();
 ?>

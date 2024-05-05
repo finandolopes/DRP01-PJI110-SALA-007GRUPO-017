@@ -7,8 +7,8 @@ include_once('conexao.php');
 // Verifique se o formulário de login foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifique se os campos de usuário e senha foram preenchidos
-    if(isset($_POST['usuario']) && isset($_POST['senha'])){
-        $user = $_POST['usuario'];
+    if(isset($_POST['user']) && isset($_POST['senha'])){
+        $user = $_POST['user'];
         $senha = $_POST['senha'];
 
         // Consulta SQL para verificar as credenciais do usuário
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verifique se a consulta retornou algum resultado
         if(mysqli_num_rows($result) == 1){
             // Login bem-sucedido, redirecione para o painel de administração
-            $_SESSION['username'] = $user;
+            $_SESSION['nome_usuario'] = $user; // Correção aqui
             header('Location: ../admin/admin.php'); // Ajuste no caminho do redirecionamento
             exit();
         } else {
@@ -31,3 +31,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+

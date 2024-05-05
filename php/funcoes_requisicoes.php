@@ -1,4 +1,20 @@
 <?php
+// Incluir o arquivo de conexão
+include_once('../php/conexao.php');
+
+// Verificar se o formulário de filtro foi submetido
+if(isset($_POST['filtrar'])) {
+    $data_inicio = $_POST['data_inicio'];
+    $data_fim = $_POST['data_fim'];
+
+    // Consultar requisições filtradas por data
+    require_once('../php/funcoes_requisicoes.php');
+    $requisicoes = listarRequisicoesPorData($conexao, $data_inicio, $data_fim);
+} else {
+    // Consultar todas as requisições do banco de dados
+    require_once('../php/funcoes_requisicoes.php');
+    $requisicoes = listarRequisicoes($conexao);
+}
 // Função para listar todas as requisições
 function listarRequisicoes($conexao) {
     $sql = "SELECT r.id_requisicao, r.horario_contato, r.tipo, r.categoria, r.outros_info, r.data_requisicao, c.nome, c.email, c.telefone 

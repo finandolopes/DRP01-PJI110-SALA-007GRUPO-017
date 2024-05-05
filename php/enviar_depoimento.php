@@ -7,22 +7,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include 'conexao.php';
 
     // Obter os dados do formulário
-    $nome = $_POST['nome'];
+    $nome = isset($_POST['nome']) ? $_POST['nome'] : ''; // Verifica se o campo nome está definido
     $mensagem = $_POST['mensagem'];
 
-    // Inserir os dados na tabela de depoimentos
-    $sql = "INSERT INTO depoimentos (nome_cliente, mensagem, status_mod) VALUES ('$nome', '$mensagem', 'pendente')";
-    if (mysqli_query($conexao, $sql)) {
-        // Definir uma variável de sessão para indicar sucesso no envio do depoimento
-        $_SESSION['sucesso_depoimento'] = true;
+    // Verificar se o campo de mensagem está vazio
+    if (empty($mensagem)) {
+        // Definir uma variável de sessão para indicar o erro
+        $_SESSION['erro_mensagem'] = "O campo de mensagem não pode estar vazio.";
     } else {
-        // Se houver um erro, você pode tratar de acordo com sua lógica de aplicativo
-        echo "<p class='text-danger'>Erro ao enviar depoimento: " . mysqli_error($conexao) . "</p>";
-    }
+        // Verificar se o campo de nome está vazio
+        if (empty($nome)) {
+            // Define o nome como "Anônimo" se estiver vazio
+            $nome = "Anônimo";
+        }
 
-    // Redirecionar de volta para a página de envio de depoimentos
-    // Redirecionar de volta para o index.php após o envio de depoimentos
-    header("Location: /index.php");
-    exit(); // Certifique-se de que o script pare de ser executado após o redirecionamento
+        // Inserir os dados na tabela de depoimentos
+        $sql = "INSERT INTO depoimentos (nome_cliente, mensagem, status_mod) VALUES ('$nome', '$mensagem', 'pendente')";
+        if (mysqli_query($conexao, $sql)) {
+            // Definir uma variável de sessão para indicar sucesso no envio do depoimento
+            $_SESSION['sucesso_depoimento'] = true;
+        } else {
+            // Se houver um erro, você pode tratar de acordo com sua lógica de aplicativo
+            $_SESSION['erro_mensagem'] = "Erro ao enviar depoimento: " . mysqli_error($conexao);
+        }
+    }
 }
+
+// Retornar à página de envio de depoimentos
+header("Location: {$_SERVER['HTTP_REFERER']}");
+exit();
 ?>

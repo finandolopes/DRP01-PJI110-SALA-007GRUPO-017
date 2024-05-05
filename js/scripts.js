@@ -60,4 +60,14 @@ $('.panel-heading a').on('click', function () {
 });
 $('#accordion').on('show.bs.collapse', function () {
     $('#accordion .in').collapse('hide');
-});
+
+    $(document).ready(function () {
+        $('.carousel').carousel({
+            padding: 200
+        });
+        autoplay();
+        function autoplay() {
+            $('.carousel').carousel('next');
+            setTimeout(autoplay, 4500);
+        }
+    });

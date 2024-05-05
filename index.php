@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $sql = "SELECT * FROM imagens_carrossel";
 $result = mysqli_query($conexao, $sql);
 
+
 // Verificar se a variável de sessão sucesso_depoimento está definida
 if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
     // Exibir a mensagem de sucesso
@@ -41,7 +42,34 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
     <link href="css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+        /* Estilos personalizados */
+        .testimonial-item {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+        }
 
+        .testimonial-img {
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-name {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-message {
+            font-size: 16px;
+        }
+    </style>
 
    
     <script>
@@ -448,88 +476,87 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
     </div>
 
     <div class="full-site">
-        <div id="home" class="slider-area">
-            <div class="bend niceties preview-2">
-                <div id="ensign-nivoslider" class="slides">
-                    <?php
-                    $diretorio = "<assets /img/slider/";
-                                          $imagens=glob($diretorio . "*.{jpg,png,gif}" , GLOB_BRACE);
-                                          foreach ($imagens as $imagem) {
-                                          echo '<img src="' . $imagem . '" alt="slider" />' ;
-                                          }
-                                          ?>
-                </div>
-                <div id="slider-direction-1" class="slider-direction slider-one">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="slider-content">
-                                    <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                                        <h2 class="title1"></h2>
-                                    </div>
-                                    <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                        <h1 class="title2"></h1>
-                                    </div>
+    <div id="home" class="slider-area">
+        <div class="bend niceties preview-2">
+            <div id="ensign-nivoslider" class="slides">
+                <?php
+                $diretorio = "assets/img/slider/";
+                $imagens = glob($diretorio . "*.{jpg,png,gif}", GLOB_BRACE);
+                foreach ($imagens as $imagem) {
+                    echo '<img src="' . $imagem . '" alt="slider" />';
+                }
+                ?>
+            </div>
+            <div id="slider-direction-1" class="slider-direction slider-one">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="slider-content">
+                                <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                                    <h2 class="title1"></h2>
+                                </div>
+                                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                                    <h1 class="title2"></h1>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="slider-direction-2" class="slider-direction slider-two">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="slider-content text-center">
-                                    <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                        <h1 class="title2">
-                                            <div class="br">Experiência no Mercado</div>
-                                        </h1>
-                                    </div>
+            </div>
+            <div id="slider-direction-2" class="slider-direction slider-two">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="slider-content text-center">
+                                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                                    <h1 class="title2">
+                                        <div class="br">Experiência no Mercado</div>
+                                    </h1>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="slider-direction-3" class="slider-direction slider-two">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="slider-content">
-                                    <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                        <h1 class="title2">
-                                            <div class="br">Transparência e Credibilidade</div>
-                                        </h1>
-                                    </div>
+            </div>
+            <div id="slider-direction-3" class="slider-direction slider-two">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="slider-content">
+                                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                                    <h1 class="title2">
+                                        <div class="br">Transparência e Credibilidade</div>
+                                    </h1>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="slider-direction-4" class="slider-direction slider-two">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="slider-content">
-                                    <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                        <h1 class="title2">
-                                            <div class="br">Foco no Resultado</div>
-                                        </h1>
-                                    </div>
+            </div>
+            <div id="slider-direction-4" class="slider-direction slider-two">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="slider-content">
+                                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                                    <h1 class="title2">
+                                        <div class="br">Foco no Resultado</div>
+                                    </h1>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="slider-direction-5" class="slider-direction slider-two">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="slider-content">
-                                    <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                        <h1 class="title2">
-                                            <div class="br">Alcançar Objetivos</div>
-                                        </h1>
-                                    </div>
+            </div>
+            <div id="slider-direction-5" class="slider-direction slider-two">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="slider-content">
+                                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                                    <h1 class="title2">
+                                        <div class="br">Alcançar Objetivos</div>
+                                    </h1>
                                 </div>
                             </div>
                         </div>
@@ -538,6 +565,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
             </div>
         </div>
     </div>
+</div>
 
 
     <div id="sobre" class="about-area area-padding">
@@ -606,47 +634,74 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                 </div>
                             </h4>
                             <br /><br />
-                            <div class="col-md-4 col-sm-4 col-xs-12 adjacent-item-about-details">
-                                <h3 class="title-item-about-details">
-                                    <div class="br">
-                                        Missão
-                                    </div>
-                                </h3>
-                                <h5 class="about-content">
-                                    <div class="br">
-                                        Facilitar o acesso a crédito consignado e fornecer consultoria financeira personalizada, visando o equilíbrio e bem-estar financeiro dos nossos clientes.
-                                    </div>
-                                </h5>
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-12 middle-item-about-details">
-                                <h3 class="title-item-about-details">
-                                    <div class="br">
-                                        Visão
-                                    </div>
-                                </h3>
-                                <h5 class="about-content">
-                                    <div class="br">
-                                        Ser reconhecida como a empresa líder  em intermediação de negócios, destacando-se pela excelência no atendimento ao cliente e pela construção de relacionamentos sólidos e duradouros.
-                                    </div>
-                                </h5>
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-12 adjacent-item-about-details">
-                                <h3 class="title-item-about-details">
-                                    <div class="br">
-                                        Valores
-                                    </div>
-                                </h3>
-                                <h5 class="about-content">
-                                    <div class="br">
-                                        <strong>Transparência:</strong> Agimos com total transparência em nossas operações e informações, promovendo a confiança mútua.<br>
-                                        <strong>Comprometimento Personalizado:</strong> Nos dedicamos a entender as necessidades individuais de cada cliente, oferecendo soluções financeiras.<br>
-                                        <strong>Respeito e Empatia:</strong> Valorizamos a diversidade e tratamos todos com respeito e empatia, construindo relações duradouras.<br>
-                                        <strong>Sustentabilidade Financeira:</strong> Comprometemo-nos a promover práticas financeiras sustentáveis, visando o bem-estar financeiro a longo prazo de nossos clientes.<br>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
+                            <div class="slider1 owl-carousel">
+        <div class="card">
+            <div class="img">
+                <img src="assets/img/missao.png" alt="missao">
+            </div>
+            <div class="content">
+                <div class="title">                    
                 </div>
+                <div class="sub-title">
+                    
+                </div>
+                <p>
+                    
+                    Facilitar o acesso a crédito consignado e fornecer consultoria financeira personalizada, visando o equilíbrio e bem-estar financeiro dos nossos clientes.
+                </p>
+                
+            </div>
+        </div>
+        <div class="card">
+            <div class="img">
+                <img src="assets/img/visao.png" alt="visao">
+            </div>
+            <div class="content">
+                <div class="title">                    
+                </div>
+                <div class="sub-title">
+                    
+                </div>
+                <p>
+                    Ser reconhecida como a empresa líder  em intermediação de negócios, destacando-se pela excelência no atendimento ao cliente e pela construção de relacionamentos sólidos e duradouros.
+                </p>
+                
+            </div>
+        </div>
+        <div class="card">
+            <div class="img">
+                <img src="assets/img/valores.png" alt="valores">
+            </div>
+            <div class="content">
+                <div class="title">                    
+                </div>
+                <div class="sub-title">
+                    
+                </div>
+                <p>
+                    <strong>Transparência:</strong> Agimos com total transparência em nossas operações e informações, promovendo a confiança mútua.<br>
+                    <strong>Comprometimento Personalizado:</strong> Nos dedicamos a entender as necessidades individuais de cada cliente, oferecendo soluções financeiras.<br>
+                    <strong>Respeito e Empatia:</strong> Valorizamos a diversidade e tratamos todos com respeito e empatia, construindo relações duradouras.<br>
+                    <strong>Sustentabilidade Financeira:</strong> Comprometemo-nos a promover práticas financeiras sustentáveis, visando o bem-estar financeiro a longo prazo de nossos clientes.<br>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+  $(".slider1").owlCarousel({
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 5000, // 5000ms = 5s;
+    autoplayHoverPause: true,
+    items: 3, // Inicialmente mostrar 3 itens
+    onInitialized: function(event) {
+        // Depois que o carrossel é inicializado, alterar para mostrar 1 item
+        this.options.items = 1;
+    }
+});
+
+</script>
             </div>
         </div>
 
@@ -736,7 +791,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                             <h2 class="br">Requisição de Análise de Crédito</h2>
                         </div>
                         <div class="formulario-modal" id="requisicaoForm">
-                            <form action="process.php" method="POST" id="form-requisicao">
+                            <form action="php/process.php" method="POST" id="form-requisicao">
                                 <div class="form-group">
                                     <input type="text" class="br form-control" id="nome" name="nome" placeholder="Nome completo" required>
                                 </div>
@@ -1016,19 +1071,32 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
         </div>
     </div>
     </div>
-  <div class="container-fluid">
+<div class="container-fluid container-center">
     <div class="row justify-content-center">
         <div class="col-md-8 col-sm-8 col-xs-12 text-center">
             <div class="section-headline">
                 <h2 class="br">Enviar Depoimento</h2>
             </div>
-            <form action="php/enviar_depoimento.php" method="POST">
+            <!-- Adicionando um identificador único ao formulário -->
+            <form id="form-depoimento" action="php/enviar_depoimento.php" method="POST">
                 <div class="form-group">
                     <input type="text" name="nome" class="br form-control" id="nome" placeholder="Insira o nome, em branco enviará como Anônimo" data-rule="minlen:4" data-msg="" />
                     <div class="br validation"></div>
                 </div>
                 <div class="form-group">
                     <textarea class="br form-control" name="mensagem" rows="5" data-rule="required" data-msg="Por favor escreva algo para nós" placeholder="Mensagem"></textarea>
+                    <!-- Adicionando um identificador único ao elemento onde a mensagem de erro será exibida -->
+                    <div id="erro-mensagem" class="text-danger">
+                        <?php
+                        // Verificar se a variável de sessão erro_mensagem está definida
+                        if (isset($_SESSION['erro_mensagem'])) {
+                            // Exibir a mensagem de erro
+                            echo $_SESSION['erro_mensagem'];
+                            // Remover a variável de sessão para que a mensagem não seja exibida novamente após atualizar a página
+                            unset($_SESSION['erro_mensagem']);
+                        }
+                        ?>
+                    </div>
                     <div class="br validation"></div>
                     <div class="en validation"></div>
                 </div>
@@ -1040,47 +1108,52 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
     </div>
 </div>
 
+<!-- Script JavaScript para rolar a página até a mensagem de erro -->
+<script>
+    window.onload = function() {
+        // Verificar se a URL contém o parâmetro de erro
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('erro')) {
+            // Rolar a página até a mensagem de erro
+            const erroMensagem = document.getElementById('erro-mensagem');
+            if (erroMensagem) {
+                erroMensagem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    };
+</script>
 
+<div class="container">
+        <div class="owl-carousel owl-theme">
+            <!-- Consultar os depoimentos aprovados no banco de dados -->
+            <?php
+            $sql = "SELECT nome, mensagem FROM depoimentos WHERE status_mod = 'aprovado'";
+            $result = mysqli_query($conexao, $sql);
 
-<div id="depoimentos" class="testimonials text-center">
-    <!-- ======= Depoimentos ======= -->
-    <div class="container">
-        <div class="testimonials-slider swiper mx-auto" style="max-width: 800px; margin: 0 auto;">
-            <div class="swiper-wrapper" style="max-height: 7em; overflow: hidden;">
-                <?php
-                // Consultar os depoimentos aprovados no banco de dados
-                $sql = "SELECT nome, mensagem FROM depoimentos WHERE status_mod = 'aprovado'";
-                $result = mysqli_query($conexao, $sql);
-                // Verificar se há depoimentos aprovados
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $nome = $row['nome'] ? $row['nome'] : "Anônimo";
-                        $mensagem = $row['mensagem'];
-                ?>
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" style="max-width: 200px;">
-                                <h3><?php echo $nome; ?></h3>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    <?php echo $mensagem; ?>
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                            </div>
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $nome = $row['nome'] ? $row['nome'] : "Anônimo";
+                    $mensagem = $row['mensagem'];
+                    ?>
+                    <!-- Cada depoimento deve estar dentro de um item do Owl Carousel -->
+                    <div class="item">
+                        <div class="testimonial-item">
+                            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="Depoimento Imagem">
+                            <div class="testimonial-name"><?php echo $nome; ?></div>
+                            <div class="testimonial-message"><?php echo $mensagem; ?></div>
                         </div>
-                <?php
-                    }
-                } else {
-                    // Caso não haja depoimentos aprovados
-                    echo "<div class='swiper-slide'><div class='testimonial-item'><p>Nenhum depoimento aprovado disponível.</p></div></div>";
+                    </div>
+                    <?php
                 }
-                ?>
-            </div>
-            <div class="swiper-pagination"></div>
+            } else {
+                // Caso não haja depoimentos aprovados
+                echo "<p>Nenhum depoimento aprovado disponível.</p>";
+            }
+            ?>
         </div>
     </div>
-</div><!-- ======= Fim seção Depoimentos ======= -->
 
+ 
     <footer>
         <footer class="footer-area-bottom">
             <div class="container">
@@ -1119,8 +1192,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
         <script src="lib/appear/jquery.appear.min.js"></script>
         <script src="lib/isotope/isotope.pkgd.min.js"></script>
         <script src="js/main.min.js"></script>
-        <script src="js/contactform.min.js"></script>
-        <script src="js/language.min.js"></script>
+        <script src="js/contactform.min.js"></script>       
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="lib/bootstrap/js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -1129,5 +1201,38 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
         <script src="js/script.js"></script>
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+    // Inicialize o carrossel do Owl Carousel
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 30,
+        autoplay: true,
+        autoplayTimeout: 5000, // 5000ms = 5s
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 2,
+                nav: false
+            },
+            1000: {
+                items: 3,
+                nav: true,
+                loop: false
+            }
+        }
+    });
+</script>
 </body>
 </html>
+
+<?php
+// Fechar a conexão com o banco de dados após o uso
+mysqli_close($conexao);
+?>

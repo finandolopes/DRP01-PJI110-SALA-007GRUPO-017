@@ -2,4 +2,118 @@ html,body{height:100%}.floatleft{float:left}.floatright{float:right}.alignleft{f
 .panel-body {
     padding-bottom: 20px;
 }
+.container-center {
+    display: flex; /* Define o display flex */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
 
+    .container-center .col-md-8 {
+        text-align: center; /* Centraliza o texto "Enviar Depoimento" */
+    }
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    display: grid;
+    height: 100%;
+    place-items: center;
+    text-align: center;
+    background: #f2f2f2;
+}
+
+.slider {
+    max-width: 1100px;
+    display: flex;
+}
+
+    .slider .card {
+        flex: 1;
+        margin: 0 10px;
+        background: #fff;
+    }
+
+        .slider .card .img {
+            height: 200px;
+            width: 100%;
+        }
+
+            .slider .card .img img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+        .slider .card .content {
+            padding: 20px 20px;
+        }
+
+.card .content .title {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.card .content .sub-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #e74c3c;
+    line-height: 20px;
+}
+
+.card .content p {
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.card .content .btn {
+    display: block;
+    text-align: left;
+    margin: 10px 0;
+}
+
+    .card .content .btn button {
+        background: #e74c3c;
+        color: #fff;
+        border: none;
+        outline: none;
+        font-size: 17px;
+        padding: 5px 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+        .card .content .btn button:hover {
+            transform: scale(0.9);
+        }
+.panel-heading .acc-icons {
+    float: left; /* Reposiciona o ícone para a esquerda */
+    margin-right: 10px; /* Adiciona um espaço à direita do ícone */
+}
+/* Estilos personalizados */
+.testimonial-item {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+.testimonial-img {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+.testimonial-name {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.testimonial-message {
+    font-size: 16px;
+}
