@@ -20,6 +20,11 @@
 - `Javascript`
 - `MSQL`
 - `Framework - Bootstrap`
+- `GitHub`
+- `SQL`
+- `MySQL Workbench`
+- `Visual Studio Code`
+- `000webhost`
 ## 🖥 Preview:
 
 
