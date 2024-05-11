@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparação de Taxas de Juros</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos personalizados */
+        body {
+            background-color: lightblue; /* Alterado para se parecer com a imagem */
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .porquinho {
+            display: block;
+            margin: 50px auto;
+            font-size: 100px; /* Aumentado o tamanho para se parecer com a imagem */
+            color: pink; /* Alterado para se parecer com a imagem */
+            text-align: center; /* Centralizado para se parecer com a imagem */
+        }
+
+        .barra-titulo {
+            font-weight: bold;
+        }
+
+        .barra-progresso {
+            height: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .progresso {
+            height: 100%;
+            border-radius: 10px;
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="titulo">Compare as Taxas de Juros</h1>
+
+        <!-- Imagem do porquinho -->
+        <div class="porquinho">🐖</div> <!-- Alterado para um emoji de porquinho -->
+        <!-- Barra para o Empréstimo Consignado do INSS -->
+        <div class="barra">
+            <p class="barra-titulo">Empréstimo Consignado do INSS <span class="taxa">Taxa de juros: a partir de 1,72% a.m.</span></p>
+            <div class="barra-progresso">
+                <div class="progresso" style="width: 10%;"></div>
+            </div>
+        </div>
+
+        <!-- Barra para o Cartão de Crédito Consignado do INSS -->
+        <div class="barra">
+            <p class="barra-titulo">Cartão de Crédito Consignado do INSS <span class="taxa">Taxa de juros: a partir de 2,55% a.m.</span></p>
+            <div class="barra-progresso">
+                <div class="progresso" style="width: 20%;"></div>
+            </div>
+        </div>
+
+        <!-- Barra para o Crédito com Garantia do FGTS -->
+        <div class="barra">
+            <p class="barra-titulo">Crédito com Garantia do FGTS <span class="taxa">Taxa de juros: a partir de 1,49% a.m.</span></p>
+            <div class="barra-progresso">
+                <div class="progresso" style="width: 5%;"></div>
+            </div>
+        </div>
+
+        <!-- Barra para o Crédito Pessoal para pessoa física -->
+        <div class="barra">
+            <p class="barra-titulo">Crédito Pessoal para pessoa física <span class="taxa">Taxa de juros em média no mercado: a partir de 11,0% a.m.</span></p>
+            <div class="barra-progresso">
+                <div class="progresso" style="width: 60%;"></div>
+            </div>
+        </div>
+
+        <!-- Barra para o Cartão de Crédito Convencional -->
+        <div class="barra">
+            <p class="barra-titulo">Cartão de Crédito Convencional <span class="taxa">Taxa de juros em média no mercado: a partir de 17,99% a.m.</span></p>
+            <div class="barra-progresso">
+                <div class="progresso" style="width: 90%;"></div>
+            </div>
+        </div>
+
+        <!-- Barra para o Cheque Especial -->
+        <div class="barra">
+            <p class="barra-titulo">Cheque Especial <span class="taxa">Taxa de juros em média no mercado: a partir de 10,5% a.m.</span></p>
+            <div class="barra-progresso">
+                <div class="progresso" style="width: 50%;"></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

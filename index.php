@@ -428,6 +428,11 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                             <div class="br">Depoimentos</div>
                                         </a>
                                     </li>
+                                     <li>
+                                        <a class="page-scroll" href="#chegar">
+                                            <div class="br">Como Chegar</div>
+                                        </a>
+                                    </li>
                                     <li>
                                         <a class="page-scroll" href="#" data-toggle="modal" data-target="#loginModal">
                                             <div class="br">Login</div>
@@ -509,9 +514,9 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="slider-content text-center">
                                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                    <h1 class="title2">
-                                        <div class="br">Experiência no Mercado</div>
-                                    </h1>
+                                    <div class="container">
+                                <h2 class="animate__animated animate__fadeInDown">Experiência no Mercado</h2>
+                            </div>
                                 </div>
                             </div>
                         </div>
@@ -524,9 +529,9 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="slider-content">
                                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                    <h1 class="title2">
-                                        <div class="br">Transparência e Credibilidade</div>
-                                    </h1>
+                                     <div class="container">
+                                <p class="animate__animated animate__fadeInUp">Transparência e Credibilidade</p>
+                            </div>
                                 </div>
                             </div>
                         </div>
@@ -539,9 +544,9 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="slider-content">
                                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                    <h1 class="title2">
-                                        <div class="br">Foco no Resultado</div>
-                                    </h1>
+                                    <div class="container">
+                                <p class="animate__animated animate__fadeInUp">Foco no Resultado</p>
+                            </div>
                                 </div>
                             </div>
                         </div>
@@ -554,9 +559,9 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="slider-content">
                                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                    <h1 class="title2">
-                                        <div class="br">Alcançar Objetivos</div>
-                                    </h1>
+                                   <div class="container">
+                                <p class="animate__animated animate__fadeInUp">Alcançar Objetivos</p>
+                            </div>
                                 </div>
                             </div>
                         </div>
@@ -1036,41 +1041,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                     </div>
                 </div> <!-- Fim da coluna Dúvidas Frequentes -->
             </div>
-            <div class="footer-area">
-                <div class="container">
-                    <div class="row">
-                        <!-- Coluna da Informação da Empresa -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="footer-content">
-                                <div class="footer-head">
-                                    <div class="section-headline text-center">
-                                        <h2 class="br">A Empresa</h2>
-                                    </div>
-                                    <div class="footer-logo">
-                                        <img src="assets/img/logo01-black.png" alt="logo" width="125px">
-                                    </div>
-                                    <h4 class="br">CONFINTER Consultoria Financeira<br /><span class="number-sequence">CNPJ: 11.727.809.0001/36</span></h4>
-                                    <h5 class="br">Especialista em corretagem, consultoria, intermediação<br />e mediação de negócios financeiros.</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Coluna de Como Chegar -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="footer-content">
-                                <div class="footer-head">
-                                    <div class="section-headline text-center">
-                                        <h2 class="br">Como Chegar</h2>
-                                    </div>
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.674620432733!2d-46.34657878502169!3d-23.529135784679013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce43de0d92a6f5%3A0x8f85eeb0c19e3c32!2sMarina%20La%20Regina!5e0!3m2!1sen!2sus!4v1648523258379!5m2!1sen!2sus&hl=pt-BR" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+           
 <div class="container-fluid container-center">
     <div class="row justify-content-center">
         <div class="col-md-8 col-sm-8 col-xs-12 text-center">
@@ -1122,7 +1093,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
         }
     };
 </script>
-
+<div id="depoimentos" class="testimonials">
 <div class="container">
         <div class="owl-carousel owl-theme">
             <!-- Consultar os depoimentos aprovados no banco de dados -->
@@ -1138,7 +1109,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                     <!-- Cada depoimento deve estar dentro de um item do Owl Carousel -->
                     <div class="item">
                         <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="Depoimento Imagem">
+                            <img src="assets/img/depoimentos/1.png" class="testimonial-img" alt="Depoimento Imagem">
                             <div class="testimonial-name"><?php echo $nome; ?></div>
                             <div class="testimonial-message"><?php echo $mensagem; ?></div>
                         </div>
@@ -1153,6 +1124,42 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
         </div>
     </div>
 
+     <div class="footer-area">
+                <div class="container">
+                    <div class="row">
+                        <!-- Coluna da Informação da Empresa -->
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="footer-content">
+                                <div class="footer-head">
+                                    <div class="section-headline text-center">
+                                        <h2 class="br">A Empresa</h2>
+                                    </div>
+                                    <div class="footer-logo">
+                                        <img src="assets/img/logo01-black.png" alt="logo" width="125px">
+                                    </div>
+                                    <h4 class="br">CONFINTER Consultoria Financeira<br /><span class="number-sequence">CNPJ: 11.727.809.0001/36</span></h4>
+                                    <h5 class="br">Especialista em corretagem, consultoria, intermediação<br />e mediação de negócios financeiros.</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="chegar" class="chegar">
+                        <!-- Coluna de Como Chegar -->
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="footer-content">
+                                <div class="footer-head">
+                                    <div class="section-headline text-center">
+                                        <h2 class="br">Como Chegar</h2>
+                                    </div>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.674620432733!2d-46.34657878502169!3d-23.529135784679013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce43de0d92a6f5%3A0x8f85eeb0c19e3c32!2sMarina%20La%20Regina!5e0!3m2!1sen!2sus!4v1648523258379!5m2!1sen!2sus&hl=pt-BR" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
  
     <footer>
         <footer class="footer-area-bottom">
