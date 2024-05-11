@@ -1,9 +1,9 @@
 <?php
 // Dados de conexão com o banco de dados
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "confinter";
+$host = "localhost";   // indicar o host do banco de dados
+$user = "seu usuário"; // login do banco de dados
+$password = "sua senha"; // Senha de acesso ao banco de dados
+$database = "seu BD"; // Seu banco de dados criado no phpMyAdmin ou outro gerenciador de banco de dados
 
 // Conexão com o banco de dados
 $conexao = mysqli_connect($host, $user, $password, $database);
