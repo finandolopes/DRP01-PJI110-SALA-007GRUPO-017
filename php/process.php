@@ -1,17 +1,6 @@
 <?php
-// Conectar ao banco de dados (substitua os valores conforme necessário)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "confinter";
-
-// Criar conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar a conexão
-if ($conn->connect_error) {
-    die("Erro na conexão com o banco de dados: " . $conn->connect_error);
-}
+// Incluir o arquivo de conexão e as funções de manipulação de clientes
+include_once('conexao.php');
 
 // Preparar a declaração SQL para inserir os dados na tabela clientes
 $sqlClientes = "INSERT INTO clientes (nome, data_nascimento, email, telefone) VALUES (?, ?, ?, ?)";
