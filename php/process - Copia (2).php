@@ -81,54 +81,6 @@ if ($stmtRequisicoes = $conn->prepare($sqlRequisicoes)) {
     echo "Erro na preparação da declaração para inserir os dados na tabela requisicoes: " . $conn->error;
     exit(); // Sai do script se houver erro
 }
-// Importe a biblioteca PHPMailer
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-// Adicione os arquivos da biblioteca PHPMailer
-require 'php/PHPMailer/src/Exception.php';
-require 'php/PHPMailer/src/PHPMailer.php';
-require 'php/PHPMailer/src/SMTP.php';
-
-
-// Configuração do servidor SMTP
-$mail = new PHPMailer();
-$mail->isSMTP();
-$mail->Host = 'smtp.example.com';
-$mail->SMTPAuth = true;
-$mail->Username = 'contato@confinter.com.br';
-$mail->Password = 'sua_senha';
-$mail->Port = 587; // Porta SMTP
-$mail->SMTPSecure = 'tls'; // ou 'ssl' se necessário
-
-// Configurações do e-mail
-$mail->setFrom('contato@confinter.com.br', 'CONFINTER');
-$mail->addAddress($_POST['email']); // Endereço de e-mail do destinatário
-$mail->Subject = 'Cópia do Formulário de Requisição';
-$mail->isHTML(true); // Habilita o formato HTML para o corpo do e-mail
-
-// Corpo do e-mail
-$mailBody = "
-    <h1>Cópia do Formulário de Requisição</h1>
-    <p><strong>Nome:</strong> {$_POST['nome']}</p>
-    <p><strong>Data de Nascimento:</strong> {$_POST['data_nascimento']}</p>
-    <p><strong>Telefone:</strong> {$_POST['telefone']}</p>
-    <p><strong>E-mail:</strong> {$_POST['email']}</p>
-    <p><strong>Horário para Contato:</strong> {$_POST['horario_contato']}</p>
-    <p><strong>Tipo:</strong> {$_POST['tipo']}</p>
-    <p><strong>Categoria:</strong> {$_POST['categoria']}</p>
-    <p><strong>Outras Informações:</strong> {$_POST['outros_info']}</p>
-";
-
-$mail->Body = $mailBody;
-
-// Envia o e-mail
-if(!$mail->send()) {
-    echo 'Erro ao enviar e-mail: ' . $mail->ErrorInfo;
-} else {
-    echo 'E-mail enviado com sucesso!';
-}
-
 
 // Fechar a conexão
 $conn->close();

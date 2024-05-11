@@ -1,7 +1,7 @@
 <?php
 // Incluir o arquivo de conexão e as funções de manipulação de clientes
-include_once('php/conexao.php'); 
-include_once('php/funcoes_clientes.php');
+include_once('conexao.php'); 
+include_once('funcoes_clientes.php');
 include_once('verifica_login.php');
 // Verificar se o ID do cliente foi passado via GET
 if(isset($_GET['id'])) {
