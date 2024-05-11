@@ -1,11 +1,6 @@
 <?php
-// Conexão com o banco de dados (substitua os valores conforme necessário)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "confinter";
-
-$conexao = new mysqli($servername, $username, $password, $dbname);
+// Incluir o arquivo de conexão e as funções de manipulação de clientes
+include_once('conexao.php');
 
 // Verifica se há erros na conexão
 if ($conexao->connect_error) {
