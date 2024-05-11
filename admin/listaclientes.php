@@ -1,16 +1,6 @@
-﻿<?php
-// Conexão com o banco de dados
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "confinter";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verifica a conexão
-if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
-}
+<?php
+// Incluir o arquivo de conexão e as funções de manipulação de clientes
+include_once('conexao.php');
 
 // Consulta SQL para buscar os clientes
 $sql = "SELECT r.id_cliente, c.nome AS nome_cliente, c.email, c.telefone FROM clientes r INNER JOIN clientes c ON r.id_cliente = c.id_cliente";
