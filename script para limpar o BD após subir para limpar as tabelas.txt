@@ -1,0 +1,29 @@
+-- Desativar as restrições de chave estrangeira temporariamente
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- Excluir os dados de cada tabela
+TRUNCATE TABLE `aprovado`;
+TRUNCATE TABLE `clientes`;
+TRUNCATE TABLE `contador_visitas`;
+TRUNCATE TABLE `depoimentos`;
+TRUNCATE TABLE `empresa`;
+TRUNCATE TABLE `enderecos`;
+TRUNCATE TABLE `imagens_carrossel`;
+TRUNCATE TABLE `requisicoes`;
+TRUNCATE TABLE `tempo_visita`;
+DELETE FROM `usuarios` WHERE `perfil` = 'usuario'; -- Mantendo apenas o administrador
+
+-- Resetar auto_increment para cada tabela que possui
+ALTER TABLE `aprovado` AUTO_INCREMENT = 1;
+ALTER TABLE `clientes` AUTO_INCREMENT = 1;
+ALTER TABLE `contador_visitas` AUTO_INCREMENT = 1;
+ALTER TABLE `depoimentos` AUTO_INCREMENT = 1;
+ALTER TABLE `empresa` AUTO_INCREMENT = 1;
+ALTER TABLE `enderecos` AUTO_INCREMENT = 1;
+ALTER TABLE `imagens_carrossel` AUTO_INCREMENT = 1;
+ALTER TABLE `requisicoes` AUTO_INCREMENT = 1;
+ALTER TABLE `tempo_visita` AUTO_INCREMENT = 1;
+ALTER TABLE `usuarios` AUTO_INCREMENT = 3; -- Mantendo o último ID de usuário
+
+-- Reativar as restrições de chave estrangeira
+SET FOREIGN_KEY_CHECKS = 1;
