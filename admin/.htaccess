@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Reescrever URLs para ocultar a extensão .php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# Reescrever URLs para ocultar o diretório /admin
+RewriteCond %{REQUEST_URI} !^/admin
+RewriteRule ^admin/(.*)$ /$1 [L,R=301]
