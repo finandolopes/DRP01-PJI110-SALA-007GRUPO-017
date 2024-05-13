@@ -1,6 +1,16 @@
-<?php
-// Incluir o arquivo de conexão e as funções de manipulação de clientes
-include_once('conexao.php');
+﻿<?php
+// Conexão com o banco de dados
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "confinter";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verifica a conexão
+if ($conn->connect_error) {
+    die("Erro na conexão: " . $conn->connect_error);
+}
 
 // Consulta SQL para buscar os clientes
 $sql = "SELECT r.id_cliente, c.nome AS nome_cliente, c.email, c.telefone FROM clientes r INNER JOIN clientes c ON r.id_cliente = c.id_cliente";
@@ -11,12 +21,12 @@ if ($result->num_rows > 0) {
     // Loop através de cada linha de resultado
     while($row = $result->fetch_assoc()) {
         echo "
-        <tr>                                             
-            <td>" . $row["id_cliente"] . "</td>
-            <td>" . $row["nome_cliente"] . "</td>
-            <td>" . $row["email"] . "</td>
-            <td>" . $row["telefone"] . "</td>                                                
-        </tr>";
+<tr>
+    <td>" . $row["id_cliente"] . "</td>
+    <td>" . $row["nome_cliente"] . "</td>
+    <td>" . $row["email"] . "</td>
+    <td>" . $row["telefone"] . "</td>
+</tr>";
     }
 } else {
     echo "<tr><td colspan='6'>Nenhum cliente encontrado</td></tr>";
@@ -54,10 +64,10 @@ $conn->close();
 
             <div class="header-left active">
 
-                <a href="admin.php" class="logo">
+                <a href="index.html" class="logo">
                     <img src="assets/img/logo.png" alt="">
                 </a>
-                <a href="admin.php" class="logo-small">
+                <a href="index.html" class="logo-small">
                     <img src="assets/img/logo-small.png" alt="">
                 </a>
 
@@ -221,62 +231,59 @@ $conn->close();
                     <div class="col-12">
                         <h4 class="page-title">Lista de Clientes</h4>
                     </div>
-                </div> 
-            <!-- Opções de exportação e impressão -->
-            <div class="export-options">
-                <form method="post" action="">
-                    <button type="submit" name="exportar">Exportar XML</button>
-                </form>
-                <button onclick="window.print()">
-                    <i class="fa fa-print" aria-hidden="true"></i> Imprimir
-                </button>
-            </div>
-           <div class="page-wrapper">
-            <div class="content container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <h4 class="page-title">Lista de Clientes</h4>
-                    </div>
                 </div>
+                <!-- Opções de exportação e impressão -->
+                <div class="export-options">
+                    <form method="post" action="">
+                        <button type="submit" name="exportar" class="btn btn-primary">Exportar XML</button>    <i class="fa fa-print" style="font-size: 24px;" onclick="window.print()" aria-hidden="true"></i> Imprimir
+                    </form>
+                </div>
+                <div class="page-wrapper">
+                    <div class="content container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4 class="page-title">Lista de Clientes</h4>
+                            </div>
+                        </div>
 
-                <!-- Tabela de clientes -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="example" class="table datanew">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Nome do Cliente</th>
-                                                <th>E-mail</th>
-                                                <th>Telefone</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            // Conexão com o banco de dados
-                                            $servername = "localhost";
-                                            $username = "root";
-                                            $password = "";
-                                            $dbname = "confinter";
+                        <!-- Tabela de clientes -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table id="example" class="table datanew">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Nome do Cliente</th>
+                                                        <th>E-mail</th>
+                                                        <th>Telefone</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php
+                                                    // Conexão com o banco de dados
+                                                    $servername = "localhost";
+                                                    $username = "root";
+                                                    $password = "";
+                                                    $dbname = "confinter";
 
-                                            $conn = new mysqli($servername, $username, $password, $dbname);
+                                                    $conn = new mysqli($servername, $username, $password, $dbname);
 
-                                            // Verifica a conexão
-                                            if ($conn->connect_error) {
-                                                die("Erro na conexão: " . $conn->connect_error);
-                                            }
+                                                    // Verifica a conexão
+                                                    if ($conn->connect_error) {
+                                                    die("Erro na conexão: " . $conn->connect_error);
+                                                    }
 
-                                            // Consulta SQL para buscar os clientes
-                                            $sql = "SELECT r.id_cliente, c.nome AS nome_cliente, c.email, c.telefone FROM clientes r INNER JOIN clientes c ON r.id_cliente = c.id_cliente";
-                                            $result = $conn->query($sql);
+                                                    // Consulta SQL para buscar os clientes
+                                                    $sql = "SELECT r.id_cliente, c.nome AS nome_cliente, c.email, c.telefone FROM clientes r INNER JOIN clientes c ON r.id_cliente = c.id_cliente";
+                                                    $result = $conn->query($sql);
 
-                                            // Verifica se há resultados da consulta
-                                            if ($result->num_rows > 0) {
-                                                // Loop através de cada linha de resultado
-                                                while($row = $result->fetch_assoc()) {
+                                                    // Verifica se há resultados da consulta
+                                                    if ($result->num_rows > 0) {
+                                                    // Loop através de cada linha de resultado
+                                                    while($row = $result->fetch_assoc()) {
                                                     echo "
                                                     <tr>
                                                         <td>" . $row["id_cliente"] . "</td>
@@ -284,39 +291,40 @@ $conn->close();
                                                         <td>" . $row["email"] . "</td>
                                                         <td>" . $row["telefone"] . "</td>
                                                     </tr>";
-                                                }
-                                            } else {
-                                                echo "<tr><td colspan='4'>Nenhum cliente encontrado</td></tr>";
-                                            }
+                                                    }
+                                                    } else {
+                                                    echo "
+                                                    <tr><td colspan='4'>Nenhum cliente encontrado</td></tr>";
+                                                    }
 
-                                            // Fecha a conexão com o banco de dados
-                                            $conn->close();
-                                            ?>
-                                        </tbody>
-                                    </table>
+                                                    // Fecha a conexão com o banco de dados
+                                                    $conn->close();
+                                                    ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-        </div>
 
-    </div>
-
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/feather.min.js"></script>
-    <script src="assets/js/jquery.slimscroll.min.js"></script>
-    <script src="assets/js/jquery.dataTables.min.js"></script>
-    <script src="assets/js/dataTables.bootstrap4.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
-    <script src="assets/plugins/apexchart/chart-data.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#example').DataTable();
-        });
-    </script>
+            <script src="assets/js/jquery-3.6.0.min.js"></script>
+            <script src="assets/js/feather.min.js"></script>
+            <script src="assets/js/jquery.slimscroll.min.js"></script>
+            <script src="assets/js/jquery.dataTables.min.js"></script>
+            <script src="assets/js/dataTables.bootstrap4.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+            <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
+            <script src="assets/plugins/apexchart/chart-data.js"></script>
+            <script src="assets/js/script.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $('#example').DataTable();
+                });
+            </script>
 </body>
 </html>

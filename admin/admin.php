@@ -39,12 +39,26 @@ function contarRegistros($conexao, $sql, $params = null) {
 // Recupera o nome de usuário da sessão
 $username = $_SESSION['username'];
 
-// Consulta o banco de dados para obter o nome do usuário específico
-$sqlNomeUsuario = "SELECT nome FROM usuarios WHERE usuario = ?";
-$nomeUsuario = executarConsulta($conexao, $sqlNomeUsuario, ['s', $username]);
-$nomeUsuario = $nomeUsuario ? $nomeUsuario['nome'] : "Nome de Usuário";
+// Consulta o banco de dados para obter informações do usuário
+$sqlUsuario = "SELECT * FROM usuarios WHERE usuario = ?";
+$usuario = executarConsulta($conexao, $sqlUsuario, ['s', $username]);
 
-// Consulta o banco de dados para obter a média de tempo que o visitante fica no site
+// Verifica se o usuário foi encontrado
+if ($usuario) {
+    // Use as informações do usuário
+    $nome = htmlspecialchars($usuario['nome']);
+    $email = htmlspecialchars($usuario['email']);
+    // e assim por diante...
+} else {
+    // Trate o caso em que o usuário não foi encontrado
+    $nome = "Usuário Desconhecido";
+    $email = "email@example.com";
+    // ou qualquer valor padrão que você preferir
+}
+// Consulta o perfil do usuário
+$sqlPerfilUsuario = "SELECT perfil FROM usuarios WHERE usuario = ?";
+$perfilUsuario = executarConsulta($conexao, $sqlPerfilUsuario, ['s', $username]);
+$perfil_usuario = $perfilUsuario ? $perfilUsuario['perfil'] : "Perfil do Usuário";// Consulta o banco de dados para obter a média de tempo que o visitante fica no site
 $sqlMediaTempo = "SELECT SEC_TO_TIME(AVG(TIME_TO_SEC(tempo))) AS media_tempo FROM contador_visitas";
 $mediaTempo = executarConsulta($conexao, $sqlMediaTempo);
 

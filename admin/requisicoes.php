@@ -253,17 +253,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['exportar']) && !empty(
     <input type="date" name="data_inicio" id="data_inicio">
     <label for="data_fim">Data Fim:</label>
     <input type="date" name="data_fim" id="data_fim">
-    <button type="submit" name="filtrar">Filtrar</button>
+    <button type="submit" name="filtrar" class="btn btn-primary">Filtrar</button>
 </form>
 
 <!-- Opções de exportação e impressão -->
 <div class="export-options">        
     <form method="post" action="">
-        <button type="submit" name="exportar">Exportar XML</button>        
-    </form>
-    <button onclick="window.print()">
-        <i class="fa fa-print" aria-hidden="true"></i> Imprimir
-    </button>
+        <button type="submit" name="exportar" class="btn btn-primary">Exportar XML</button>    <i class="fa fa-print" style="font-size: 24px;" onclick="window.print()" aria-hidden="true"></i> Imprimir           
+    </form>    
 </div>
                 <div class="row">
                     <div class="col-md-12">
