@@ -1,14 +1,6 @@
 <?php
 session_start();
-include_once('../php/conexao.php'); // Ajuste no caminho do include_once
-
-// Conexão com o banco de dados
-$conn = new mysqli("localhost", "root", "", "confinter");
-
-// Verifica se houve erro na conexão
-if ($conn->connect_error) {
-    die("Erro de conexão: " . $conn->connect_error);
-}
+include_once('../php/conexao.php'); 
 
 // Consulta SQL para selecionar os depoimentos pendentes de moderação
 $sql = "SELECT * FROM depoimentos WHERE aprovado = 0 AND reprovado = 0";
