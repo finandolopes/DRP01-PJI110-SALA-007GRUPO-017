@@ -1,4 +1,6 @@
 <?php
+include_once('../php/conexao.php');
+
 // Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Inclui o arquivo de conexão com o banco de dados
