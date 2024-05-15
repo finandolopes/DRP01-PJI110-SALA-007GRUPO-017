@@ -1,6 +1,6 @@
 <?php
 // Incluir o arquivo de conexão e as funções de manipulação de clientes
-include_once('conexao.php');
+include_once('../conexao.php');
 
 // Verifica se há erros na conexão
 if ($conexao->connect_error) {
