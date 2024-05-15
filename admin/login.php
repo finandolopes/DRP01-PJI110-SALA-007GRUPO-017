@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include_once('conexao.php');
+include_once('../php/conexao.php');
 
 // Verifica se os campos de login foram enviados via POST
 if (isset($_POST['usuario']) && isset($_POST['senha'])) {
