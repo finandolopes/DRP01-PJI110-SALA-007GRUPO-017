@@ -4,7 +4,7 @@ session_start();
 // Verificar se os dados foram enviados via POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Incluir o arquivo de conexão com o banco de dados
-    include 'conexao.php';
+    include '../php/conexao.php';
 
     // Obter os dados do formulário
     $nome = isset($_POST['nome']) ? $_POST['nome'] : ''; // Verifica se o campo nome está definido
