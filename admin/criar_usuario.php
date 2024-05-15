@@ -1,4 +1,7 @@
 <?php
+include '..php/config.php';
+
+// Use $conn para interagir com o banco de dados
 // Função para criar um novo usuário
 function criarUsuario($conexao, $nome, $usuario, $senha, $telefone, $email, $perfil) {
     // Hash da senha
@@ -17,18 +20,6 @@ function criarUsuario($conexao, $nome, $usuario, $senha, $telefone, $email, $per
 
 // Verifica se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Conecta ao banco de dados (substitua as informações de conexão conforme necessário)
-    $servername = "localhost";
-    $username = "seu_usuario";
-    $password = "sua_senha";
-    $dbname = "seu_banco_de_dados";
-
-    $conexao = new mysqli($servername, $username, $password, $dbname);
-
-    // Verifica se a conexão foi bem-sucedida
-    if ($conexao->connect_error) {
-        die("Erro na conexão com o banco de dados: " . $conn->connect_error);
-    }
 
     // Obtém os valores do formulário
     $nome = $_POST["nome"];
