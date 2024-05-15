@@ -1,7 +1,6 @@
 <?php
-include '..php/config.php';
+include_once('../php/conexao.php');
 
-// Use $conn para interagir com o banco de dados
 // Função para criar um novo usuário
 function criarUsuario($conexao, $nome, $usuario, $senha, $telefone, $email, $perfil) {
     // Hash da senha
