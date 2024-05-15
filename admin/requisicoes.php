@@ -280,23 +280,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['exportar']) && !empty(
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php
-                                            // Conexão com o banco de dados
-                                            $servername = "localhost";
-                                            $username = "root";
-                                            $password = "";
-                                            $dbname = "confinter";
-
-                                            $conn = new mysqli($servername, $username, $password, $dbname);
-
-                                            // Verifica a conexão
-                                            if ($conexao->connect_error) {
-                                            die("Erro na conexão: " . $conn->connect_error);
+                                            
                                             }
 
                                             // Consulta SQL para buscar as requisições
                                             $sql = "SELECT r.id_requisicao, c.nome AS nome_cliente, c.email, c.telefone, r.tipo, r.categoria, r.horario_contato, r.data_requisicao FROM requisicoes r INNER JOIN clientes c ON r.id_cliente = c.id_cliente";
-                                            $result = $conn->query($sql);
+                                            $result = $conexao->query($sql);
 
                                             // Verifica se há resultados da consulta
                                             if ($result->num_rows > 0) {
