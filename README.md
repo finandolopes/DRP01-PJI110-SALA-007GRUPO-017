@@ -3,7 +3,7 @@
 
 
 ## 📋 Índice
-- [Link do projeto:](https://finandolopes.github.io/GRUPO-PI-TURMA-007/)
+- [Link do projeto:](http://confinter.rf.gd/)
 
 - [📖 Sobre](#-Sobre)
 - [🚀 Tecnologias utilizadas](#-Tecnologias-utilizadas)
@@ -24,7 +24,7 @@
 - `SQL`
 - `MySQL Workbench`
 - `Visual Studio Code`
-- `000webhost`
+- `dash.infinityfree.com`
 ## 🖥 Preview:
 
 
