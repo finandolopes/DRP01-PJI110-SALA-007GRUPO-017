@@ -1,4 +1,4 @@
-Site CCONFINTER
+Site CONFINTER
 Este relatório oferece uma visão geral dos elementos e conceitos utilizados no código do site.
 Linguagens Utilizadas:
 
@@ -29,10 +29,6 @@ Validação de Formulário:
 JavaScript é empregado para validar campos do formulário antes do envio.
 Garante que campos obrigatórios sejam preenchidos corretamente pelo usuário.
 
-Modal:
-Implementação de um modal para exibir o mapa de localização da empresa.
-JavaScript é utilizado para controlar o comportamento do modal e exibir o mapa dentro dele.
-
 Responsividade: Utilizado Framework (Bootstrap)
 Utilização de classes do Bootstrap para garantir que a página seja responsiva em diferentes dispositivos.
 Ilustrações:
@@ -45,9 +41,6 @@ Permite que os usuários façam login no sistema de forma segura e intuitiva.
 
 Mensagens de Sucesso:
 Após o envio de depoimentos, uma mensagem de sucesso é exibida dinamicamente na página.
-
-Modal de Como Chegar:
-Modal implementado para exibir o mapa de localização da empresa quando solicitado pelo usuário.
 
 Modal Login:
 O código define um modal de login com um formulário contendo campos para usuário e senha.
@@ -80,19 +73,19 @@ Esta seção apresenta perguntas frequentes em um formato de acordeão.
 Cada pergunta é seguida por uma resposta que pode ser expandida ou recolhida ao clicar na pergunta.
 Três perguntas frequentes são listadas aqui.
 
-Modal de Contato:
-Este é um modal de contato que permite aos usuários enviar mensagens.
-O formulário inclui campos para nome, e-mail, telefone, mensagem.
-Há uma mensagem de confirmação para quando a mensagem é enviada com sucesso.
-Os dados são enviados para algum lugar não especificado usando o método POST.
+Enviar Depoimentos:
+Criamos uma seção para ser enviado depoimentos criado por Clientes onde estes manifestarão sua satisfação ou insatisfação com o serviço prestado.
+
+Depoimentos:
+Abaixo á uma seção para exibir depoimentos aprovados. Esses depoimentos são recuperados do banco de dados e exibidos em um carrossel.
+Finalmente, o rodapé é concluído com informações de direitos autorais e créditos para o desenvolvimento do site.
 
 Rodapé:
 O rodapé começa com uma <footer> tag e é dividido em duas seções principais.
-A primeira seção inclui informações sobre a empresa, como o logotipo, o nome da empresa, o CNPJ e uma breve descrição das atividades.
-A segunda seção contém links para as redes sociais da empresa, como Instagram e WhatsApp.
+A primeira seção inclui informações sobre a empresa, como o logotipo, o nome da empresa.
 Em seguida, há um formulário para enviar depoimentos. Os visitantes podem inserir seu nome (opcional) e mensagem para enviar um depoimento.
-Abaixo do formulário de depoimento, há uma seção para exibir depoimentos aprovados. Esses depoimentos são recuperados do banco de dados e exibidos em um carrossel.
-Finalmente, o rodapé é concluído com informações de direitos autorais e créditos para o desenvolvimento do site.
+
+3 botões laterais que acompanham a navegação pelo site, visando a facilidade de acesso ao WhatsApp, Instagram e E-mail da CONFINTER.
 
 Scripts JavaScript:
 O código HTML inclui vários scripts JavaScript no final do documento para fornecer funcionalidades adicionais, como carrosséis, formulários de contato, efeitos de animação e muito mais.
@@ -126,7 +119,7 @@ Início
 |
 |-- Modal 
 |   |-- Modal de login (para realização do acesso ao Painel Administrativo)
-|   |-- Modal de Mapa (para exibir um mapa de localização)
+|  
 |
 Fim
 
@@ -178,7 +171,21 @@ A página se adapta automaticamente a diferentes tamanhos de tela, garantindo um
 
 Barra de Navegação e Sidebar:
 A barra de navegação no topo contém o logotipo, o nome do painel administrativo e informações do usuário.
-A sidebar à esquerda fornece links para diferentes funcionalidades do painel administrativo.
+A sidebar à esquerda fornece links para diferentes funcionalidades do painel administrativo. Entre elas:
+Dashboard:
+Área em que é exibido quantidade de acessos realizados no site, quantidade de requisições de Análise de Crédito realizado no site, Depoimentos, quantificado quantos depoimentos foram realizados e quantidade de tempo de acesso ao site, listando também os 5 últimos clientes que encaminharam requisições de Análise de Crédito no site.
+Requisições:
+Área em que é listado todos os clientes que entraram em contato requisitando análise de crédito sendo possível realizar a impressão e exportar em arquivo XML.
+Listar Clientes.
+Área em que é possível listar todos os clientes que já contataram a CONFINTER via site.
+Gerenciar Usuários:
+Área em que é possível editar usuário já existente bem como criar novos.
+Acesso ao ERP:
+Área requisitada pelo proprietário da CONFINTER que visa um atalho ao seu link externo de seu sistema ERP.
+Alterar Slides: 
+Seção em que é possível alterar ou excluir os slides da área principal do site.
+Moderar Depoimentos:
+Área responsável por receber e Moderar todos os depoimentos recebidos via site.
 
 Conteúdo Dinâmico:
 O conteúdo das funcionalidades é carregado dinamicamente dentro do contêiner principal da página, sem a necessidade de recarregar a página inteira.
