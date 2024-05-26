@@ -20,55 +20,49 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
 }
 
 ?>
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">   
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
     <title>CONFINTER | Consolidando sonhos</title>
-    <meta name="description" content="Consolidando sonhos">    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consolidando sonhos">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/favicon.png" rel="apple-touch-icon">
-    <link href="lib/fonts-googleapis/family-open-sans.min.css" rel="stylesheet">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="lib/nivo-slider/css/nivo-slider.min.css" rel="stylesheet">
     <link href="lib/nivo-slider/css/nivo-slider-theme.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/owl.transitions.min.css" rel="stylesheet">
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/venobox/venobox.min.css" rel="stylesheet">
-    <link href="css/responsive.min.css" rel="stylesheet">
-    <link href="css/style.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-   
-    
-    <style>
-        /* Estilos personalizados */
-        .testimonial-item {
-            background-color: #f8f9fa;
-            border-radius: 5px;
-            padding: 20px;
-            text-align: center;
-        }
+    <!-- Inclua o CSS do Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-        .testimonial-img {
-            max-width: 150px;
-            margin-bottom: 15px;
-        }
+<!-- Inclua jQuery e o JavaScript do Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-        .testimonial-name {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
 
-        .testimonial-message {
-            font-size: 16px;
-        }
-    </style>
-
-   
     <script>
         $(document).ready(function () {
             // Remover a máscara de data antes de enviar o formulário
@@ -256,200 +250,45 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
             }
         });
 
-    </script>
-
-
-    <style>
-        .floating-buttons {
-            position: fixed;
-            top: 50%;
-            left: 0; /* Ajuste para centralizar os botões na lateral esquerda */
-            transform: translateY(-50%);
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            width: 50px; /* Definindo a largura dos botões */
-            border-radius: 50%; /* Tornando o container redondo */
-        }
-
-            .floating-buttons a {
-                display: flex; /* Usando flex para alinhar ícone verticalmente */
-                justify-content: center; /* Alinhando ícone horizontalmente */
-                align-items: center; /* Alinhando ícone verticalmente */
-                margin-bottom: 10px;
-                width: 40px; /* Definindo a largura dos botões */
-                height: 40px; /* Definindo a altura dos botões */
-                background-color: rgba(0, 0, 0, 0.5); /* Adicionando um fundo semi-transparente */
-                border-radius: 50%; /* Tornando o botão redondo */
-                text-decoration: none;
-                transition: background 0.3s ease;
-            }
-
-        /* Estilo dos botões flutuantes */
-        .floating-buttons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-        }
-
-        /* Estilo do ícone do WhatsApp */
-        .whatsapp i {
-            color: #25D366; /* Cor verde do logo do WhatsApp */
-        }
-
-        /* Estilo do ícone do Email */
-        .email i {
-            color: #4285F4; /* Cor vermelha do logo do Gmail, por exemplo */
-        }
-
-        /* Estilo do ícone do Instagram */
-        .instagram i {
-            color: #D44638; /* Cor vermelha do logo do Instagram, por exemplo */
-        }
-
-
-        .floating-buttons a {
-            display: block;
-            margin-bottom: 10px;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            background-color: #fff; /* Fundo branco para todos os ícones */
-            border-radius: 50%;
-            text-decoration: none;
-            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2); /* Sombra para destacar os ícones */
-        }
-
-            .floating-buttons a:hover {
-                opacity: 0.8; /* Efeito ao passar o mouse */
-            }
-        /* Aumentando o tamanho dos ícones */
-        .whatsapp i,
-        .instagram i,
-        .email i {
-            font-size: 30px; /* Ajuste o tamanho dos ícones conforme necessário */
-            line-height: 40px; /* Alinhamento vertical dos ícones */
-        }
-    </style>
-    <style>
-        /* Estilo dos ícones das redes sociais */
-        .footer-icons a i {
-            font-size: 45px; /* Ajuste o tamanho do ícone */
-            margin-right: 10px; /* Adiciona um espaçamento entre os ícones */
-        }
-
-        .footer-icons a .fab.fa-instagram {
-            color: #e4405f; /* Cor do Instagram */
-        }
-
-        .footer-icons a .fab.fa-whatsapp {
-            color: #25d366; /* Cor do WhatsApp */
-        }
-
-        /* Remover estilo padrão dos links */
-        .footer-icons a {
-            text-decoration: none; /* Remove sublinhado */
-        }
-
-        .panel-collapse {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-
-            .panel-collapse.in {
-                max-height: 1000px; /* Defina um valor adequado para a altura máxima */
-            }
-    </style>
-</head>
+    </script>   
+    </head>
 <div class="floating-buttons">
-    <a href="https://www.instagram.com/confintersp?igsh=a3NuaGJrem5pYzZu" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://api.whatsapp.com/send?phone=11948016298" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-    <a href="mailto:contato@confinter.com.br" class="email"><i class="far fa-envelope"></i></a>
+    <a href="https://www.instagram.com/confintersp?igsh=a3NuaGJrem5pYzZu" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+    <a href="https://api.whatsapp.com/send?phone=11948016298" target="_blank" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+    <a href="mailto:contato@confinter.com.br" class="email"><i class="bi bi-envelope-at"></i></i></a>
 </div>
+<body>
 
-<body data-spy="scroll" data-target="#navbar-edart">
-    <div id="preloader"></div>
-    <header>
-        <div id="sticker" class="header-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <nav class="navbar navbar-default">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-edart-navbar-collapse-1" aria-expanded="false">
-                                    <span class="sr-only"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                                <a id="navbar-logo" class="navbar-brand page-scroll sticky-logo br hidden-sm hidden-xs" href="#">
-                                    <img src="assets/img/logo01-white.png" alt="logo" width="80px">
-                                </a>
-                                <a id="navbar-logo" class="navbar-brand page-scroll sticky-logo br visible-xs" href="#">
-                                    <img src="assets/img/logo01-white.png" alt="logo" width="80px">
-                                </a>
-                            </div>
-                            <div class="collapse navbar-collapse main-menu bs-edart-navbar-collapse-1" id="navbar-example">
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li>
-                                        <a class="page-scroll" href="#sobre">
-                                            <div class="br">Sobre</div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="page-scroll" href="#valores">
-                                            <div class="br">Nossos Valores</div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="page-scroll" href="#serviços">
-                                            <div class="br">Serviços</div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="page-scroll" href="#requisicoes">
-                                            <div class="br">Requisições</div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="page-scroll" href="#duvidas">
-                                            <div class="br">Dúvidas</div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="page-scroll" href="#depoimentos">
-                                            <div class="br">Depoimentos</div>
-                                        </a>
-                                    </li>
-                                     <li>
-                                        <a class="page-scroll" href="#chegar">
-                                            <div class="br">Como Chegar</div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="page-scroll" href="#" data-toggle="modal" data-target="#loginModal">
-                                            <div class="br">Login</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
+    <!-- ======= Inicio Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!--<h1 class="logo"><a href="index.html">CONFINTER</a></h1>-->
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#sobre">Sobre</a></li>
+                    <li><a class="nav-link scrollto" href="#valores">Nossos Valores</a></li>
+                    <li><a class="nav-link scrollto" href="#servicos">Serviços</a></li>
+                    <li><a class="nav-link scrollto" href="#requi">Requisições</a></li>
+                    <li><a class="nav-link scrollto" href="#faq">Dúvidas</a></li>
+                    <li><a class="nav-link scrollto" href="#depoimentos">Depoimentos</a></li>
+                    <li><a class="nav-link scrollto" href="#chegar">Como Chegar</a></li>
+                    <a class="page-scroll" href="#" data-toggle="modal" data-target="#loginModal">Login</a> 
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
         </div>
-    </header>
-
+    </header><!-- Fim do Header -->
     <!-- Modal Login -->
     <div id="loginModal" class="modal fade modal-login" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Login</h4>
+                    <h4 class="modal-title"></h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -476,244 +315,206 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
             </div>
         </div>
     </div>
-
-    <div class="full-site">
-    <div id="home" class="slider-area">
-        <div class="bend niceties preview-2">
-            <div id="ensign-nivoslider" class="slides">
-                <?php
-                $diretorio = "assets/img/slider/";
-                $imagens = glob($diretorio . "*.{jpg,png,gif}", GLOB_BRACE);
-                foreach ($imagens as $imagem) {
-                    echo '<img src="' . $imagem . '" alt="slider" />';
-                }
-                ?>
+    <section id="hero">
+        <!-- ======= Incio Slides ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="full-site w-100">
+        <div id="home" class="slider-area w-100">
+            <div class="bend niceties preview-2 w-100">
+                <div id="ensign-nivoslider" class="slides">
+                        <?php
+                        $diretorio = "assets/img/slider/";
+                        $imagens = glob($diretorio . "*.{jpg,png,gif}", GLOB_BRACE);
+                        foreach ($imagens as $imagem) {
+                        echo '<img src="' . $imagem . '" alt="slider" />';
+                        }
+                        ?>
+                    </div>
+                    <div id="slider-direction-1" class="slider-direction slider-one">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="slider-content">
+                                        <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                                            <h2 class="title1"></h2>
+                                        </div>
+                                        <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                                            <h1 class="title2"></h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="slider-direction-2" class="slider-direction slider-two">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="slider-content text-center">
+                                        <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                                            <div class="container">
+                                                <h2 class="animate__animated animate__fadeInDown">Experiência no Mercado</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="slider-direction-3" class="slider-direction slider-two">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="slider-content">
+                                        <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                                            <div class="container">
+                                                <p class="animate__animated animate__fadeInUp">Transparência e Credibilidade</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="slider-direction-4" class="slider-direction slider-two">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="slider-content">
+                                        <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                                            <div class="container">
+                                                <p class="animate__animated animate__fadeInUp">Foco no Resultado</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="slider-direction-5" class="slider-direction slider-two">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="slider-content">
+                                        <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                                            <div class="container">
+                                                <p class="animate__animated animate__fadeInUp">Alcançar Objetivos</p>
+                                                <p class="animate__animated animate__fadeInUp">Alcançar Objetivos</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="slider-direction-1" class="slider-direction slider-one">
-                <div class="container">
+        </div>
+    </section><!-- Fim Slides -->
+
+    <main id="main">
+
+        <!-- ======= Seção Sobre ======= -->
+        <section id="sobre" class="about">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-headline text-center">
+                    <h2 class="br">Sobre Nós</h2>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="slider-content">
-                                <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                                    <h2 class="title1"></h2>
-                                </div>
-                                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                    <h1 class="title2"></h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="slider-direction-2" class="slider-direction slider-two">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="slider-content text-center">
-                                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                    <div class="container">
-                                <h2 class="animate__animated animate__fadeInDown">Experiência no Mercado</h2>
-                            </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="slider-direction-3" class="slider-direction slider-two">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="slider-content">
-                                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                     <div class="container">
-                                <p class="animate__animated animate__fadeInUp">Transparência e Credibilidade</p>
-                            </div>
+                            <div class="well-middle">
+                                <div class="single-well">
+                                    <span class="br minor-title-about"></span>
+                                    <h4 class="about-content">
+                                        <div class="br">
+                                            A <strong>CONFINTER</strong> é uma empresa especializada em Consultoria Financeira e Correspondente Bancária que atua na intermediação de negócios, presencialmente e online.
+                                        </div>
+                                    </h4>
+                                    <h4 class="about-content">
+                                        <div class="br">
+                                            Seguimos as diretrizes do Banco Central do Brasil, nos termos da Resolução no 3.954/2011. Nosso procedimento de avaliação de crédito é submetido à política de crédito da Instituição
+                                            Financeira escolhida pelo usuário e está submetida a aprovação.
+                                        </div>
+                                    </h4>
+                                    <h4 class="about-content">
+                                        <div class="br">
+                                            Antes da contratação de qualquer serviço através de nossos parceiros e consultores, você receberá todas as condições e informações relativas à linha
+                                            de crédito a ser contratada, de forma completa e transparente.
+                                        </div>
+                                    </h4>
+                                    <br /><br />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="slider-direction-4" class="slider-direction slider-two">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="slider-content">
-                                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                    <div class="container">
-                                <p class="animate__animated animate__fadeInUp">Foco no Resultado</p>
-                            </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="slider-direction-5" class="slider-direction slider-two">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="slider-content">
-                                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                   <div class="container">
-                                <p class="animate__animated animate__fadeInUp">Alcançar Objetivos</p>
-                            </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        </section><!-- Fim da Seção Sobre -->
+        <!-- ======= Missão, Visão e Valores ======= -->
+        <section id="valores" class="services section-bg">
+            <div class="container" data-aos="fade-up">
 
-
-    <div id="sobre" class="about-area area-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="section-headline text-center">
-                        <h2 class="br">Sobre Nós</h2>
-                    </div>
+                <div class="section-headline text-center">
+                    <h2 class="br">Nossos Valores</h2>
+                    <p></p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="well-middle">
-                        <div class="single-well">
-                            <span class="br minor-title-about"></span>
-                            <h4 class="about-content">
-                                <div class="br">
-                                    A <strong>CONFINTER</strong> é uma empresa especializada em Consultoria Financeira e Correspondente Bancária que atua na intermediação de negócios, presencialmente e online.
-                                </div>
-                            </h4>
-                            <h4 class="about-content">
-                                <div class="br">
-                                    Seguimos as diretrizes do Banco Central do Brasil, nos termos da Resolução no 3.954/2011. Nosso procedimento de avaliação de crédito é submetido à política de crédito da Instituição
-                                    Financeira escolhida pelo usuário e está submetida a aprovação.
-                                </div>
-                            </h4>
-                            <h4 class="about-content">
-                                <div class="br">
-                                    Antes da contratação de qualquer serviço através de nossos parceiros e consultores, você receberá todas as condições e informações relativas à linha
-                                    de crédito a ser contratada, de forma completa e transparente.
-                                </div>
-                            </h4>
-                            <br /><br />
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box iconbox-blue">
+                            <div class="icon">
+                                
+                                <img src="assets/img/missao.png" alt="missao">
+                            </div>
+                            <h4><a href=""></a></h4>
+                            <p>Facilitar o acesso a crédito consignado e fornecer consultoria financeira personalizada, visando o equilíbrio e bem-estar financeiro dos nossos clientes.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="icon-box iconbox-orange ">
+                            <div class="icon">                            
+                                <img src="assets/img/visao.png" alt="visao">
+                            </div>
+                            <h4><a href=""></a></h4>
+                            <p>
+                                Ser reconhecida como a empresa líder  em intermediação de negócios, destacando-se pela excelência no atendimento ao cliente e pela construção de relacionamentos sólidos e duradouros.
+                            </p><br>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon-box iconbox-pink">
+                            <div class="icon">
+                                <img src="assets/img/valores.png" alt="valores">
+                            </div>
+                            <h4><a href=""></a></h4>
+                            <p>
+                                <strong>Transparência:</strong> Agimos com total transparência em nossas operações e informações, promovendo a confiança mútua.<br>
+                                <strong>Comprometimento Personalizado:</strong> Nos dedicamos a entender as necessidades individuais de cada cliente, oferecendo soluções financeiras.<br>
+                                <strong>Respeito e Empatia:</strong> Valorizamos a diversidade e tratamos todos com respeito e empatia, construindo relações duradouras.<br>
+                                <strong>Sustentabilidade Financeira:</strong> Comprometemo-nos a promover práticas financeiras sustentáveis, visando o bem-estar financeiro a longo prazo de nossos clientes.<br>
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div><!-- Fim do Sobre Nós -->
-    <div id="valores" class="valores-area area-padding">
-        <!-- ======= Nossos Valores  ======= -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="section-headline text-center">
-                        <h2 class="br">Nossos Valores</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="well-middle">
-                        <div class="single-well">
-                            <span class="br minor-title-about"></span>
-                            <h4 class="about-content">
-                                <div class="br">
-                                    Um novo projeto onde o conceito e a missão vão além do que se espera de uma consultoria, totalmente estruturada e
-                                    pronta para sermos o futuro de nossos clientes. Uma consultoriafinanceira totalmente estruturada e personalizada,
-                                    pronta para entregar o melhor custo xbenefício aos nossos clientes.
-                                </div>
-                            </h4>
-                            <h4 class="about-content">
-                                <div class="br">
-                                    Nossa palavra de ordem é o <strong>SUCESSO</strong>. Transparência e Honestidade são os nossos principais valores.
-                                </div>
-                            </h4>
-                            <br /><br />
-                            <div class="slider1 owl-carousel">
-        <div class="card">
-            <div class="img">
-                <img src="assets/img/missao.png" alt="missao">
-            </div>
-            <div class="content">
-                <div class="title">                    
-                </div>
-                <div class="sub-title">
-                    
-                </div>
-                <p>
-                    
-                    Facilitar o acesso a crédito consignado e fornecer consultoria financeira personalizada, visando o equilíbrio e bem-estar financeiro dos nossos clientes.
-                </p>
-                
-            </div>
-        </div>
-        <div class="card">
-            <div class="img">
-                <img src="assets/img/visao.png" alt="visao">
-            </div>
-            <div class="content">
-                <div class="title">                    
-                </div>
-                <div class="sub-title">
-                    
-                </div>
-                <p>
-                    Ser reconhecida como a empresa líder  em intermediação de negócios, destacando-se pela excelência no atendimento ao cliente e pela construção de relacionamentos sólidos e duradouros.
-                </p>
-                
-            </div>
-        </div>
-        <div class="card">
-            <div class="img">
-                <img src="assets/img/valores.png" alt="valores">
-            </div>
-            <div class="content">
-                <div class="title">                    
-                </div>
-                <div class="sub-title">
-                    
-                </div>
-                <p>
-                    <strong>Transparência:</strong> Agimos com total transparência em nossas operações e informações, promovendo a confiança mútua.<br>
-                    <strong>Comprometimento Personalizado:</strong> Nos dedicamos a entender as necessidades individuais de cada cliente, oferecendo soluções financeiras.<br>
-                    <strong>Respeito e Empatia:</strong> Valorizamos a diversidade e tratamos todos com respeito e empatia, construindo relações duradouras.<br>
-                    <strong>Sustentabilidade Financeira:</strong> Comprometemo-nos a promover práticas financeiras sustentáveis, visando o bem-estar financeiro a longo prazo de nossos clientes.<br>
-                </p>
-                
-            </div>
-        </div>
-    </div>
-    <script>
-  $(".slider1").owlCarousel({
-    loop: true,
-    autoplay: true,
-    autoplayTimeout: 5000, // 5000ms = 5s;
-    autoplayHoverPause: true,
-    items: 3, // Inicialmente mostrar 3 itens
-    onInitialized: function(event) {
-        // Depois que o carrossel é inicializado, alterar para mostrar 1 item
-        this.options.items = 1;
-    }
-});
 
-</script>
             </div>
-        </div>
+        </section><!-- Fim da Seção Missão, Visão e Valores -->
 
+        <style>
+            .icon-large {
+                font-size: 2em; /* Ajuste este valor para o tamanho desejado */
+            }
+        </style>
         <div id="serviços" class="services-area area-padding">
             <!-- ======= Serviços ======= -->
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="section-headline services-head text-center">
-                            <h2>Nossos serviços</h2>
+                        <div class="section-headline text-center">
+                            <h2 class="br">Nossos Serviços</h2>
                         </div>
                     </div>
                 </div>
@@ -724,7 +525,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                             <div class="services-details">
                                 <div class="single-services">
                                     <a class="services-icon" href="#">
-                                        <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                                        <i class="bi bi-briefcase"></i>
                                     </a>
                                     <h4>Consultoria</h4>
                                     <p>
@@ -739,7 +540,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                             <div class="services-details">
                                 <div class="single-services">
                                     <a class="services-icon" href="#">
-                                        <i class="fa fa-line-chart" aria-hidden="true"></i>
+                                        <i class="bi bi-person-vcard-fill"></i>
                                     </a>
                                     <h4>Intermediação de Negócios</h4>
                                     <p>
@@ -755,7 +556,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                             <div class="services-details">
                                 <div class="single-services">
                                     <a class="services-icon" href="#">
-                                        <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                        <i class="bi bi-credit-card"></i>
                                     </a>
                                     <h4>Cartões de Crédito Consignado</h4>
                                     <p>
@@ -771,7 +572,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                             <div class="services-details">
                                 <div class="single-services">
                                     <a class="services-icon" href="#">
-                                        <i class="fa fa-money" aria-hidden="true"></i>
+                                        <i class="bi bi-cash-coin"></i>
                                     </a>
                                     <h4>Saque Aniversário FGTS</h4>
                                     <p>
@@ -784,300 +585,220 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                 </div>
             </div>
         </div><!-- fim da Seção de serviços -->
-        <div class="container">
-            <div class="row align-items-stretch">
-                <div class="col-md-6">
-                    <!-- Coluna 1: Requisição de Análise de Crédito -->
-                    <div id="requisicoes" class="our-team-area area-padding">
-                        <div class="section-headline text-center">
-                            <h2 class="br">Requisição de Análise de Crédito</h2>
-                        </div>
-                        <div class="formulario-modal" id="requisicaoForm">
-                            <form action="php/process.php" method="POST" id="form-requisicao">
-                                <div class="form-group">
-                                    <input type="text" class="br form-control" id="nome" name="nome" placeholder="Nome completo" required>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                        <label for="data_nascimento">Data Nasci.:</label>
-                                        <input type="date" class="br form-control" id="data_nascimento" placeholder="Data de Nascimento:" name="data_nascimento" required>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="telefone">Telefone:</label>
-                                        <input type="tel" class="br form-control" id="telefone" name="telefone" placeholder="Telefone" required maxlength="15">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="email">E-mail:</label>
-                                        <input type="email" class="br form-control" id="email" name="email" placeholder="Digite seu E-mail" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="horario_contato">Horário para Contato:</label>
-                                    <div class="input-group">
-                                        <input type="time" class="br form-control" id="horario_contato" name="horario_contato" required>
-                                        <div class="input-group-append">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="tipo" class="text-left">Tipo:</label>
-                                    <textarea class="br form-control" id="tipo" name="tipo" rows="3" maxlength="250"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label>Categoria:</label><br>
-                                    <div class="form-row">
-                                        <div class="form-check col-md-3">
-                                            <input class="form-check-input" type="checkbox" id="aposentado" name="categoria[]" value="Aposentado">
-                                            <label class="form-check-label" for="aposentado">Aposentado</label>
-                                        </div>
-                                        <div class="form-check col-md-3">
-                                            <input class="form-check-input" type="checkbox" id="pensionista" name="categoria[]" value="Pensionista">
-                                            <label class="form-check-label" for="pensionista">Pensionista</label>
-                                        </div>
-                                        <div class="form-check col-md-3">
-                                            <input class="form-check-input" type="checkbox" id="servidor_publico" name="categoria[]" value="Servidor Público">
-                                            <label class="form-check-label" for="servidor_publico">Servidor Público</label>
-                                        </div>
-                                        <div class="form-check col-md-3">
-                                            <input class="form-check-input" type="checkbox" id="outros_check" name="categoria[]" value="Outros">
-                                            <label class="form-check-label" for="outros_check">Outros</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group" id="outros_info_div" style="display: none;">
-                                    <label for="outros_info">Insira outras informações se necessário:</label>
-                                    <input type="text" class="br form-control" id="outros_info" name="outros_info" rows="3" maxlength="200">
-                                </div>
-                                <div class="form-group text-center">
-                                    <div class="form-group text-center">
-                                        <button type="submit" class="btn btn-primary">
-                                            <div class="br">Enviar Requisição</div>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div><!-- Fim da coluna Requisição de Análise de Crédito -->
-                <div class="col-md-6">
-                    <!-- Coluna 2: Dúvidas Frequentes -->
-                    <div class="col-md-12" style="overflow-y: auto;">
-                        <div id="duvidas" class="faq-area area-padding">
-                            <div class="section-headline text-center">
-                                <h2 class="br">Dúvidas frequentes</h2>
-                            </div>
-                            <div class="faq-details">
-                                <div class="panel-group" id="accordion">
-                                    <div class="panel panel-default" style="margin-bottom: 5px; width: 100%;">
-                                        <!-- Pergunta 1 -->
-                                        <div class="panel-heading">
-                                            <h4 class="check-title">
-                                                <a data-toggle="collapse" class="active" data-parent="#accordion" href="#check1">
-                                                    <span class="acc-icons"></span>
-                                                    <h3 class="br" style="font-size: 14px; margin-bottom: 0;">Em que área a empresa opera?</h3>
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="check1" class="panel-collapse collapse in">
-                                            <div class="panel-body">
-                                                <h5 class="br" style="font-size: 12px;">
-                                                    Operamos como prestadores de serviços, há mais de 15 anos nas áreas de
-                                                    Crédito Consignado, Intermediação de Negócios,
-                                                    Consultoria Financeira e Cobranças.
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default" style="margin-bottom: 5px; width: 100%;">
-                                        <!-- Pergunta 2 -->
-                                        <div class="panel-heading">
-                                            <h4 class="check-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#check2">
-                                                    <span class="acc-icons"></span>
-                                                    <h3 class="br" style="font-size: 14px; margin-bottom: 0;">Porquê escolher a CONFINTER?</h3>
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="check2" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <h5 class="br" style="font-size: 12px;">
-                                                    Você terá um atendimento rápido e prático em todo território nacional.
-                                                    Nossos profissionais são dinâmicos e altamente qualificados,
-                                                    oferecendo suporte eficiente, soluções práticas com foco em resultados.
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default" style="margin-bottom: 5px; width: 100%;">
-                                        <!-- Pergunta 3 -->
-                                        <div class="panel-heading">
-                                            <h4 class="check-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#check3">
-                                                    <span class="acc-icons"></span>
-                                                    <h3 class="br" style="font-size: 14px; margin-bottom: 0;">O que é empréstimo consignado?</h3>
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="check3" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <h5 class="br" style="font-size: 12px;">
-                                                    O consignado é uma modalidade de crédito em que os pagamentos são descontados automaticamente
-                                                    do salário do servidor ou do benefício do INSS do tomador.
-                                                    Por conta dessa dinâmica, a taxa de inadimplência é baixa e o risco para os bancos muito pequeno,
-                                                    e é isso que faz com que o crédito consignado tenha uma das menores taxas do mercado.
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default" style="margin-bottom: 5px; width: 100%;">
-                                        <!-- Pergunta 4 -->
-                                        <div class="panel-heading">
-                                            <h4 class="check-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#check4">
-                                                    <span class="acc-icons"></span>
-                                                    <h3 class="br" style="font-size: 14px; margin-bottom: 0;">Quem pode solicitar crédito consignado?</h3>
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="check4" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <h5 class="br" style="font-size: 12px;">
-                                                    Aqui na CONFINTER, o crédito consignado está disponível para alguns públicos, entre eles:
-                                                    Beneficiário do INSS (BPC/LOAS), Servidores Públicos Municipais, Estaduais e Federais do SIAPE,
-                                                    Militares das Forças Armadas e Aposentados e Pensionistas do INSS.
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default" style="margin-bottom: 5px; width: 100%;">
-                                        <!-- Pergunta 5 -->
-                                        <div class="panel-heading">
-                                            <h4 class="check-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#check5">
-                                                    <span class="acc-icons"></span>
-                                                    <h3 class="br" style="font-size: 14px; margin-bottom: 0;">Quais são as taxas de juros?</h3>
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="check5" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <h5 class="br" style="font-size: 12px;">
-                                                    Oferecemos Empréstimo Consignado com taxas personalizadas que podem variar dependendo do tipo de convênio,
-                                                    operação, prazo, valor solicitado e perfil do cliente.
-                                                    As taxas de juros máximas são de 1.72% ao mês no empréstimo consignado para aposentado e/ou pensionista do INSS
-                                                    e Beneficiário do INSS (BPC/LOAS); e para Servidores Públicos à partir de 1.93% ao mês.
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default" style="margin-bottom: 5px; width: 100%;">
-                                        <!-- Pergunta 6 -->
-                                        <div class="panel-heading">
-                                            <h4 class="check-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#check6">
-                                                    <span class="acc-icons"></span>
-                                                    <h3 class="br" style="font-size: 14px; margin-bottom: 0;">Como é feita a análise de crédito?</h3>
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="check6" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <h5 class="br" style="font-size: 12px;">
-                                                    Prezando sempre pela saúde financeira, optamos pelas melhores estratégias de acordo com a gama de bancos parceiros e financeiras,
-                                                    buscando o melhor custo-benefício para nossos clientes.
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default" style="margin-bottom: 5px; width: 100%;">
-                                        <!-- Pergunta 7 -->
-                                        <div class="panel-heading">
-                                            <h4 class="check-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#check7">
-                                                    <span class="acc-icons"></span>
-                                                    <h3 class="br" style="font-size: 14px; margin-bottom: 0;">Como a CONFINTER pode me ajudar hoje?</h3>
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="check7" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <h5 class="br" style="font-size: 12px;">
-                                                    A CONFINTER atua também como Correspondente Digital autorizado pelo Banco Central e pode intermediar operações de crédito ajudando você,
-                                                    consumidor, a escolher as melhores opções de crédito disponíveis para seu perfil.
-                                                    Conosco, você não precisa sair de casa ou do trabalho perdendo tempo indo até o banco, enfrentando filas e burocracia! Nós fazemos todo o
-                                                    processo e acompanhamos o seu caso, digitalmente até a liberação do crédito em conta.
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default" style="margin-bottom: 5px; width: 100%;">
-                                        <!-- Pergunta 8 -->
-                                        <div class="panel-heading">
-                                            <h4 class="check-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#check8">
-                                                    <span class="acc-icons"></span>
-                                                    <h3 class="br" style="font-size: 14px; margin-bottom: 0;">Como faço para assinar o meu contrato?</h3>
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="check8" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <h5 class="br" style="font-size: 12px;">
-                                                    A assinatura é de forma digital, podendo ser enviado um link por WhatsApp ou SMS, enviado para o seu número de celular informado no formulário.  A maioria dos bancos exigem:
-                                                    •	o envio do documento de identidade;
-                                                    •	o aceite (SIM) na CCB: essa etapa o cliente verifica se todas as condições contratadas e precisa dar o aceite para seguir para a assinatura;
-                                                    •	tirar uma selfie (foto de si mesmo) que é a etapa de assinatura digital do cliente;
-                                                    Entretanto, essa modalidade pode variar de acordo com as exigências de cada Instituição Financeira.
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- Fim da coluna Dúvidas Frequentes -->
-            </div>
-           
-<div class="container-fluid container-center">
-    <div class="row justify-content-center">
-        <div class="col-md-8 col-sm-8 col-xs-12 text-center">
-            <div class="section-headline">
-                <h2 class="br">Enviar Depoimento</h2>
-            </div>
-            <!-- Adicionando um identificador único ao formulário -->
-            <form id="form-depoimento" action="php/enviar_depoimento.php" method="POST">
-                <div class="form-group">
-                    <input type="text" name="nome" class="br form-control" id="nome" placeholder="Insira o nome, em branco enviará como Anônimo" data-rule="minlen:4" data-msg="" />
-                    <div class="br validation"></div>
-                </div>
-                <div class="form-group">
-                    <textarea class="br form-control" name="mensagem" rows="5" data-rule="required" data-msg="Por favor escreva algo para nós" placeholder="Mensagem"></textarea>
-                    <!-- Adicionando um identificador único ao elemento onde a mensagem de erro será exibida -->
-                    <div id="erro-mensagem" class="text-danger">
-                        <?php
-                        // Verificar se a variável de sessão erro_mensagem está definida
-                        if (isset($_SESSION['erro_mensagem'])) {
-                            // Exibir a mensagem de erro
-                            echo $_SESSION['erro_mensagem'];
-                            // Remover a variável de sessão para que a mensagem não seja exibida novamente após atualizar a página
-                            unset($_SESSION['erro_mensagem']);
-                        }
-                        ?>
-                    </div>
-                    <div class="br validation"></div>
-                    <div class="en validation"></div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Enviar Depoimento</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+        <div id="requi" class="requisicoes section-bg"></div>
 
-<!-- Script JavaScript para rolar a página até a mensagem de erro -->
-<script>
+        <div id="requi" class="requisicoes section-bg"></div>
+
+        <div class="container">
+            <div class="row">
+                <!-- Coluna 1: Requisição de Análise de Crédito -->
+                <div class="col-md-5">
+                    <section id="requi" class="requisicoes section-bg">
+                        <div class="container">
+                            <div class="row align-items-stretch">
+                                <!-- Conteúdo da Requisição de Análise de Crédito -->
+                                <div class="section-headline text-center">
+                                    <h2 class="br">Requisição de Análise de Crédito</h2>
+                                    <p></p>
+                                </div>
+                                <div class="formulario-modal" id="requisicaoForm">
+                                    <form action="php/process.php" method="POST" id="form-requisicao">
+                                        <div class="form-group">
+                                            <input type="text" class="br form-control" id="nome" name="nome" placeholder="Nome completo" required>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label for="data_nascimento">Data Nascimento:</label>
+                                                <input type="date" class="br form-control" id="data_nascimento" placeholder="Data de Nascimento:" name="data_nascimento" required>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="telefone">Telefone:</label>
+                                                <input type="tel" class="br form-control" id="telefone" name="telefone" placeholder="Telefone" required maxlength="15">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="email">E-mail:</label>
+                                                <input type="email" class="br form-control" id="email" name="email" placeholder="Digite seu E-mail" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="horario_contato">Horário para Contato:</label>
+                                            <div class="input-group">
+                                                <input type="time" class="br form-control" id="horario_contato" name="horario_contato" required>
+                                                <div class="input-group-append">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tipo" class="text-left">Tipo:</label>
+                                            <textarea class="br form-control" id="tipo" name="tipo" rows="3" maxlength="250"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Categoria:</label><br>
+                                            <div class="form-row">
+                                                <div class="form-check col-md-3">
+                                                    <input class="form-check-input" type="checkbox" id="aposentado" name="categoria[]" value="Aposentado">
+                                                    <label class="form-check-label" for="aposentado">Aposentado</label>
+                                                </div>
+                                                <div class="form-check col-md-3">
+                                                    <input class="form-check-input" type="checkbox" id="pensionista" name="categoria[]" value="Pensionista">
+                                                    <label class="form-check-label" for="pensionista">Pensionista</label>
+                                                </div>
+                                                <div class="form-check col-md-3">
+                                                    <input class="form-check-input" type="checkbox" id="servidor_publico" name="categoria[]" value="Servidor Público">
+                                                    <label class="form-check-label" for="servidor_publico">Servidor Público</label>
+                                                </div>
+                                                <div class="form-check col-md-3">
+                                                    <input class="form-check-input" type="checkbox" id="outros_check" name="categoria[]" value="Outros">
+                                                    <label class="form-check-label" for="outros_check">Outros</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" id="outros_info_div" style="display: none;">
+                                            <label for="outros_info">Insira outras informações se necessário:</label>
+                                            <input type="text" class="br form-control" id="outros_info" name="outros_info" rows="3" maxlength="200">
+                                        </div>
+                                        <div class="form-group text-center">
+                                            <div class="form-group text-center">
+                                                <button type="submit" class="btn btn-primary">
+                                                    <div class="br">Enviar Requisição</div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+    
+                <!-- Coluna 2: Dúvidas Frequentes -->
+                <div class="col-md-7">
+                    <section id="faq" class="faq section-bg">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-headline text-center">
+                                <h2 class="br">Dúvidas Frequentes</h2>
+                            </div>
+                            <div class="faq-list" style="font-size: 14px; height: 100%;">
+                                <ul>
+                                    <!-- Perguntas frequentes -->
+                                    <li data-aos="fade-up">
+                                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#check1" style="width: 100%;">Em que área a empresa opera? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                        <div id="check1" class="collapse show" data-bs-parent=".faq-list">
+                                            <p>
+                                                Operamos como prestadores de serviços, há mais de 15 anos nas áreas de Crédito Consignado, Intermediação de Negócios, Consultoria Financeira e Cobranças.
+                                            </p>
+                                        </div>
+                                    </li>
+    
+                                    <li data-aos="fade-up" data-aos-delay="100">
+                                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#check2" class="collapsed" style="width: 100%;">Porquê escolher a CONFINTER? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                        <div id="check2" class="collapse" data-bs-parent=".faq-list">
+                                            <p>
+                                                Você terá um atendimento rápido e prático em todo território nacional. Nossos profissionais são dinâmicos e altamente qualificados, oferecendo suporte eficiente, soluções práticas com foco em resultados.
+                                            </p>
+                                        </div>
+                                    </li>
+    
+                                    <li data-aos="fade-up" data-aos-delay="300">
+                                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#check3" class="collapsed" style="width: 100%;">O que é empréstimo consignado? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                        <div id="check3" class="collapse" data-bs-parent=".faq-list">
+                                            <p>
+                                                O consignado é uma modalidade de crédito em que os pagamentos são descontados automaticamente do salário do servidor ou do benefício do INSS do tomador. Por conta dessa dinâmica, a taxa de inadimplência é baixa e o risco para os bancos muito pequeno, e é isso que faz com que o crédito consignado tenha uma das menores taxas do mercado.
+                                            </p>
+                                        </div>
+                                    </li>
+    
+                                    <li data-aos="fade-up" data-aos-delay="400">
+                                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#check4" class="collapsed" style="width: 100%;">Quem pode solicitar crédito consignado? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                        <div id="check4" class="collapse" data-bs-parent=".faq-list">
+                                            <p>
+                                                Aqui na CONFINTER, o crédito consignado está disponível para alguns públicos, entre eles: Beneficiário do INSS (BPC/LOAS), Servidores Públicos Municipais, Estaduais e Federais do SIAPE, Militares das Forças Armadas e Aposentados e Pensionistas do INSS.
+                                            </p>
+                                        </div>
+                                    </li>
+    
+                                    <li data-aos="fade-up" data-aos-delay="400">
+                                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#check5" class="collapsed" style="width: 100%;">Quais são as taxas de juros? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                        <div id="check5" class="collapse" data-bs-parent=".faq-list">
+                                            <p>
+                                                Oferecemos Empréstimo Consignado com taxas personalizadas que podem variar dependendo do tipo de convênio, operação, prazo, valor solicitado e perfil do cliente. As taxas de juros máximas são de 1.72% ao mês no empréstimo consignado para aposentado e/ou pensionista do INSS e Beneficiário do INSS (BPC/LOAS); e para Servidores Públicos à partir de 1.93% ao mês.
+                                            </p>
+                                        </div>
+                                    </li>
+    
+                                    <li data-aos="fade-up" data-aos-delay="400">
+                                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#check6" class="collapsed" style="width: 100%;">Como é feita a análise de crédito? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                        <div id="check6" class="collapse" data-bs-parent=".faq-list">
+                                            <p>
+                                                Prezando sempre pela saúde financeira, optamos pelas melhores estratégias de acordo com a gama de bancos parceiros e financeiras, buscando o melhor custo-benefício para nossos clientes.
+                                            </p>
+                                        </div>
+                                    </li>
+    
+                                    <li data-aos="fade-up" data-aos-delay="400">
+                                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#check7" class="collapsed" style="width: 100%;">Como a CONFINTER pode me ajudar hoje? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                        <div id="check7" class="collapse" data-bs-parent=".faq-list">
+                                            <p>
+                                                A CONFINTER atua também como Correspondente Digital autorizado pelo Banco Central e pode intermediar operações de crédito ajudando você, consumidor, a escolher as melhores opções de crédito disponíveis para seu perfil. Conosco, você não precisa sair de casa ou do trabalho perdendo tempo indo até o banco, enfrentando filas e burocracia! Nós fazemos todo o processo e acompanhamos o seu caso, digitalmente até a liberação do crédito em conta.
+                                            </p>
+                                        </div>
+                                    </li>
+    
+                                    <li data-aos="fade-up" data-aos-delay="400">
+                                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#check8" class="collapsed" style="width: 100%;">Como faço para assinar o meu contrato? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                        <div id="check8" class="collapse" data-bs-parent=".faq-list">
+                                            <p>
+                                                A assinatura é de forma digital, podendo ser enviado um link por WhatsApp ou SMS, enviado para o seu número de celular informado no formulário. A maioria dos bancos exigem: • o envio do documento de identidade; • o aceite (SIM) na CCB: essa etapa o cliente verifica se todas as condições contratadas e precisa dar o aceite para seguir para a assinatura; • tirar uma selfie (foto de si mesmo) que é a etapa de assinatura digital do cliente; Entretanto, essa modalidade pode variar de acordo com as exigências de cada Instituição Financeira.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>        
+
+        <!-- ======= Seção Enviar Depoimentos ======= -->
+        <section id="envdepoimentos" class="testimonials">
+        <div class="container-fluid container-center">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-8 col-xs-12 text-center">
+                    <div class="section-headline text-center">
+                        <h2 class="br">Enviar Depoimento</h2>
+                    </div>
+                    <!-- Adicionando um identificador único ao formulário -->
+                    <form id="form-depoimento" action="php/enviar_depoimento.php" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="nome" class="br form-control" id="nome" placeholder="Insira o nome, em branco enviará como Anônimo" data-rule="minlen:4" data-msg="" />
+                            <div class="br validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="br form-control" name="mensagem" rows="5" data-rule="required" data-msg="Por favor escreva algo para nós" placeholder="Mensagem"></textarea>
+                            <!-- Adicionando um identificador único ao elemento onde a mensagem de erro será exibida -->
+                            <div id="erro-mensagem" class="text-danger">
+                                <?php
+                                // Verificar se a variável de sessão erro_mensagem está definida
+                                if (isset($_SESSION['erro_mensagem'])) {
+                                    // Exibir a mensagem de erro
+                                    echo $_SESSION['erro_mensagem'];
+                                    // Remover a variável de sessão para que a mensagem não seja exibida novamente após atualizar a página
+                                    unset($_SESSION['erro_mensagem']);
+                                }
+                                ?>
+                            </div>
+                            <div class="br validation"></div>
+                            <div class="en validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Enviar Depoimento</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!-- Fim Item Depoimentos -->
+        <script>
     window.onload = function() {
         // Verificar se a URL contém o parâmetro de erro
         const urlParams = new URLSearchParams(window.location.search);
@@ -1090,153 +811,158 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
         }
     };
 </script>
-<div id="depoimentos" class="testimonials">
-<div class="container">
-        <div class="owl-carousel owl-theme">
-            <!-- Consultar os depoimentos aprovados no banco de dados -->
-            <?php
-            $sql = "SELECT nome, mensagem FROM depoimentos WHERE status_mod = 'aprovado'";
-            $result = mysqli_query($conexao, $sql);
 
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $nome = $row['nome'] ? $row['nome'] : "Anônimo";
-                    $mensagem = $row['mensagem'];
-                    ?>
-                    <!-- Cada depoimento deve estar dentro de um item do Owl Carousel -->
-                    <div class="item">
-                        <div class="testimonial-item">
-                            <img src="assets/img/depoimentos/1.png" class="testimonial-img" alt="Depoimento Imagem">
-                            <div class="testimonial-name"><?php echo $nome; ?></div>
-                            <div class="testimonial-message"><?php echo $mensagem; ?></div>
-                        </div>
-                    </div>
-                    <?php
+       <!-- ======= Seção Depoimentos ======= -->
+<section id="depoimentos" class="testimonials">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Depoimentos</h2>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+                <?php
+                $sql = "SELECT nome, mensagem FROM depoimentos WHERE status_mod = 'aprovado'";
+                $result = mysqli_query($conexao, $sql);
+
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $nome = $row['nome'] ? $row['nome'] : "Anônimo";
+                        $mensagem = $row['mensagem'];
+                ?>
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    <?php echo $mensagem; ?>
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <h3><?php echo $nome; ?></h3>
+                            </div>
+                        </div><!-- Fim Item Depoimentos -->
+                <?php
+                    }
+                } else {
+                    echo "<div class='swiper-slide'><div class='testimonial-item'><p>Nenhum depoimento aprovado disponível.</p></div></div>";
                 }
-            } else {
-                // Caso não haja depoimentos aprovados
-                echo "<p>Nenhum depoimento aprovado disponível.</p>";
-            }
-            ?>
-        </div>
-    </div>
-
-     <div class="footer-area">
-                <div class="container">
-                    <div class="row">
-                        <!-- Coluna da Informação da Empresa -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="footer-content">
-                                <div class="footer-head">
-                                    <div class="section-headline text-center">
-                                        <h2 class="br">A Empresa</h2>
-                                    </div>
-                                    <div class="footer-logo">
-                                        <img src="assets/img/logo01-black.png" alt="logo" width="125px">
-                                    </div>
-                                    <h4 class="br">CONFINTER Consultoria Financeira<br /><span class="number-sequence">CNPJ: 11.727.809.0001/36</span></h4>
-                                    <h5 class="br">Especialista em corretagem, consultoria, intermediação<br />e mediação de negócios financeiros.</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="chegar" class="chegar">
-                        <!-- Coluna de Como Chegar -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="footer-content">
-                                <div class="footer-head">
-                                    <div class="section-headline text-center">
-                                        <h2 class="br">Como Chegar</h2>
-                                    </div>
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.674620432733!2d-46.34657878502169!3d-23.529135784679013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce43de0d92a6f5%3A0x8f85eeb0c19e3c32!2sMarina%20La%20Regina!5e0!3m2!1sen!2sus!4v1648523258379!5m2!1sen!2sus&hl=pt-BR" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                ?>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
+
     </div>
-    </div>
- 
-    <footer>
-        <footer class="footer-area-bottom">
+</section><!-- Fim Seção Depoimentos -->
+
+        <!-- ======= Seção Contato ======= -->
+        <section id="chegar" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-headline text-center">
+                    <h2 class="br">Contato</h2>                  
+                </div>
+
+                <div>
+                    <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.674620432733!2d-46.34657878502169!3d-23.529135784679013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce43de0d92a6f5%3A0x8f85eeb0c19e3c32!2sMarina%20La%20Regina!5e0!3m2!1sen!2sus!4v1648523258379!5m2!1sen!2sus&hl=pt-BR" frameborder="0" allowfullscreen></iframe>                    
+                </div>
+
+                <div class="row mt-5">
+                    
+                        </div>
+
+                    </div>
+                   
+        </section><!-- Fim da Seção de Contato -->
+
+    </main><!-- Fim #main -->
+
+    <!-- ======= Inicio do Footer ======= -->
+    <footer id="footer">
+
+        <div class="footer-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="copyright text-center">
-                            <p class="br">&copy; Copyright 2024 CONFINTER. Todos Direitos Reservados.</p>
-                        </div>
-                        <div class="credits">
-                            <div class="br">Desenvolvido por <a href="https://github.com/finandolopes/DRP01-PJI110-SALA-007GRUPO-017/tree/main">DRP01-PJI110-SALA-007GRUPO-017</a> com <a href="https://bootstrapmade.com/">BootstrapMade</a></div>
-                        </div>
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+			    <img src="assets/img/logo01-black.png" alt="logo" width="125px">
+                       <h4 class="br">Consultoria Financeira<br /><spam class="number-sequence">CNPJ: 11.727.809.0001/36</spam></h4>
+                       <h5 class="br">Especialista em corretagem, consultoria, intermediação<br />e mediação de negócios financeiros.</h5>
+                        
                     </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Links Úteis</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#sobre">Sobre</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#valores">Nossos Valores</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#servicos">Serviços</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#requi">Requisições</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#faq">Dúvidas</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#depoimentos">Depoimentos</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#chegar">Como Chegar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4></h4>
+                        <ul>
+                            <li><i class="bx bx-phone-outgoing"></i> <a href="#">(11)94801-6298</a></li>
+                            <li><i class="bx bx-mail-send"></i> <a href="#">contato@confinter.com.br</a></li>                                                  
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Para Informações</h4>
+                        <p>Cadastre seu E-mail</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input class="btn-primary" type="submit" value="Inscreva-se">
+                        </form>
+                    </div>
+
                 </div>
             </div>
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                // Iniciar o carrossel de depoimentos aprovados
-                $('#carouselDepoimentos').carousel({
-                    interval: 5000 // Muda o depoimento a cada 5 segundos
-                });
-            });
-        </script>
-        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
         </div>
-        <script src="lib/jquery/jquery.min.js"></script>
-        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/venobox/venobox.min.js"></script>
-        <script src="lib/knob/jquery.knob.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/parallax/parallax.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/nivo-slider/js/jquery.nivo.slider.min.js" type="text/javascript"></script>
-        <script src="lib/appear/jquery.appear.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="js/main.min.js"></script>
-        <script src="js/contactform.min.js"></script>       
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-        <script src="js/script.js"></script>
-       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-    // Inicialize o carrossel do Owl Carousel
-    $(".owl-carousel").owlCarousel({
-        loop: true,
-        margin: 30,
-        autoplay: true,
-        autoplayTimeout: 5000, // 5000ms = 5s
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-                nav: true
-            },
-            600: {
-                items: 2,
-                nav: false
-            },
-            1000: {
-                items: 3,
-                nav: true,
-                loop: false
-            }
-        }
-    });
+
+        <div class="container d-md-flex py-4">
+
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>Confinter 2024</span></strong>. Todos Direitos Reservados.
+                </div>
+                <div class="credits">
+                    Desenvolvido por <a href="https://github.com/finandolopes/DRP01-PJI110-SALA-007GRUPO-017/tree/main">DRP01-PJI110-SALA-007GRUPO-017</a> com <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                </div>
+            </div>            
+        </div>
+    </footer><!-- Fim Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/venobox/venobox.min.js"></script>
+    <!-- <script src="lib/parallax/parallax.min.js"></script>-->
+    <script src="lib/nivo-slider/js/jquery.nivo.slider.min.js" type="text/javascript"></script>
+    <!--<script src="lib/isotope/isotope.pkgd.min.js"></script> -->
+
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+<!-- Initialize Nivo Slider -->
+<script>
+$(window).on('load', function() {
+    $('#ensign-nivoslider').nivoSlider();
+});
 </script>
 </body>
-</html>
 
-<?php
-// Fechar a conexão com o banco de dados após o uso
-mysqli_close($conexao);
-?>
+</html>
