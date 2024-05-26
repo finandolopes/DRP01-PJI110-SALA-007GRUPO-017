@@ -398,8 +398,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                     <div class="slider-content">
                                         <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
                                             <div class="container">
-                                                <p class="animate__animated animate__fadeInUp">Alcançar Objetivos</p>
-                                                <p class="animate__animated animate__fadeInUp">Alcançar Objetivos</p>
+                                                <p class="animate__animated animate__fadeInUp">Alcançar Objetivos</p>                                                
                                             </div>
                                         </div>
                                     </div>
@@ -508,84 +507,76 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                 font-size: 2em; /* Ajuste este valor para o tamanho desejado */
             }
         </style>
-        <div id="serviços" class="services-area area-padding">
-            <!-- ======= Serviços ======= -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="section-headline text-center">
-                            <h2 class="br">Nossos Serviços</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-3 col-sm-3 col-xs-12">
-                        <!-- Inicio Serviços -->
-                        <div class="about-move">
-                            <div class="services-details">
-                                <div class="single-services">
-                                    <a class="services-icon" href="#">
-                                        <i class="bi bi-briefcase"></i>
-                                    </a>
-                                    <h4>Consultoria</h4>
-                                    <p>
-                                        Nossos especialistas ajudarão desde a abertura de contas até delinear a melhor estratégia para os diferentes mercados financeiros.
-                                    </p>
-                                </div>
-                            </div><!-- Fim Detalhes Sobre -->
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-12">
-                        <div class="about-move">
-                            <div class="services-details">
-                                <div class="single-services">
-                                    <a class="services-icon" href="#">
-                                        <i class="bi bi-person-vcard-fill"></i>
-                                    </a>
-                                    <h4>Intermediação de Negócios</h4>
-                                    <p>
-                                        Atuando como correspondentes bancários com mais de 15 anos de experiência. Parceria com os principais bancos e financeiras de crédito consignado no país.
-                                    </p>
-                                </div>
-                            </div><!-- Fim Detalhes Sobre -->
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-12">
-                        <div class=" about-move">
-                            <!-- fim col-md-3 -->
-                            <div class="services-details">
-                                <div class="single-services">
-                                    <a class="services-icon" href="#">
-                                        <i class="bi bi-credit-card"></i>
-                                    </a>
-                                    <h4>Cartões de Crédito Consignado</h4>
-                                    <p>
-                                        Conveniado com os principais bancos, ao todo são mais de 250 convênios ativos em Governos, Prefeituras e para aposentados e pensionistas do INSS.
-                                    </p>
-                                </div>
-                            </div><!-- fim dos detalhes do sobre -->
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-12">
-                        <!-- fim col-md-3 -->
-                        <div class=" about-move">
-                            <div class="services-details">
-                                <div class="single-services">
-                                    <a class="services-icon" href="#">
-                                        <i class="bi bi-cash-coin"></i>
-                                    </a>
-                                    <h4>Saque Aniversário FGTS</h4>
-                                    <p>
-                                        No saque-aniversário você pode sacar o valor que possui em FGTS com taxas a partir de 1.29% a.m..
-                                    </p>
-                                </div>
-                            </div><!-- fim dos detalhes do sobre -->
-                        </div>
+
+
+       <div id="serviços" class="services-area area-padding">
+        <!-- ======= Serviços ======= -->
+        <div class="container faq">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="section-title text-center">
+                        <h2>Nossos Serviços</h2>
                     </div>
                 </div>
             </div>
-        </div><!-- fim da Seção de serviços -->
-        <div id="requi" class="requisicoes section-bg"></div>
+            <div class="row text-center">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="about-move">
+                        <div class="services-details faq-list">
+                            <div class="single-services">
+                                <div class="service-box">
+                                    <i class="bi bi-briefcase icon-help" style="font-size: 60px;"></i>
+                                    <h4><a href="#">Consultoria</a></h4>
+                                    <p>Nossos especialistas ajudarão desde a abertura de contas até delinear a melhor estratégia para os diferentes mercados financeiros.</p>
+                                </div>
+                            </div>
+                        </div><!-- Fim Detalhes Sobre -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="about-move">
+                        <div class="services-details faq-list">
+                            <div class="single-services">
+                                <div class="service-box">
+                                    <i class="bi bi-person-vcard-fill icon-help" style="font-size: 60px;"></i>
+                                    <h4><a href="#">Intermediação de Negócios</a></h4>
+                                    <p>Atuando como correspondentes bancários com mais de 15 anos de experiência. Parceria com os principais bancos e financeiras de crédito consignado no país.</p>
+                                </div>
+                            </div>
+                        </div><!-- Fim Detalhes Sobre -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="about-move">
+                        <div class="services-details faq-list">
+                            <div class="single-services">
+                                <div class="service-box">
+                                    <i class="bi bi-credit-card icon-help" style="font-size: 60px;"></i>
+                                    <h4><a href="#">Cartões de Crédito Consignado</a></h4>
+                                    <p>Conveniado com os principais bancos, ao todo são mais de 250 convênios ativos em Governos, Prefeituras e para aposentados e pensionistas do INSS.</p>
+                                </div>
+                            </div>
+                        </div><!-- Fim Detalhes Sobre -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="about-move">
+                        <div class="services-details faq-list">
+                            <div class="single-services">
+                                <div class="service-box">
+                                    <i class="bi bi-cash-coin icon-help" style="font-size: 60px;"></i>
+                                    <h4><a href="#">Saque Aniversário FGTS</a></h4>
+                                    <p>No saque-aniversário você pode sacar o valor que possui em FGTS com taxas a partir de 1.29% a.m..</p>
+                                </div>
+                            </div>
+                        </div><!-- Fim Detalhes Sobre -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- fim da Seção de serviços -->
+    
+
 
         <div id="requi" class="requisicoes section-bg"></div>
 
@@ -597,10 +588,9 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                         <div class="container">
                             <div class="row align-items-stretch">
                                 <!-- Conteúdo da Requisição de Análise de Crédito -->
-                                <div class="section-headline text-center">
-                                    <h2 class="br">Requisição de Análise de Crédito</h2>
-                                    <p></p>
-                                </div>
+                                <div class="section-title">
+            <h2>Requisição de Análise de Crédito</h2>
+        </div>
                                 <div class="formulario-modal" id="requisicaoForm">
                                     <form action="php/process.php" method="POST" id="form-requisicao">
                                         <div class="form-group">
@@ -608,16 +598,16 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-4">
-                                                <label for="data_nascimento">Data Nascimento:</label>
-                                                <input type="date" class="br form-control" id="data_nascimento" placeholder="Data de Nascimento:" name="data_nascimento" required>
+                                                <label for="data_nascimento">Data Nasc.:</label>
+                                                <input type="date" class="br form-control" id="data_nascimento" placeholder="" name="data_nascimento" required>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="telefone">Telefone:</label>
-                                                <input type="tel" class="br form-control" id="telefone" name="telefone" placeholder="Telefone" required maxlength="15">
+                                                <input type="tel" class="br form-control" id="telefone" name="telefone" placeholder="" required maxlength="15">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="email">E-mail:</label>
-                                                <input type="email" class="br form-control" id="email" name="email" placeholder="Digite seu E-mail" required>
+                                                <input type="email" class="br form-control" id="email" name="email" placeholder="" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -635,21 +625,29 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                         <div class="form-group">
                                             <label>Categoria:</label><br>
                                             <div class="form-row">
-                                                <div class="form-check col-md-3">
-                                                    <input class="form-check-input" type="checkbox" id="aposentado" name="categoria[]" value="Aposentado">
-                                                    <label class="form-check-label" for="aposentado">Aposentado</label>
+                                                <div class="col-md-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="aposentado" name="categoria[]" value="Aposentado">
+                                                        <label class="form-check-label" for="aposentado" style="font-size: 11px;">Aposentado</label>
+                                                    </div>
                                                 </div>
-                                                <div class="form-check col-md-3">
-                                                    <input class="form-check-input" type="checkbox" id="pensionista" name="categoria[]" value="Pensionista">
-                                                    <label class="form-check-label" for="pensionista">Pensionista</label>
+                                                <div class="col-md-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="pensionista" name="categoria[]" value="Pensionista">
+                                                        <label class="form-check-label" for="pensionista" style="font-size: 11px;">Pensionista</label>
+                                                    </div>
                                                 </div>
-                                                <div class="form-check col-md-3">
-                                                    <input class="form-check-input" type="checkbox" id="servidor_publico" name="categoria[]" value="Servidor Público">
-                                                    <label class="form-check-label" for="servidor_publico">Servidor Público</label>
+                                                <div class="col-md-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="servidor_publico" name="categoria[]" value="Servidor Público">
+                                                        <label class="form-check-label" for="servidor_publico" style="font-size: 11px;">Servidor Público</label>
+                                                    </div>
                                                 </div>
-                                                <div class="form-check col-md-3">
-                                                    <input class="form-check-input" type="checkbox" id="outros_check" name="categoria[]" value="Outros">
-                                                    <label class="form-check-label" for="outros_check">Outros</label>
+                                                <div class="col-md-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="outros_check" name="categoria[]" value="Outros">
+                                                        <label class="form-check-label" for="outros_check" style="font-size: 11px;">Outros</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -670,14 +668,14 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                         </div>
                     </section>
                 </div>
-    
+
                 <!-- Coluna 2: Dúvidas Frequentes -->
                 <div class="col-md-7">
-                    <section id="faq" class="faq section-bg">
+                    <section id="duvidas" class="faq section-bg">
                         <div class="container" data-aos="fade-up">
-                            <div class="section-headline text-center">
-                                <h2 class="br">Dúvidas Frequentes</h2>
-                            </div>
+                            <div class="section-title">
+            <h2>Dúvidas Frequentes</h2>
+        </div>
                             <div class="faq-list" style="font-size: 14px; height: 100%;">
                                 <ul>
                                     <!-- Perguntas frequentes -->
@@ -689,7 +687,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                             </p>
                                         </div>
                                     </li>
-    
+
                                     <li data-aos="fade-up" data-aos-delay="100">
                                         <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#check2" class="collapsed" style="width: 100%;">Porquê escolher a CONFINTER? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                                         <div id="check2" class="collapse" data-bs-parent=".faq-list">
@@ -698,7 +696,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                             </p>
                                         </div>
                                     </li>
-    
+
                                     <li data-aos="fade-up" data-aos-delay="300">
                                         <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#check3" class="collapsed" style="width: 100%;">O que é empréstimo consignado? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                                         <div id="check3" class="collapse" data-bs-parent=".faq-list">
@@ -707,7 +705,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                             </p>
                                         </div>
                                     </li>
-    
+
                                     <li data-aos="fade-up" data-aos-delay="400">
                                         <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#check4" class="collapsed" style="width: 100%;">Quem pode solicitar crédito consignado? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                                         <div id="check4" class="collapse" data-bs-parent=".faq-list">
@@ -716,7 +714,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                             </p>
                                         </div>
                                     </li>
-    
+
                                     <li data-aos="fade-up" data-aos-delay="400">
                                         <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#check5" class="collapsed" style="width: 100%;">Quais são as taxas de juros? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                                         <div id="check5" class="collapse" data-bs-parent=".faq-list">
@@ -725,7 +723,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                             </p>
                                         </div>
                                     </li>
-    
+
                                     <li data-aos="fade-up" data-aos-delay="400">
                                         <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#check6" class="collapsed" style="width: 100%;">Como é feita a análise de crédito? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                                         <div id="check6" class="collapse" data-bs-parent=".faq-list">
@@ -734,7 +732,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                             </p>
                                         </div>
                                     </li>
-    
+
                                     <li data-aos="fade-up" data-aos-delay="400">
                                         <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#check7" class="collapsed" style="width: 100%;">Como a CONFINTER pode me ajudar hoje? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                                         <div id="check7" class="collapse" data-bs-parent=".faq-list">
@@ -743,7 +741,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                                             </p>
                                         </div>
                                     </li>
-    
+
                                     <li data-aos="fade-up" data-aos-delay="400">
                                         <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#check8" class="collapsed" style="width: 100%;">Como faço para assinar o meu contrato? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                                         <div id="check8" class="collapse" data-bs-parent=".faq-list">
@@ -758,7 +756,7 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
                     </section>
                 </div>
             </div>
-        </div>        
+        </div>
 
         <!-- ======= Seção Enviar Depoimentos ======= -->
         <section id="envdepoimentos" class="testimonials">
@@ -854,113 +852,109 @@ if (isset($_SESSION['sucesso_depoimento']) && $_SESSION['sucesso_depoimento']) {
     </div>
 </section><!-- Fim Seção Depoimentos -->
 
-        <!-- ======= Seção Contato ======= -->
-        <section id="chegar" class="contact">
-            <div class="container" data-aos="fade-up">
+       <!-- ======= Seção Contato ======= -->
+       <section id="chegar" class="contact">
+        <div class="container" data-aos="fade-up">
 
-                <div class="section-headline text-center">
-                    <h2 class="br">Contato</h2>                  
-                </div>
+            <div class="section-headline text-center">
+                <h2 class="br">Contato</h2>                  
+            </div>
 
-                <div>
-                    <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.674620432733!2d-46.34657878502169!3d-23.529135784679013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce43de0d92a6f5%3A0x8f85eeb0c19e3c32!2sMarina%20La%20Regina!5e0!3m2!1sen!2sus!4v1648523258379!5m2!1sen!2sus&hl=pt-BR" frameborder="0" allowfullscreen></iframe>                    
-                </div>
+            <div>
+                <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.674620432733!2d-46.34657878502169!3d-23.529135784679013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce43de0d92a6f5%3A0x8f85eeb0c19e3c32!2sMarina%20La%20Regina!5e0!3m2!1sen!2sus!4v1648523258379!5m2!1sen!2sus&hl=pt-BR" frameborder="0" allowfullscreen></iframe>                    
+            </div>
 
-                <div class="row mt-5">
-                    
-                        </div>
-
-                    </div>
-                   
-        </section><!-- Fim da Seção de Contato -->
-
-    </main><!-- Fim #main -->
-
-    <!-- ======= Inicio do Footer ======= -->
-    <footer id="footer">
-
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-3 col-md-6 footer-contact">
-			    <img src="assets/img/logo01-black.png" alt="logo" width="125px">
-                       <h4 class="br">Consultoria Financeira<br /><spam class="number-sequence">CNPJ: 11.727.809.0001/36</spam></h4>
-                       <h5 class="br">Especialista em corretagem, consultoria, intermediação<br />e mediação de negócios financeiros.</h5>
-                        
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Links Úteis</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#sobre">Sobre</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#valores">Nossos Valores</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#servicos">Serviços</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#requi">Requisições</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#faq">Dúvidas</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#depoimentos">Depoimentos</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#chegar">Como Chegar</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4></h4>
-                        <ul>
-                            <li><i class="bx bx-phone-outgoing"></i> <a href="#">(11)94801-6298</a></li>
-                            <li><i class="bx bx-mail-send"></i> <a href="#">contato@confinter.com.br</a></li>                                                  
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
-                        <h4>Para Informações</h4>
-                        <p>Cadastre seu E-mail</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input class="btn-primary" type="submit" value="Inscreva-se">
-                        </form>
+            <div class="row mt-5">
+                
                     </div>
 
                 </div>
+               
+    </section><!-- Fim da Seção de Contato -->
+
+</main><!-- Fim #main -->
+<!-- ======= Inicio do Footer ======= -->
+<footer id="footer">
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 footer-contact">
+            <img src="assets/img/logo01-black.png" alt="logo" width="125px">    
+                </div>
+
+                <div class="col-lg-2 col-md-6 footer-links">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#sobre">Sobre</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#valores">Nossos Valores</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#servicos">Serviços</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#requi">Requisições</a></li>
+                        <li><i class="bx bx-question-mark"></i> <a href="#faq">Dúvidas</a></li>
+                        <li><i class="bx bx-highlight"></i> <a href="#depoimentos">Depoimentos</a></li>
+                        <li><i class="bx bx-map"></i> <a href="#chegar">Como Chegar</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4></h4>
+                    <ul>
+                        <li><i class="bx bx-phone-outgoing"></i> <a href="#">(11)94801-6298</a></li>
+                        <li><i class="bx bx-mail-send"></i> <a href="#">contato@confinter.com.br</a></li>                                                  
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 footer-newsletter">
+                    <h4>Para Informações</h4>
+                    <p>Cadastre seu E-mail</p>
+                    <form action="" method="post">
+                        <input type="email" name="email"><input class="btn-primary" type="submit" value="Inscreva-se">
+                    </form>
+                </div>
+
             </div>
         </div>
+    </div>
 
-        <div class="container d-md-flex py-4">
+    <div class="container d-md-flex py-4">
 
-            <div class="me-md-auto text-center text-md-start">
-                <div class="copyright">
-                    &copy; Copyright <strong><span>Confinter 2024</span></strong>. Todos Direitos Reservados.
-                </div>
-                <div class="credits">
-                    Desenvolvido por <a href="https://github.com/finandolopes/DRP01-PJI110-SALA-007GRUPO-017/tree/main">DRP01-PJI110-SALA-007GRUPO-017</a> com <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                </div>
-            </div>            
-        </div>
-    </footer><!-- Fim Footer -->
+        <div class="me-md-auto text-center text-md-start">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Confinter 2024</span></strong>. Todos Direitos Reservados.
+            </div>
+            <div class="credits">
+                Desenvolvido por <a href="https://github.com/finandolopes/DRP01-PJI110-SALA-007GRUPO-017/tree/main">DRP01-PJI110-SALA-007GRUPO-017</a> com <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>            
+    </div>
+</footer><!-- Fim Footer -->
 
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/venobox/venobox.min.js"></script>
-    <!-- <script src="lib/parallax/parallax.min.js"></script>-->
-    <script src="lib/nivo-slider/js/jquery.nivo.slider.min.js" type="text/javascript"></script>
-    <!--<script src="lib/isotope/isotope.pkgd.min.js"></script> -->
+<!-- Vendor JS Files -->
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/venobox/venobox.min.js"></script>
+<!-- <script src="lib/parallax/parallax.min.js"></script>-->
+<script src="lib/nivo-slider/js/jquery.nivo.slider.min.js" type="text/javascript"></script>
+<!--<script src="lib/isotope/isotope.pkgd.min.js"></script> -->
 
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
 
 <!-- Initialize Nivo Slider -->
 <script>
 $(window).on('load', function() {
-    $('#ensign-nivoslider').nivoSlider();
+$('#ensign-nivoslider').nivoSlider();
 });
 </script>
 </body>
