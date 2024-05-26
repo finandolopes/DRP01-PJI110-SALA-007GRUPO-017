@@ -2646,3 +2646,471 @@ span.email-notes {
   line-height: 40px; /* Alinhamento vertical dos ícones */
 }
 
+/* Estilo para a seção de perguntas frequentes */
+.faq {
+  padding: 30px 0; /* Reduza o padding para economizar espaço */
+}
+
+/* Estilo para o título da seção */
+.faq .section-title h2 {
+  font-size: 28px; /* Reduza o tamanho do título conforme necessário */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px; /* Reduza a margem inferior conforme necessário */
+}
+
+/* Estilo para cada pergunta */
+.faq-list li {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px; /* Reduza o preenchimento das perguntas */
+  margin-bottom: 15px; /* Reduza a margem inferior das perguntas */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex; /* Use flexbox para alinhar o ícone e o texto na mesma linha */
+  align-items: center; /* Alinhe os itens verticalmente */
+}
+
+/* Estilo para o ícone de interrogação */
+.faq-list li .icon-help {
+  font-size: 20px; /* Reduza o tamanho do ícone conforme necessário */
+  margin-right: 10px;
+  color: #007bff; /* Cor do ícone */
+}
+
+/* Estilo para o texto das perguntas */
+.faq-list li a {
+  color: #333; /* Cor do texto da pergunta */
+  font-size: 16px; /* Reduza o tamanho do texto das perguntas */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Estilo para o texto das respostas */
+.faq-list li p {
+  font-size: 14px; /* Reduza o tamanho do texto das respostas */
+  line-height: 1.6;
+}
+
+/* Animação para mostrar/ocultar a resposta */
+.faq-list li a.collapsed .icon-show {
+  display: none;
+}
+
+.faq-list li a.collapsed .icon-close {
+  display: inline-block;
+}
+
+/* Estilo para os ícones de mostrar/ocultar */
+.faq-list li .icon-show,
+.faq-list li .icon-close {
+  font-size: 20px; /* Reduza o tamanho dos ícones */
+  margin-left: auto;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+/* Estilo para o link colapsado */
+.faq-list li a.collapsed {
+  color: #007bff; /* Cor do texto da pergunta quando colapsado */
+}
+
+/* Estilo para o link expandido */
+.faq-list li a {
+  color: #333; /* Cor do texto da pergunta quando expandido */
+}
+
+/* Estilo para o link expandido com o cursor */
+.faq-list li a:hover {
+  text-decoration: none;
+  color: #555; /* Cor do texto da pergunta quando hover */
+}
+
+/* Estilo para a seção de Requisição de Análise de Crédito */
+.requisicoes {
+  padding: 30px 0; /* Reduza o padding para economizar espaço */
+}
+
+/* Estilo para o título da seção */
+.requisicoes .section-title h2 {
+  font-size: 28px; /* Reduza o tamanho do título conforme necessário */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px; /* Reduza a margem inferior conforme necessário */
+}
+
+/* Estilo para o formulário de Requisição de Análise de Crédito */
+.formulario-modal {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para os campos do formulário */
+.formulario-modal input[type="text"],
+.formulario-modal input[type="date"],
+.formulario-modal input[type="tel"],
+.formulario-modal input[type="email"],
+.formulario-modal textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Estilo para os botões do formulário */
+.formulario-modal button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Estilo para o checkbox do formulário */
+.formulario-modal input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Estilo para o label do checkbox do formulário */
+.formulario-modal .form-check-label {
+  font-size: 14px;
+}
+/* Estilo para a seção de Enviar Depoimentos */
+.testimonials {
+  padding: 60px 0; /* Ajuste o padding conforme necessário */
+}
+
+/* Estilo para o título da seção */
+.testimonials .section-headline h2 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para o formulário de Envio de Depoimentos */
+#form-depoimento {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para os campos do formulário */
+#form-depoimento input[type="text"],
+#form-depoimento textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Estilo para os botões do formulário */
+#form-depoimento button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Estilo para a mensagem de erro */
+#erro-mensagem {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Estilo para a mensagem de sucesso */
+#sucesso-mensagem {
+  margin-top: 10px;
+  font-size: 14px;
+  color: green;
+}
+/* Estilo para a seção de Depoimentos */
+.testimonials {
+  padding: 60px 0; /* Ajuste o padding conforme necessário */
+}
+
+/* Estilo para o título da seção */
+.testimonials .section-title h2 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para o contêiner do slide de depoimentos */
+.testimonials .testimonials-slider {
+  margin-top: 30px; /* Adicione margem superior para separar do título */
+}
+
+/* Estilo para os slides de depoimentos */
+.testimonials .swiper-slide {
+  text-align: center;
+}
+
+/* Estilo para o texto do depoimento */
+.testimonials .testimonial-item p {
+  font-size: 16px; /* Ajuste o tamanho do texto do depoimento conforme necessário */
+  line-height: 1.6;
+  margin-bottom: 20px; /* Adicione margem inferior para separar o texto do nome */
+}
+
+/* Estilo para o nome do autor do depoimento */
+.testimonials .testimonial-item h3 {
+  font-size: 18px; /* Ajuste o tamanho do nome conforme necessário */
+  font-weight: bold;
+}
+
+/* Estilo para a seção de serviços */
+.services-area {
+  padding: 30px 0; /* Reduza o padding para economizar espaço */
+}
+
+/* Estilo para o título da seção */
+.services-area .section-title h2 {
+  font-size: 28px; /* Reduza o tamanho do título conforme necessário */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px; /* Reduza a margem inferior conforme necessário */
+}
+
+/* Estilo para cada serviço */
+.services-area .single-services {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px; /* Reduza o preenchimento do serviço */
+  margin-bottom: 15px; /* Reduza a margem inferior dos serviços */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  height: 400px; /* Defina a altura padrão para todos os serviços */
+  display: flex; /* Use flexbox para alinhar o conteúdo verticalmente */
+  flex-direction: column; /* Alinhe o conteúdo na direção da coluna */
+  justify-content: space-between; /* Distribua o espaço uniformemente entre os elementos */
+}
+
+/* Estilo para o ícone do serviço */
+.services-area .single-services .icon-help {
+  font-size: 60px; /* Ajuste o tamanho do ícone conforme necessário */
+  margin-bottom: 10px; /* Adicione margem inferior para separar o ícone do texto */
+  color: #007bff; /* Cor do ícone */
+  text-align: center;
+  transition: color 0.3s ease; /* Adiciona transição de cor */
+}
+
+/* Efeito de cor ao passar o cursor sobre o ícone */
+.services-area .single-services .icon-help:hover {
+  color: #50ff93; /* Cor do ícone ao passar o cursor */
+}
+
+/* Estilo para o título do serviço */
+.services-area .single-services h4 {
+  font-size: 20px; /* Ajuste o tamanho do título conforme necessário */
+  font-weight: bold;
+  margin-bottom: 10px; /* Adicione margem inferior para separar o título do texto */
+  text-align: center;
+  transition: color 0.3s ease; /* Adiciona transição de cor */
+}
+
+/* Efeito de cor ao passar o cursor sobre o título */
+.services-area .single-services h4:hover {
+  color: #ff7f50; /* Cor do título ao passar o cursor */
+}
+
+/* Estilo para o texto do serviço */
+.services-area .single-services p {
+  font-size: 16px; /* Ajuste o tamanho do texto conforme necessário */
+  line-height: 1.6;
+  text-align: justify;
+}
+/* Estilo para a seção Missão, Visão e Valores */
+#valores.services {
+  padding: 30px 0;
+}
+
+/* Estilo para o título da seção */
+#valores.services .section-headline h2 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para cada caixa de ícone */
+#valores.services .icon-box {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estilo para o ícone */
+#valores.services .icon-box .icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Estilo para o título */
+#valores.services .icon-box h4 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Estilo para o texto */
+#valores.services .icon-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Efeito de hover */
+#valores.services .icon-box:hover {
+  background-color: #e9e9e9;
+}
+/* Estilo para a seção Sobre Nós */
+#sobre.about {
+  padding: 60px 0;
+}
+
+/* Estilo para o título da seção */
+#sobre.about .section-headline h2 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para o conteúdo sobre nós */
+#sobre.about .about-content {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+/* Estilo para o título menor sobre nós */
+#sobre.about .minor-title-about {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Estilo para o modal de login */
+.modal-login .modal-content {
+  border-radius: 10px;
+}
+
+/* Estilo para o cabeçalho do modal */
+.modal-login .modal-header {
+  background-color: #007bff;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Estilo para o título do modal */
+.modal-login .modal-title {
+  font-weight: bold;
+}
+
+/* Estilo para o corpo do modal */
+.modal-login .modal-body {
+  padding: 20px;
+}
+
+/* Estilo para o formulário dentro do modal */
+.modal-login form {
+  margin-bottom: 0;
+}
+
+/* Estilo para os campos do formulário */
+.modal-login .form-group {
+  margin-bottom: 20px;
+}
+
+/* Estilo para as labels dos campos */
+.modal-login label {
+  font-weight: bold;
+}
+
+/* Estilo para o botão de fechar o modal */
+.modal-login .close {
+  color: #fff;
+  opacity: 1;
+}
+
+/* Estilo para a imagem dentro do modal */
+.modal-login img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilo para o botão de entrar */
+.modal-login .btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+/* Estilo para o botão de entrar ao passar o mouse */
+.modal-login .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para a seção de newsletter no rodapé */
+.footer-newsletter h4 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-newsletter p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-newsletter form {
+  margin-top: 15px;
+}
+
+.footer-newsletter input[type="email"] {
+  width: calc(100% - 130px); /* Ajuste conforme necessário */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  font-size: 16px;
+}
+
+.footer-newsletter input[type="submit"] {
+  width: 130px; /* Ajuste conforme necessário */
+  padding: 10px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.footer-newsletter input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
