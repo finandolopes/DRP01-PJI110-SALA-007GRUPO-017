@@ -1,12 +1,11 @@
 <?php
-// Incluir o arquivo de conexão e as funções de manipulação de clientes
 include_once('conexao.php');
 
 // Preparar a declaração SQL para inserir os dados na tabela clientes
 $sqlClientes = "INSERT INTO clientes (nome, data_nascimento, email, telefone) VALUES (?, ?, ?, ?)";
 
 // Preparar e executar a declaração para inserir os dados na tabela clientes
-if ($stmtClientes = $conn->prepare($sqlClientes)) {
+if ($stmtClientes = $conexao->prepare($sqlClientes)) {
     $stmtClientes->bind_param("ssss", $nome, $data_nascimento, $email, $telefone);
 
     // Atribuir os valores recebidos do formulário às variáveis para a tabela clientes
@@ -22,25 +21,22 @@ if ($stmtClientes = $conn->prepare($sqlClientes)) {
         exit(); // Sai do script se houver erro
     }
 
-    // Obtém o ID do cliente inserido
-    $id_cliente = $stmtClientes->insert_id;
-
     // Fechar a declaração para inserir os dados na tabela clientes
     $stmtClientes->close();
 } else {
-    echo "Erro na preparação da declaração para inserir os dados na tabela clientes: " . $conn->error;
+    echo "Erro na preparação da declaração para inserir os dados na tabela clientes: " . $conexao->error;
     exit(); // Sai do script se houver erro
 }
 
-// Preparar a declaração SQL para inserir os dados na tabela requisicoes
-$sqlRequisicoes = "INSERT INTO requisicoes (id_cliente, horario_contato, tipo, categoria, outros_info, data_requisicao) VALUES (?, ?, ?, ?, ?, NOW())";
+// Definir a consulta SQL para inserir os dados na tabela requisicoes
+$sqlRequisicoes = "INSERT INTO requisicoes (id_cliente, horario_contato, tipo, categoria, outros_info) VALUES (?, ?, ?, ?, ?)";
 
 // Preparar e executar a declaração para inserir os dados na tabela requisicoes
-if ($stmtRequisicoes = $conn->prepare($sqlRequisicoes)) {
-   $stmtRequisicoes->bind_param("issss", $id_cliente, $horario_contato, $tipo, $categoria, $outros_info);
-
+if ($stmtRequisicoes = $conexao->prepare($sqlRequisicoes)) {
+    $stmtRequisicoes->bind_param("issss", $id_cliente, $horario_contato, $tipo, $categoria, $outros_info);
 
     // Atribuir os valores recebidos do formulário às variáveis para a tabela requisicoes
+    $id_cliente = $conexao->insert_id; // Obtém o ID do cliente inserido anteriormente
     $horario_contato = $_POST['horario_contato'];
     $tipo = $_POST['tipo'];
 
@@ -67,60 +63,24 @@ if ($stmtRequisicoes = $conn->prepare($sqlRequisicoes)) {
     // Fechar a declaração para inserir os dados na tabela requisicoes
     $stmtRequisicoes->close();
 } else {
-    echo "Erro na preparação da declaração para inserir os dados na tabela requisicoes: " . $conn->error;
+    echo "Erro na preparação da declaração para inserir os dados na tabela requisicoes: " . $conexao->error;
     exit(); // Sai do script se houver erro
 }
-// Importe a biblioteca PHPMailer
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
-// Adicione os arquivos da biblioteca PHPMailer
-require 'php/PHPMailer/src/Exception.php';
-require 'php/PHPMailer/src/PHPMailer.php';
-require 'php/PHPMailer/src/SMTP.php';
+// Enviar email
+$to = "contato@confinter.com.br";
+$subject = "Nova Requisição de Análise de Crédito";
+$message = "Uma nova requisição de análise de crédito foi enviada.\n\nNome: $nome\nEmail: $email\nTelefone: $telefone\nHorário para Contato: $horario_contato\nTipo: $tipo\nCategoria: $categoria\nOutras informações: $outros_info";
+$headers = "From: contato@confinter.com.br"; // Substitua pelo seu email
 
-
-// Configuração do servidor SMTP
-$mail = new PHPMailer();
-$mail->isSMTP();
-$mail->Host = 'smtp.example.com';
-$mail->SMTPAuth = true;
-$mail->Username = 'contato@confinter.com.br';
-$mail->Password = 'sua_senha';
-$mail->Port = 587; // Porta SMTP
-$mail->SMTPSecure = 'tls'; // ou 'ssl' se necessário
-
-// Configurações do e-mail
-$mail->setFrom('contato@confinter.com.br', 'CONFINTER');
-$mail->addAddress($_POST['email']); // Endereço de e-mail do destinatário
-$mail->Subject = 'Cópia do Formulário de Requisição';
-$mail->isHTML(true); // Habilita o formato HTML para o corpo do e-mail
-
-// Corpo do e-mail
-$mailBody = "
-    <h1>Cópia do Formulário de Requisição</h1>
-    <p><strong>Nome:</strong> {$_POST['nome']}</p>
-    <p><strong>Data de Nascimento:</strong> {$_POST['data_nascimento']}</p>
-    <p><strong>Telefone:</strong> {$_POST['telefone']}</p>
-    <p><strong>E-mail:</strong> {$_POST['email']}</p>
-    <p><strong>Horário para Contato:</strong> {$_POST['horario_contato']}</p>
-    <p><strong>Tipo:</strong> {$_POST['tipo']}</p>
-    <p><strong>Categoria:</strong> {$_POST['categoria']}</p>
-    <p><strong>Outras Informações:</strong> {$_POST['outros_info']}</p>
-";
-
-$mail->Body = $mailBody;
-
-// Envia o e-mail
-if(!$mail->send()) {
-    echo 'Erro ao enviar e-mail: ' . $mail->ErrorInfo;
+if (mail($to, $subject, $message, $headers)) {
+    echo "E-mail enviado com sucesso.";
 } else {
-    echo 'E-mail enviado com sucesso!';
+    echo "Falha no envio do e-mail.";
 }
 
-
 // Fechar a conexão
-$conn->close();
+$conexao->close();
 
 // Redirecionar de volta ao index.php
 echo "<script>alert('Requisição enviada com sucesso!'); window.location.href = '../index.php';</script>";
