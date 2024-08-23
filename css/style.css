@@ -2410,6 +2410,131 @@ ul li:hover a span{
   padding-left: 30%;
   display: block;
 }
+/* Estilo padrão (desktop) */
+
+body {
+  font-size: 16px;
+}
+
+/* Dispositivos com largura até 768px (tablets) */
+@media (max-width: 768px) {
+  body {
+      font-size: 14px;
+  }
+
+  .container {
+      padding: 10px;
+  }
+
+  #header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+}
+
+/* Dispositivos com largura até 576px (celulares) */
+@media (max-width: 576px) {
+  body {
+      font-size: 12px;
+  }
+
+  .container {
+      padding: 5px;
+  }
+
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  #hero .carousel-inner {
+      height: auto;
+  }
+}
+/* Esconder imagens grandes em telas pequenas */
+@media (max-width: 576px) {
+  .carousel-item {
+      background-size: cover;
+      background-position: center;
+  }
+
+  #hero .carousel-item {
+      height: 300px;
+  }
+}
+/* Menu de navegação responsivo */
+@media (max-width: 576px) {
+  .navbar {
+      display: block;
+  }
+
+  .navbar ul {
+      display: flex;
+      flex-direction: column;
+  }
+}
+/* Para telas até 768px (tablets e celulares) */
+@media (max-width: 768px) {
+  /* Ajustes gerais */
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Ajustes no header */
+  #header {
+    height: 70px;
+    padding: 10px;
+  }
+
+  /* Ajustes nos títulos */
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  /* Ajustes nos serviços */
+  .services-details {
+    padding-top: 20px;
+    font-size: 14px;
+  }
+
+  /* Ajustes no layout da equipe */
+  .team-member {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .team-left-text h4 {
+    font-size: 24px;
+  }
+}
+
+/* Para telas até 576px (celulares pequenos) */
+@media (max-width: 576px) {
+  /* Ajustes ainda mais específicos */
+  h1 {
+    font-size: 28px;
+  }
+
+  .container {
+    padding: 5px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .section-headline h2 {
+    font-size: 24px;
+  }
+}
+
+
+
 /*----------------------------------------
  .fim CSS
 ----------------------------------------*/
