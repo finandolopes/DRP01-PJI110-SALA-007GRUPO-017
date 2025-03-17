@@ -1,5 +1,5 @@
-# 🕹 Criação do Projeto Integrador PI UNIVESP
-> Criação do Projeto Integrador PI UNIVESP - 
+# 🕹 Criação do Projeto Integrador PI - III UNIVESP
+> Criação do Projeto Integrador PI - III UNIVESP - 
 
 
 ## 📋 Índice
@@ -19,6 +19,7 @@
 - `CSS`
 - `Javascript`
 - `MSQL`
+- `API de Localização – Google Maps Embed API`  
 - `Framework - Bootstrap`
 - `GitHub`
 - `SQL`
@@ -29,7 +30,7 @@
 
 
 <p align="center">
-  <img src="screenshot.png" title="screenshot" alt="screenshot do jogo">
+  <img src="screenshot.png" title="screenshot" alt="screenshot do Site CONFINTER">
 </p>
 
 
