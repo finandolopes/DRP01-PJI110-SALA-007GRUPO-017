@@ -1,5 +1,5 @@
-# 🕹 Criação do Projeto Integrador PI - III UNIVESP
-> Criação do Projeto Integrador PI - III UNIVESP - 
+# 🕹 Criação do Projeto Integrador PI - I UNIVESP
+> Criação do Projeto Integrador PI - I UNIVESP - 
 
 
 ## 📋 Índice
@@ -19,7 +19,6 @@
 - `CSS`
 - `Javascript`
 - `MSQL`
-- `API de Localização – Google Maps Embed API`  
 - `Framework - Bootstrap`
 - `GitHub`
 - `SQL`
